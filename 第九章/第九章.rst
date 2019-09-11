@@ -31,28 +31,18 @@ IEEE
 802规范定义了网卡如何访问传输介质，以及如何在传输介质上传输数据的方法，还定义了传输信息的网络设备之间建立连接、维护和拆除的途径。IEEE
 802 规范主要包括如下内容：
 
-IEEE \ `802.1 <https://baike.baidu.com/item/802.1>`__ ：局域网体系结构、寻址、`网络互联 <https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94/10501073>`__\ 和网络。
-
-IEEE 802.2：\ `逻辑链路控制 <https://baike.baidu.com/item/%E9%80%BB%E8%BE%91%E9%93%BE%E8%B7%AF%E6%8E%A7%E5%88%B6/3530198>`__\ 子层（\ `LLC <https://baike.baidu.com/item/LLC/10072443>`__\ ）的定义。
-
-IEEE \ `802.3 <https://baike.baidu.com/item/802.3/960717>`__ ：`以太网 <https://baike.baidu.com/item/%E4%BB%A5%E5%A4%AA%E7%BD%91>`__\ `介质访问控制 <https://baike.baidu.com/item/%E4%BB%8B%E8%B4%A8%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6/10081534>`__\ 协议
-（\ `CSMA/CD <https://baike.baidu.com/item/CSMA/CD>`__\ ）及\ `物理层 <https://baike.baidu.com/item/%E7%89%IEEE \ `80A9%E7%90%86%E5%B1%82/4329158>`__\ 技术规范。
-
-IEEE \ `802.4 <https://baike.baidu.com/item/802.4/7998449>`__ ：`令牌总线网 <https://baike.baidu.com/item/%E4%BB%A4%E7%89%8C%E6%80%BB%E7%BA%BF%E7%BD%91/1627852>`__\ （Token-Bus）的介质访问控制协议及物理层技术规范。
-
-2.5 <https://baike.baidu.com/item/802.5/7998550>`__ ：`令牌环 <https://baike.baidu.com/item/%E4%BB%A4%E7%89%8C%E7%8E%AF>`__\ 网（Token-Ring)的介质访问控制协议及物理层技术规范。
-
-IEEE 802.6 ：城域网介质访问控制协议DQDB （Distributed Queue DualBus \ `分布式队列双总线 <https://baike.baidu.com/item/%E5%88%86%E5%B8%83%E5%BC%8F%E9%98%9F%E5%88%97%E5%8F%8C%E6%80%BB%E7%BA%BF/3023478>`__\ ）及物理层技术规范。
-
+IEEE 802.1 ：局域网体系结构、寻址网络互联和网络。
+IEEE 802.2：\ `逻辑链路控制子层（LLC）的定义。
+IEEE 802.3：以太网介质访问控制协议
+（CSMA/CD及物理层技术规范。
+IEEE 802.4 ：令牌总线网（Token-Bus）的介质访问控制协议及物理层技术规范。
+2.5 ：令牌环网（Token-Ring)的介质访问控制协议及物理层技术规范。
+IEEE 802.6 ：城域网介质访问控制协议DQDB （Distributed Queue DualBus分布式队列双总线）及物理层技术规范。
 IEEE 802.7 ：宽带技术咨询组，提供有关宽带联网的技术咨询。
-
 IEEE 802.8 ：光纤技术咨询组，提供有关光纤联网的技术咨询。
-
-IEEE 802.9 ：综合声音数据的局域网（IVDLAN）\ `介质访问控制 <https://baike.baidu.com/item/%E4%BB%8B%E8%B4%A8%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6/10081534>`__\ 协议及\ `物理层 <https://baike.baidu.com/item/%E7%89%A9%E7%90%86%E5%B1%82/4329158>`__\ 技术规范。
-
-IEEE \ `802.1 <https://baike.baidu.com/item/802.1>`__\ 0：网络安全技术咨询组，定义了网络\ `互操作 <https://baike.baidu.com/item/%E4%BA%92%E6%93%8D%E4%BD%9C/9878042>`__\ 的认证和加密方法。
-
-IEEE \ `802.11 <https://baike.baidu.com/item/802.11>`__\ ：\ `无线局域网 <https://baike.baidu.com/item/%E6%97%A0%E7%BA%BF%E5%B1%80%E5%9F%9F%E7%BD%91>`__\ （WLAN）的介质访问控制协议及物理层技术规范。
+IEEE 802.9 ：综合声音数据的局域网（IVDLAN）介质访问控制 协议及物理层技术规范。
+IEEE \ `802.10：网络安全技术咨询组，定义了网络互操作的认证和加密方法。
+IEEE \ `802.11 ：无线局域网（WLAN）的介质访问控制协议及物理层技术规范。
 
 9.1.3 网络设备
 
@@ -108,50 +98,30 @@ ESP32芯片集成了丰富的硬件外设，如图9-5所示，包括电容式触
 
 蓝牙和WIFI是ESP32的核心功能，蓝牙和wifi的共存也是esp32的独门武功，通过ESP32进行网络开发是非常好的选择，在ESP32上安装MicroPython固件，可以使用Python语法，运用Python进行简单的网络开发。Skids提供了丰富的Python网络接口，便于开发人员进行网络相关的设计开发。
 
-网络相关接口封装在network库，主要用于WIFI相关的配置和连接，WIFI有两种配置模式，一个用于
-station（当ESP32连接到路由器时），一个用于热点（access
-point）（用于其他设备与ESP32连接）。使用以下指令创建这些对象的实例：
+网络相关接口封装在network库，主要用于WIFI相关的配置和连接，WIFI有两种配置模式，一个用于station（当ESP32连接到路由器时），一个用于热点（accesspoint）（用于其他设备与ESP32连接）。使用以下指令创建这些对象的实例：
+::
 
-import network
-
-sta_if = network.WLAN(network.STA_IF) #STA模式
-
-ap_if = network.WLAN(network.AP_IF) #AP模式
-
-可使用以下指令检查接口是否有效：
-
-sta_if.active() # Ture表示接口有效，False表示无效
-
-ap_if.active() # Ture表示接口有效，False表示无效
-
-可使用以下指令检查接口的网络设置：
-
-ap_if.ifconfig()
-
-# 返回值为：IP地址、网络掩码、网关、DNS
-
-配置WIFI，让Skids可以连接某个热点实现上网的过程如下：
-
-sta_if = network.WLAN(network.STA_IF) #STA模式
-
-ap_if = network.WLAN(network.AP_IF) #AP模式
-
-if ap_if.active(): #如果AP模式开启了，则先关闭
-
-ap_if.active(False)
-
-if not sta_if.isconnected():
-
-print('Connecting to network...')
-
-sta_if.active(True) #激活STA
-
-sta_if.connect(wifi_name, wifi_SSID)
-#连接WiFi热点，参数为WiFi的SSID和密码
-
-while not sta_if.isconnected():
-
-pass
+   import network
+   sta_if = network.WLAN(network.STA_IF) #STA模式
+   ap_if = network.WLAN(network.AP_IF) #AP模式
+   可使用以下指令检查接口是否有效：
+   sta_if.active() # Ture表示接口有效，False表示无效
+   ap_if.active() # Ture表示接口有效，False表示无效
+   可使用以下指令检查接口的网络设置：
+   ap_if.ifconfig()
+   # 返回值为：IP地址、网络掩码、网关、DNS
+   配置WIFI，让Skids可以连接某个热点实现上网的过程如下：
+   sta_if = network.WLAN(network.STA_IF) #STA模式
+   ap_if = network.WLAN(network.AP_IF) #AP模式
+   if ap_if.active(): #如果AP模式开启了，则先关闭
+   ap_if.active(False)
+   if not sta_if.isconnected():
+   print('Connecting to network...')
+   sta_if.active(True) #激活STA
+   sta_if.connect(wifi_name, wifi_SSID)
+   #连接WiFi热点，参数为WiFi的SSID和密码
+   while not sta_if.isconnected():
+   pass
 
 9.3 认识MQTT协议
 ----------------
@@ -340,58 +310,34 @@ subscriber”输入相同的Topic并订阅。在左侧的Publisher的窗口中�
 
 分析：使用python编写程序进行测试MQTT的发布和订阅功能。首先要在控制台安装paho-mqtt工具，具体命令为:pip
 install paho-mqtt，并且自己搭建好服务端程序。客户端代码如下：
+::
 
-import paho.mqtt.client as mqtt
-
-MQTTHOST = IP地址
-
-MQTTPORT = 1883
-
-mqttClient = mqtt.Client()
-
-# 连接MQTT服务器
-
-def on_mqtt_connect():
-
-mqttClient.connect(MQTTHOST, MQTTPORT, 60)
-
-mqttClient.loop_start()
-
-# publish 消息
-
-def on_publish(topic, payload, qos):
-
-mqttClient.publish(topic, payload, qos)
-
-# 消息处理函数
-
-def on_message_come(lient, userdata, msg):
-
-print(msg.topic + "" + ":" + str(msg.payload))
-
-# subscribe 消息
-
-def on_subscribe():
-
-mqttClient.subscribe("/server", 1)
-
-mqttClient.on_message = on_message_come # 消息到来处理函数
-
-def main():
-
-on_mqtt_connect()
-
-on_publish("/test/server", "Hello Python!", 1)
-
-on_subscribe()
-
-while True:
-
-pass
-
-if \__name_\_ == '__main__':
-
-main()
+   import paho.mqtt.client as mqtt
+   MQTTHOST = IP地址
+   MQTTPORT = 1883
+   mqttClient = mqtt.Client()
+   # 连接MQTT服务器
+   def on_mqtt_connect():
+   mqttClient.connect(MQTTHOST, MQTTPORT, 60)
+   mqttClient.loop_start()
+   # publish 消息
+   def on_publish(topic, payload, qos):
+   mqttClient.publish(topic, payload, qos)
+   # 消息处理函数
+   def on_message_come(lient, userdata, msg):
+   print(msg.topic + "" + ":" + str(msg.payload))
+   # subscribe 消息
+   def on_subscribe():
+   mqttClient.subscribe("/server", 1)
+   mqttClient.on_message = on_message_come # 消息到来处理函数
+   def main():
+   on_mqtt_connect()
+   on_publish("/test/server", "Hello Python!", 1)
+   on_subscribe()
+   while True:
+   pass
+   if \__name_\_ == '__main__':
+   main()
 
 程序启动后会调用on_mqtt_connect()方法连接服务端，然后在主题"/test/server"发布消息，订阅"/server"主题并设置回调函数on_message_come处理收到的消息。
 
@@ -447,251 +393,149 @@ main()
 1. 硬件初始化
 
 通过类的构造函数，从而实现对硬件（屏幕显示和按键设置）进行初始化，同时设置配制参数。
+::
 
-def \__init__(self):
-
-self.keys = [Pin(p, Pin.IN) for p in [35, 36, 39, 34]]
-
-self.keymatch = ["Key1", "Key2", "Key3", "Key4"]
-
-self.select=1
-
+   def \__init__(self):
+   self.keys = [Pin(p, Pin.IN) for p in [35, 36, 39, 34]]
+   self.keymatch = ["Key1", "Key2", "Key3", "Key4"]
+   self.select=1
    self.displayInit()
-
-self.wifi_name = "wifi名称"
-
-self.wifi_SSID = "wifi密码"
-
-#MQTT服务端信息
-
-self.SERVER = "服务器地址"
-
-self.SERVER_PORT = MQTT服务器端口
-
-self.DEVICE_ID = "设备ID"
-
-self.TOPIC1 = b"/cloud-skids/online/dev/" + self.DEVICE_ID
-
-self.TOPIC2 = b"/cloud-skids/message/server/" + self.DEVICE_ID
-
-self.CLIENT_ID = "7e035cd4-15b4-4d4b-a706-abdb8151c57d"
+   self.wifi_name = "wifi名称"
+   self.wifi_SSID = "wifi密码"
+   #MQTT服务端信息
+   self.SERVER = "服务器地址"
+   self.SERVER_PORT = MQTT服务器端口
+   self.DEVICE_ID = "设备ID"
+   self.TOPIC1 = b"/cloud-skids/online/dev/" + self.DEVICE_ID
+   self.TOPIC2 = b"/cloud-skids/message/server/" + self.DEVICE_ID
+   self.CLIENT_ID = "7e035cd4-15b4-4d4b-a706-abdb8151c57d"
 
 #设备状态
+::
 
-self.ON = "1"
+   self.ON = "1"
+   self.OFF = "0"
+   self.content=""#初始化要发送的信息
+   self.client = MQTTClient(self.CLIENT_ID, self.SERVER, self.SERVER_PORT)
 
-self.OFF = "0"
-
-self.content=""#初始化要发送的信息
-
-self.client = MQTTClient(self.CLIENT_ID, self.SERVER, self.SERVER_PORT)
-
-在构造函数__init__(
-)中，和mqttbox一样我们需要设置服务器地址，端口号，客户端名称，发布的主题，订阅的主题，客户端id，以及需要连接的wifi名称和密码，调用了displayInit()函数来进行屏幕初始化工作。
-
+在构造函数__init__()中，和mqttbox一样我们需要设置服务器地址，端口号，客户端名称，发布的主题，订阅的主题，客户端id，以及需要连接的wifi名称和密码，调用了displayInit()函数来进行屏幕初始化工作。
+::
    def displayInit(self):#初始化
-
-screen.clear()
-
-self.drawInterface()
-
-self.selectInit()
-
-def selectInit(self):#选择表情初始化
-
-screen.drawline(20, 200, 92, 200, 2, 0xff0000)
-
-screen.drawline(92, 200, 92, 272, 2, 0xff0000)
-
-screen.drawline(92, 272, 20, 272, 2, 0xff0000)
-
-screen.drawline(20, 272, 20, 200, 2, 0xff0000)
-
-def drawInterface(self):#界面初始化
-
-bmp1=ubitmap.BitmapFromFile("pic/boy")
-
-bmp2=ubitmap.BitmapFromFile("pic/girl")
-
-bmp1.draw(20,200)#显示boy图片
-
-bmp2.draw(140,200)#显示girl图片
-
-screen.drawline(0, 160, 240, 160, 2, 0xff0000)
+   screen.clear()
+   self.drawInterface()
+   self.selectInit()
+   def selectInit(self):#选择表情初始化
+   screen.drawline(20, 200, 92, 200, 2, 0xff0000)
+   screen.drawline(92, 200, 92, 272, 2, 0xff0000)
+   screen.drawline(92, 272, 20, 272, 2, 0xff0000)
+   screen.drawline(20, 272, 20, 200, 2, 0xff0000)
+   def drawInterface(self):#界面初始化
+   bmp1=ubitmap.BitmapFromFile("pic/boy")
+   bmp2=ubitmap.BitmapFromFile("pic/girl")
+   bmp1.draw(20,200)#显示boy图片
+   bmp2.draw(140,200)#显示girl图片
+   screen.drawline(0, 160, 240, 160, 2, 0xff0000)
 
 2. 开始游戏
 
 通过类的成员函数do_connect()负责连接wifi网络。
-
-def do_connect(self):
-
-sta_if = network.WLAN(network.STA_IF) #STA模式
-
-ap_if = network.WLAN(network.AP_IF) #AP模式
-
-if ap_if.active():
-
-ap_if.active(False) #关闭AP
-
-if not sta_if.isconnected():
-
-print('Connecting to network...')
-
-sta_if.active(True) #激活STA
-
-sta_if.connect(self.wifi_name, self.wifi_SSID) #WiFi的SSID和密码
-
-while not sta_if.isconnected():
-
-pass
-
-gc.collect()
+::
+   def do_connect(self):
+   sta_if = network.WLAN(network.STA_IF) #STA模式
+   ap_if = network.WLAN(network.AP_IF) #AP模式
+   if ap_if.active():
+   ap_if.active(False) #关闭AP
+   if not sta_if.isconnected():
+   print('Connecting to network...')
+   sta_if.active(True) #激活STA
+   sta_if.connect(self.wifi_name, self.wifi_SSID) #WiFi的SSID和密码
+   while not sta_if.isconnected():
+   pass
+   gc.collect()
 
 通过类的成员函数esp()负责连接mqtt服务。
+::
 
-def esp(self):
-
-self.client.set_callback(self.sub_cb) #设置回调
-
-self.client.connect()
-
-print("连接到服务器：%s" % self.SERVER)
-
-self.client.publish(self.TOPIC1, self.ON) #发布“1”到TOPIC1
-
-self.client.subscribe(self.TOPIC2) #订阅TOPIC
-
-通过start()类成员函数开始程序。
-
-def start(self):
-
-try:
-
-while True:
-
-self.client.check_msg()#检查是否收到信息
-
-   i = 0#用来辅助判断那个按键被按下
-
-   j = -1
-
-for k in self.keys:#检查按键是否被按下
-
-if (k.value() == 0):##如果按键被按下
-
-if i != j:
-
-   j = i
-
-self.keyboardEvent(i)#触发相应按键对应事件
-
-   i = i + 1
-
-if (i > 3):
-
-   i = 0
-
-time.sleep_ms(130)
-
-finally:
-
-self.client.disconnect()
-
-print("MQTT连接断开")
+   def esp(self):
+      self.client.set_callback(self.sub_cb) #设置回调
+      self.client.connect()
+      print("连接到服务器：%s" % self.SERVER)
+      self.client.publish(self.TOPIC1, self.ON) #发布“1”到TOPIC1
+      self.client.subscribe(self.TOPIC2) #订阅TOPIC
+   通过start()类成员函数开始程序。
+   def start(self):
+      try:
+         while True:
+            self.client.check_msg()#检查是否收到信息
+            i = 0#用来辅助判断那个按键被按下
+            j = -1
+            for k in self.keys:#检查按键是否被按下
+                if (k.value() == 0):##如果按键被按下
+                  if i != j:
+                     j = i
+                     self.keyboardEvent(i)#触发相应按键对应事件
+                     i = i + 1
+                  if (i > 3):
+                     i = 0
+                     time.sleep_ms(130)
+      finally:
+         self.client.disconnect()
+         print("MQTT连接断开")
 
 3. 处理用户按键事件
 
 当用户按下按键后，类的成员函数keyboardEvent()负责进行具体的处理。在该函数中，首先判断游戏是按的key1还是key3。如果是key1则重新画焦点框，否则是key3发送表情。
+::
 
    def keyboardEvent(self, key):
-
-if self.keymatch[key] == "Key1":#右移键，选择要发送的表情
-
-if self.select%2==1:#用红色框选中boy表情
-
-   screen.drawline(20, 200, 92, 200, 2, 0xffffff)
-
-   screen.drawline(92, 200, 92, 272, 2, 0xffffff)
-
-screen.drawline(92, 272, 20, 272, 2, 0xffffff)
-
-screen.drawline(20, 272, 20, 200, 2, 0xffffff)
-
-screen.drawline(140, 200, 212, 200, 2, 0xff0000)
-
-screen.drawline(212, 200, 212, 272, 2, 0xff0000)
-
-screen.drawline(212, 272, 140, 272, 2, 0xff0000)
-
-screen.drawline(140, 272, 140, 200, 2, 0xff0000)
-
-self.select+=1
-
-else:#用红色框选中girl表情
-
-screen.drawline(140, 200, 212, 200, 2, 0xffffff)
-
-screen.drawline(212, 200, 212, 272, 2, 0xffffff)
-
-screen.drawline(212, 272, 140, 272, 2, 0xffffff)
-
-screen.drawline(140, 272, 140, 200, 2, 0xffffff)
-
-screen.drawline(20, 200, 92, 200, 2, 0xff0000)
-
-screen.drawline(92, 200, 92, 272, 2, 0xff0000)
-
-screen.drawline(92, 272, 20, 272, 2, 0xff0000)
-
-screen.drawline(20, 272, 20, 200, 2, 0xff0000)
-
-self.select+=1
-
-if self.keymatch[key] == "Key3":#发送表情按键
-
-if self.select%2==1:#显示已发送boy表情
-
-bmp1=ubitmap.BitmapFromFile("pic/boy")
-
-bmp1.draw(140,40)
-
-self.content="001"
-
-self.client.publish(self.TOPIC2,self.content)
-
-else:#显示已发送girl表情
-
-bmp2=ubitmap.BitmapFromFile("pic/girl")
-
-bmp2.draw(140,40)
-
-self.content="002"
-
-self.client.publish(self.TOPIC2,self.content)
+      if self.keymatch[key] == "Key1":#右移键，选择要发送的表情
+         if self.select%2==1:#用红色框选中boy表情
+            screen.drawline(20, 200, 92, 200, 2, 0xffffff)
+            screen.drawline(92, 200, 92, 272, 2, 0xffffff)
+            screen.drawline(92, 272, 20, 272, 2, 0xffffff)
+            screen.drawline(20, 272, 20, 200, 2, 0xffffff)
+            screen.drawline(140, 200, 212, 200, 2, 0xff0000)
+            screen.drawline(212, 200, 212, 272, 2, 0xff0000)
+            screen.drawline(212, 272, 140, 272, 2, 0xff0000)
+            screen.drawline(140, 272, 140, 200, 2, 0xff0000)
+            self.select+=1
+         else:#用红色框选中girl表情
+            screen.drawline(140, 200, 212, 200, 2, 0xffffff)
+            screen.drawline(212, 200, 212, 272, 2, 0xffffff)
+            screen.drawline(212, 272, 140, 272, 2, 0xffffff)
+            screen.drawline(140, 272, 140, 200, 2, 0xffffff)
+            screen.drawline(20, 200, 92, 200, 2, 0xff0000)
+            screen.drawline(92, 200, 92, 272, 2, 0xff0000)
+            screen.drawline(92, 272, 20, 272, 2, 0xff0000)
+            screen.drawline(20, 272, 20, 200, 2, 0xff0000)
+            self.select+=1
+    if self.keymatch[key] == "Key3":#发送表情按键
+         if self.select%2==1:#显示已发送boy表情
+            bmp1=ubitmap.BitmapFromFile("pic/boy")
+            bmp1.draw(140,40)
+            self.content="001"
+            self.client.publish(self.TOPIC2,self.content)
+         else:#显示已发送girl表情
+            bmp2=ubitmap.BitmapFromFile("pic/girl")
+            bmp2.draw(140,40)
+            self.content="002"
+            self.client.publish(self.TOPIC2,self.content)
 
 4. 接收到服务器的消息
 
 通过类成员函数sub_cb()处理服务器的消息。
+::
 
    def sub_cb(self,topic, message):#从服务器接受信息
-
-message = message.decode()
-
-print("服务器发来信息：%s" % message)
-
-#global count
-
-if message=="001":#收到boy表情号码显示boy表情
-
-bmp1=ubitmap.BitmapFromFile("pic/boy")
-
-bmp1.draw(140,40)
-
-elif message=="002":#收到girl表情号码显示girl表情
-
-bmp1=ubitmap.BitmapFromFile("pic/girl")
-
-bmp1.draw(140,40)
+      message = message.decode()
+      print("服务器发来信息：%s" % message)
+      #global count
+      if message=="001":#收到boy表情号码显示boy表情
+         bmp1=ubitmap.BitmapFromFile("pic/boy")
+         bmp1.draw(140,40)
+      elif message=="002":#收到girl表情号码显示girl表情
+         bmp1=ubitmap.BitmapFromFile("pic/girl")
+         bmp1.draw(140,40)
 
 实践练习：
 
