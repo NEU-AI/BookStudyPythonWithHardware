@@ -125,26 +125,14 @@ Python是一种跨平台的编程语言，这意味着它能够运行在所有�
 安装Python后，尝试启动交互式解释器。要从命令行启动Python，只需执行命令python。如果同时安装了较旧的版本，可能需要执行命令python3。启动Python后，可看到类似于下面的提示符：
 
 >>> Python 3.6.4 (default, Jul 8 2017, 04:57:36)
-
 [GCC 4.2.1 Compatible Apple LLVM 7.0.0 (clang-700.1.76)] on darwin
-
 Type "help", "copyright", "credits" or "license" for more information.
-
 Python提供了交互式的解释器，可以尝试像下面这样做：
-
 >>> print("Hello, world!")
-
 等你按下回车键后，将出现如下输出：
-
 >>> Hello, world!
-
 上面的 >>> 是 Python
-提示符（prompt）。提示符是程序等待你键入信息时显示的符
-
-号。这个 >>> 提示符就是在告诉你，Python
-已经准备好了，在等着你键入Python指令，你输入print("Hello,
-world!")并按回车键，Python解释器将打印字符串"Hello,
-world!"，然后再次显示提示符，这种交互式的解释器方便我们了解程序的执行状态及各个变量的当前值，它可以提供交互环境实时运行程序，这样就可以在编程时实时测试，来发现问题解决问题。
+提示符（prompt）。提示符是程序等待你键入信息时显示的符号。这个 >>> 提示符就是在告诉你，Python已经准备好了，在等着你键入Python指令，你输入print("Hello,world!")并按回车键，Python解释器将打印字符串"Hello,world!"，然后再次显示提示符，这种交互式的解释器方便我们了解程序的执行状态及各个变量的当前值，它可以提供交互环境实时运行程序，这样就可以在编程时实时测试，来发现问题解决问题。
 
 1.2.2 集成开发环境
 
@@ -175,10 +163,7 @@ notebook是基于Web技术的交互式计算文档格式，支持Markdown和Late
 
 图1-6 Jupyter notebook界面
 
-最后真正称得上IDE的是PyCharm和Spyder，PyCharm是由JetBrains打造的一款Python
-IDE。它的运行界面如图1-7所示。我们知道VS2010的重构插件Resharper就是出自JetBrains。那么，PyCharm有什么吸引人的特点呢？首先，PyCharm用于一般IDE具备的功能，比如，调试、语法高亮、Project管理、代码跳转、智能提示、自动完成、单元测试、版本控制等等，另外PyCharm还提供了一些很好的功能用于\ `Django <http://www.oschina.net/p/django>`__\ 开发，同时支持Google
-App
-Engine，支持\ `IronPython <http://www.oschina.net/p/ironpython>`__\ 。
+最后真正称得上IDE的是PyCharm和Spyder，PyCharm是由JetBrains打造的一款Python IDE。它的运行界面如图1-7所示。我们知道VS2010的重构插件Resharper就是出自JetBrains。那么，PyCharm有什么吸引人的特点呢？首先，PyCharm用于一般IDE具备的功能，比如，调试、语法高亮、Project管理、代码跳转、智能提示、自动完成、单元测试、版本控制等等，另外PyCharm还提供了一些很好的功能用于Django 开发，同时支持Google AppEngine，支持IronPython。
 
 .. image:: /Chapter/picture/image009.png
 
@@ -188,8 +173,7 @@ Engine，支持\ `IronPython <http://www.oschina.net/p/ironpython>`__\ 。
 
 Spyder是Python(x,y)的作者为它开发的一个简单的集成开发环境。和其他的Python开发环境相比，它最大的优点就是模仿MATLAB的“工作空间”的功能，可以很方便地观察和修改数组的值。
 
-Spyder的界面由许多窗格构成，如图1-8所示。用户可以根据自己的喜好调整它们的位置和大小。当多个窗格出现在一个区域时，将使用标签页的形式显示。例如在图1-7中，可以看到“Editor”、“Object
-inspector”、“Variable explorer”、“File explorer”、“Console”、“History
+Spyder的界面由许多窗格构成，如图1-8所示。用户可以根据自己的喜好调整它们的位置和大小。当多个窗格出现在一个区域时，将使用标签页的形式显示。例如在图1-7中，可以看到“Editor”、“Objectinspector”、“Variable explorer”、“File explorer”、“Console”、“History
 log”以及两个显示图像的窗格。在View菜单中可以设置是否显示这些窗格。
 
 .. image:: /Chapter/picture/image011.png
@@ -238,9 +222,7 @@ Skids连接至PC后，会自动进行驱动安装，无需人为操作，安装�
 
 1.3.3 Skids开发环境
 
-Skids集成了Python解释器和驱动库，开发简单、使用方便，无需搭建复杂的交叉开发环境，就可实现快速入门，Skids只需要一个名为uPyCraft的工具即可进行代码编辑、下载和运行uPyCraft是一个可运行在Windows/MacOS平台的Python
-IDE，界面简洁，操作便利，适合新手的学习和使用。uPyCraft
-内置了许多基础操作库，为众多的Python爱好者提供了一个简单实用的集成开发环境。
+Skids集成了Python解释器和驱动库，开发简单、使用方便，无需搭建复杂的交叉开发环境，就可实现快速入门，Skids只需要一个名为uPyCraft的工具即可进行代码编辑、下载和运行uPyCraft是一个可运行在Windows/MacOS平台的PythonIDE，界面简洁，操作便利，适合新手的学习和使用。uPyCraft内置了许多基础操作库，为众多的Python爱好者提供了一个简单实用的集成开发环境。
 
 uPyCraft的下载地址：
 
@@ -277,10 +259,7 @@ workSpace：用户自定义目录，保存用户自己的文件。
 1.4 第一个Python程序
 --------------------
 
-在安装完开发环境之后，我们开始第一个Python程序的编写，学习编程的第一个程序都是Hello
-World，因为计算机科学家Brian W. Kernighan和C语言之父的Dennis M.
-Ritchie合著的《The C Programming
-Language》(C程序设计语言)中使用它做为第一个演示程序，非常著名，所以后来的程序员在学习编程或进行设备调试时延续了这一习惯。那么在开始我们第一个程序之前先来学习一下交互式命令行及其基本操作。
+在安装完开发环境之后，我们开始第一个Python程序的编写，学习编程的第一个程序都是Hello World，因为计算机科学家Brian W. Kernighan和C语言之父的Dennis M.Ritchie合著的《The C ProgrammingLanguage》(C程序设计语言)中使用它做为第一个演示程序，非常著名，所以后来的程序员在学习编程或进行设备调试时延续了这一习惯。那么在开始我们第一个程序之前先来学习一下交互式命令行及其基本操作。
 
 1.4.1 Skids的交互命令行REPL
 
@@ -304,8 +283,7 @@ REPL是一个命令行形式的用户操作界面，类似Windows或Linux的命�
 
 输入历史：REPL储存您输入的前几行文本（在ESP32上可达8行）。可使用上下箭头键来召回之前输入的内容。
 
-Tab补齐：点击Tab键将自动补齐正在输入的当前字。这对查找模块或对象的函数很有帮助。可尝试输入”ma”并点击Tab键，则会自动将其补齐为”machine”（假设已经输入了import
-machine）。然后输入”.”，再次点击Tab键即可显示machine模块的所有函数的列表。
+Tab补齐：点击Tab键将自动补齐正在输入的当前字。这对查找模块或对象的函数很有帮助。可尝试输入”ma”并点击Tab键，则会自动将其补齐为”machine”（假设已经输入了importmachine）。然后输入”.”，再次点击Tab键即可显示machine模块的所有函数的列表。
 
 粘贴模式：按下Ctrl+E组合键将进入特殊的粘贴模式。这允许将文本块复制并粘贴到REPL。按下Ctrl+E组合键，如图1-18所示将看到粘贴模式提示。
 
@@ -337,12 +315,11 @@ machine）。然后输入”.”，再次点击Tab键即可显示machine模块�
 
 1.4.3 运行Hello World
 
-那么对于Hello
-World这种小程序或者进行代码调试与验证，我们就在终端框中用REPL的方式来执行。在uPyCraft的终端框上输入语句，如图1-22所示。
+那么对于Hello World这种小程序或者进行代码调试与验证，我们就在终端框中用REPL的方式来执行。在uPyCraft的终端框上输入语句，如图1-22所示。
 
 .. image:: /Chapter/picture/image030.jpg
 
-图1-22 uPyCraft的HellowWorld
+图1-22 uPyCraft的Hello wWorld
 
 可以直接看到程序的执行结果如图1-23所示。
 
@@ -350,8 +327,7 @@ World这种小程序或者进行代码调试与验证，我们就在终端框中
 
 图1-23 HellowWorld运行结果
 
-程序对变量a进行赋值，并打印a，可以看到屏幕打印出Hello
-World这些字符，说明程序执行成功，大多数程序都可以直接在终端框中用REPL的方式来执行，但需要解决的问题比较复杂时，你可能需要编写.Py文件，将文件下载到开发板上执行。
+程序对变量a进行赋值，并打印a，可以看到屏幕打印出Hello World这些字符，说明程序执行成功，大多数程序都可以直接在终端框中用REPL的方式来执行，但需要解决的问题比较复杂时，你可能需要编写.Py文件，将文件下载到开发板上执行。
 
 1.3.4 Skids运行Python文件
 
@@ -379,8 +355,7 @@ World这些字符，说明程序执行成功，大多数程序都可以直接在
 
 图1-27 uPyCraft语法检查
 
-如果程序语法正确，则终端框中只打印“syntax
-finish”信息，如图1-28所示，否则还会打印出错误信息。
+如果程序语法正确，则终端框中只打印“syntax finish”信息，如图1-28所示，否则还会打印出错误信息。
 
 .. image:: /Chapter/picture/image036.jpg
 
@@ -389,7 +364,7 @@ finish”信息，如图1-28所示，否则还会打印出错误信息。
 1.5 固件烧录和程序的自动执行
 ----------------------------
 
-固件(Firmware)是指设备内部保存的设备“\ `驱动程序 <https://baike.baidu.com/item/%E9%A9%B1%E5%8A%A8%E7%A8%8B%E5%BA%8F/103009>`__\ ”，通过固件，\ `系统 <https://baike.baidu.com/item/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/192>`__\ 才能按照标准的\ `设备驱动 <https://baike.baidu.com/item/%E8%AE%BE%E5%A4%87%E9%A9%B1%E5%8A%A8/9764298>`__\ 实现特定机器的运行动作，比如光驱、刻录机等都有内部固件。固件是担任着一个系统最基础最底层工作的软件。而在硬件设备中，固件就是硬件设备的灵魂，因为一些硬件设备除了固件以外没有其它软件组成，因此固件也就决定着硬件设备的功能及性能。
+固件(Firmware)是指设备内部保存的设备“驱动程序”，通过固件，系统才能按照标准的设备驱动实现特定机器的运行动作，比如光驱、刻录机等都有内部固件。固件是担任着一个系统最基础最底层工作的软件。而在硬件设备中，固件就是硬件设备的灵魂，因为一些硬件设备除了固件以外没有其它软件组成，因此固件也就决定着硬件设备的功能及性能。
 
 烧录的意思是将一些嵌入式启动所必须的硬件下载到嵌入式的储存设备中，当这些固件烧录到储存器中，板子下次启动的时候，直接从这些储存器中找到这些文件，嵌入式系统就能够直接跑起来。
 
@@ -426,22 +401,19 @@ Serial，如图1-29所示，选中对应的串口即可。
 
 图1-31 uPyCraft烧录菜单
 
-2. 烧录固件对话框将被弹出，在burn_addr选项中选择0x1000，在Firmware
-Choose选项中选中Users，如图1-32所示，点击Choose按钮，从本地目录中选择要烧录的firmware.bin固件。
+2. 烧录固件对话框将被弹出，在burn_addr选项中选择0x1000，在Firmware Choose选项中选中Users，如图1-32所示，点击Choose按钮，从本地目录中选择要烧录的firmware.bin固件。
 
 .. image:: /Chapter/picture/image041.jpg
 
 图1-32 uPyCraft烧录对话框
 
-3.
-选中待烧录的固件后，点击OK将开始烧录固件，并弹出如下窗口显示进度，如图1-33所示。
+3.选中待烧录的固件后，点击OK将开始烧录固件，并弹出如下窗口显示进度，如图1-33所示。
 
 .. image:: /Chapter/picture/image042.jpg
 
 图1-33 uPyCraft烧录进度条
 
-4.
-固件烧录完成后，该窗口自动关闭，返回uPyCraft主界面；同时，Skids设备将自动重启。
+4.固件烧录完成后，该窗口自动关闭，返回uPyCraft主界面；同时，Skids设备将自动重启。
 
 5. Skids重启后会与uPyCraft断开连接，用户重新在主菜单Tool s->
 Serial中选择对应的串口进行连接。
@@ -456,8 +428,7 @@ boot.py
 main.py
 ：python主程序的脚本文件，在boot.py运行后被执行。如果main.py不存在，则boot.py执行完成后，MCU处于空闲状态。
 
-其它Python文件 ：python
-程序文件，由main.py调用运行或者通过uPyCraft手动运行。
+其它Python文件 ：python程序文件，由main.py调用运行或者通过uPyCraft手动运行。
 
 假定Skids开机后要自动执行snake.py这个贪吃蛇游戏程序，就需要将文件命名为main.py，那么选择Device列表中的snake.py，在鼠标右键弹出菜单中选择Rename，在弹出的对话框中将文件名改为main.py，如图1-34所示。
 
