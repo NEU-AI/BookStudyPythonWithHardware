@@ -68,24 +68,17 @@ Skids使用通用IO端口进行相应LED的控制。Skids通用IO端口描述如
 在这种应用中，需要将相应的端口设置为输出口，当输出口为0时，LED亮，当输出口为1时，LED熄灭。
 
 下面以LED1为例，介绍如何通过程序控制Skids上的LED灯的开启与关闭。
+::
 
-#导入用于引脚控制的Python库
-
-from machine import Pin
-
-#获取引脚
-
-led_en = Pin(2, Pin.OUT)
-
-led1 = Pin(14, Pin.OUT)
-
-#使能LED控制
-
-led_en.value(1)
-
-#开启LED1
-
-led1.value(0)
+   #导入用于引脚控制的Python库
+   from machine import Pin
+   #获取引脚
+   led_en = Pin(2, Pin.OUT)
+   led1 = Pin(14, Pin.OUT)
+   #使能LED控制
+   led_en.value(1)
+   #开启LED1
+   led1.value(0)
 
 其中，machine库提供了与硬件设备相关的操作接口和类，其中Pin类定义了MCU引脚相关的配置。程序的主要步骤依次为：初始化变量设置LED状态开启LED1。程序执行后，发现LED1保持常亮的状态，思考能否通过修改代码使LED1产生闪烁的效果。
 
@@ -95,52 +88,31 @@ led1.value(0)
 图5-5 LED1闪烁流程图
 
 对应的程序代码如下：
+::
 
-#导入用于引脚控制的Python库
-
-from machine import Pin
-
-#导入time库
-
-import time
-
-#获取引脚
-
-led_en = Pin(2, Pin.OUT)
-
-led1 = Pin(14, Pin.OUT)
-
-#使能LED控制
-
-led_en.value(1)
-
-#开启LED1
-
-led1.value(0)
-
-#延时1秒
-
-time.sleep(1)
-
-#关闭LED1
-
-led1.value(1)
-
-#延时1秒
-
-time.sleep(1)
-
-#重新开启LED1
-
-led1.value(0)
-
-#延时1秒
-
-time.sleep(1)
-
-#关闭LED1
-
-led1.value(1)
+   #导入用于引脚控制的Python库
+   from machine import Pin
+   #导入time库
+   import time
+   #获取引脚
+   led_en = Pin(2, Pin.OUT)
+   led1 = Pin(14, Pin.OUT)
+   #使能LED控制
+   led_en.value(1)
+   #开启LED1
+   led1.value(0)
+   #延时1秒
+   time.sleep(1)
+   #关闭LED1
+   led1.value(1)
+   #延时1秒
+   time.sleep(1)
+   #重新开启LED1
+   led1.value(0)
+   #延时1秒
+   time.sleep(1)
+   #关闭LED1
+   led1.value(1)
 
 其中，time库用来获取时间和日期、测量时间间隔、延时时间等。上面的程序只要求LED开启和关闭两次，如果要开启和关闭LED一百次呢，代码如何书写？难道上面的语句要重复100遍？
 
@@ -178,18 +150,14 @@ while 判断条件：
 while循环包含3部分，一是循环变量的初始化；二是循环条件；三是循环体。其中循环体中有时需要包含循环变量的变化，循环体中的语句向右边缩进。
 
 【案例5-1】计算1到100的总和。
+::
 
-sum = 0 #存放结果变量初始化
-
-i = 0 #循环变量初始化
-
-while i<=100: #循环条件
-
-sum = sum + i
-
-i = i + 1 #循环变量的变化
-
-print(" 1 到 100 之和为: %d" %sum)
+   sum = 0 #存放结果变量初始化
+   i = 0 #循环变量初始化
+   while i<=100: #循环条件
+   sum = sum + i
+   i = i + 1 #循环变量的变化
+   print(" 1 到 100 之和为: %d" %sum)
 
 这个循环的循环体只有两条语句，其中i=i+1是循环变量的变化语句。i<=100是循环条件，当循环条件成立时，就一直执行循环体，如果条件不成立时，则结束循环操作。
 
@@ -200,42 +168,31 @@ print(" 1 到 100 之和为: %d" %sum)
 【案例5-2】输入5个同学的成绩，计算平均成绩。
 
 分析：设计一个5次的循环，每次输入一个同学的成绩m，把成绩累计在一个总成绩变量s中，最后计算平均成绩输出，程序如下：
+::
 
-s = 0
-
-i = 0
-
-while i < 5 :
-
-m = input("第"+str(i)+ "个成绩：")
-
-m = float(m)
-
-s = s + m
-
-i = i + 1
-
-print("平均成绩：", s / 5)
+   s = 0
+   i = 0
+   while i < 5 :
+   m = input("第"+str(i)+ "个成绩：")
+   m = float(m)
+   s = s + m
+   i = i + 1
+   print("平均成绩：", s / 5)
 
 在某些情况下，循环结构中还会配合使用选择判断，最常见的是if判断，用来完成数据的筛选工作或列出做事的前提条件。
 
 【案例5-3】计算1~100以内的偶数和。
 
 分析：在整数中，能被2整除的数，称为偶数。也可以表示成，除以2以后余数为0的数称为偶数。具体代码如下：
+::
 
-i = 0
-
-sumResult = 0
-
-while i<101:
-
-if i %2 = =0:
-
-sumResult = sumResult + i
-
-i = i + 1
-
-print("1~100之间的偶数之和为：%d"%sumResult)
+   i = 0
+   sumResult = 0
+   while i<101:
+   if i %2 = =0:
+   sumResult = sumResult + i
+   i = i + 1
+   print("1~100之间的偶数之和为：%d"%sumResult)
 
 5.3.2 for循环语句
 
@@ -248,18 +205,14 @@ for 变量 in 序列：
 循环体
 
 例如，使用for循环遍历列表，示例代码如下：
+::
 
-for i in [0,1,2]：
-
-print(i)
-
-输出结果：
-
-0
-
-1
-
-2
+   for i in [0,1,2]：
+   print(i)
+   输出结果：
+   0
+   1
+   2
 
 上述示例中，for循环可以将列表中的数值逐个显示。
 
@@ -268,10 +221,10 @@ print(i)
 )函数在for循环中的格式分为以下几种情况。
 
 1. 有start、end、step
+::
 
-for 循环变量 in range(start , end, step)：
-
-循环体
+   for 循环变量 in range(start , end, step)：
+   循环体
 
 1)
 如果step>0，那么循环变量会从start开始增加，沿正方向变化，一直等于或者超过end后循环停止；如果一开始就start>=end，则已经到停止条件，循环一次也不执行。
@@ -280,22 +233,21 @@ for 循环变量 in range(start , end, step)：
 如果step<0，那么变量会从start开始减少，沿负方向变化，一直到负方向等于或者超过end后循环停止；如果一开始就start<=end，则已经到停止条件，循环一次也不执行。
 
 2. 只有stop值
+::
 
-for 循环变量 in range(end)：
-
-循环体
+   for 循环变量 in range(end)：
+   循环体
 
 循环变量的值从0开始，按step=1的步长增加，一直逼近end，但不等于end，直到end的前一个值，即end-1。
 
 3. 只有start和stop值
+::
 
-for 循环变量 in range(start , end)：
-
-循环体
-
-   1) 如果start>end，则循环一次也不执行。
-
-   2)
+   for 循环变量 in range(start , end)：
+   循环体
+   
+1) 如果start>end，则循环一次也不执行。
+2)
    如果start<=end，循环变量的值从start开始，按step=1的步长增加，一直逼近end，但不等于end，直到end的前一个值，即end-1。
 
 注意：
@@ -308,53 +260,45 @@ for 循环变量 in range(start , end)：
 在使用range(start,end)函数时，循环正常退出时循环变量的值等于end-1，而并非end。
 
 【案例5-4】计算1到100的总和。
+::
 
-s = 0
-
-for i in range(101):
-
-s = s + i
-
-print(" 1 到 100 之和为: %d" %s)
+   s = 0
+   for i in range(101):
+   s = s + i
+   print(" 1 到 100 之和为: %d" %s)
 
 实际上，for与while在大多数情况下是可以相互替代的。最大的不同是：while循环的循环变量在while之前要初始化，变量的变化要自己控制，循环条件要自己写；相对来说，for循环要简单一些，因为for循环的变量变化时有规律的等差数列变化，而while循环的变量变化可以是任意的。因此，如果循环变量是有规律变化的，那么建议使用for循环；如果循环变量是无规律变化的，建议使用while循环。
 
 【案例5-5】计算1~100以内的偶数和。
+::
 
-s = 0
-
-for i in range(2,101,2):
-
-s = s + i
-
-print("1~100之间的偶数之和为：%d"%s)
+   s = 0
+   for i in range(2,101,2):
+   s = s + i
+   print("1~100之间的偶数之和为：%d"%s)
 
 5.4 学习break和continue
 -----------------------
 
 在编写循环结构时，很容易就会出现下列的错误。
+::
 
-i = 0
-
-while i<4：
-
-print(i)
+   i = 0
+   while i<4：
+   print(i)
 
 在这个例子中，循环变量i永远为0不变化，i<4永远成立，程序不停输出0，成为永远不停止的死循环。
 
 如果循环条件一直为真，永远不会变为假，则该循环会循环无限次，出现死循环。程序如果出现死循环，计算机将永远执行循环语句，别的语句将得不到执行。
 
 其中一种解决办法，就是在循环体添加中断语句，从而保证程序有出口。修改程序如下：
+::
 
-i = 0
-
-while i<4：
-
-print(i)
-
-if i%2= =0：
-
-break
+   i = 0
+   while i<4：
+   print(i)
+   if i%2= =0：
+   break
 
 .. image:: /Chapter/picture/image089.png
 图5-7 循环结构中的break
@@ -368,30 +312,22 @@ Python中的break语句和C语言中的break语句相类似，都是用来结束
 【案例5-6】判断n是否为素数。
 
 分析：素数又称质数。是指整数在一个大于1的自然数中，除了1和此整数自身外，无法被其他自然数整除的数。换句话说，只有两个正因数（1和自身）的自然数即为素数。因此，判断n是否为素数，只需要将2~n-1之间的所有数去整除n，如果存在某个数能整除n，则后面的数字不用再去整除判断，即可判定n不是素数，否则，n即为素数。
+::
 
-n = input(＂Enter n:＂)
-
-n = int(n)
-
-for d in range(2,n):
-
-if n%d= =0:
-
-break
-
-if d= =n-1:
-
-print(n, ＂is a prime＂)
-
-else:
-
-print(n, ＂is not a prime＂)
-
+   n = input(＂Enter n:＂)
+   n = int(n)
+   for d in range(2,n):
+   if n%d= =0:
+   break
+   if d= =n-1:
+   print(n, ＂is a prime＂)
+   else:
+   print(n, ＂is not a prime＂)
 运行结果：
+::
 
-Enter n:12
-
-12 is not a prime
+   Enter n:12
+   12 is not a prime
 
 图5-8 循环结构中的continue
 
@@ -413,18 +349,14 @@ Enter n:12
 【案例5-7】打印10以内的奇数。
 
 分析：可以设置一个0~10的循环结构，如果某个数能被2整除，那么这个数就不是奇数，跳出本次循环，进行下一个数字的判断，反之，这个数不能被2整除，那么这个数肯定是奇数，进行打印。
+::
 
-n = 0
-
-while n<10:
-
-n = n + 1
-
-if n%2==0: #如果n是偶数，执行continue语句
-
-continue
-
-print(n)
+   n = 0
+   while n<10:
+   n = n + 1
+   if n%2==0: #如果n是偶数，执行continue语句
+   continue
+   print(n)
 
 5.5 循环的嵌套
 --------------
@@ -480,34 +412,30 @@ while 条件2：
 当不满足循环条件2时，退出内部循环，继续执行外部循环的后续操作，等外部循环要做的事情执行完以后，结束整个外部的while循环。
 
 【案例5-8】打印如下的三角形。
+::
 
-\*
 
-\* \*
+   \*
 
-\* \* \*
+   \* \*
 
-\* \* \* \*
+   \* \* \*
 
-\* \* \* \* \*
+   \* \* \* \*
+
+   \* \* \* \* \*
 
 分析：这个三角形的规律是，第1行显示一个*号，第2行显示两个*号，以此类推。使用while循环嵌套来实现，可以使用外层循环来控制行，内层循环控制要显示的*个数。
+::
 
-i = 1
-
-while i<6:
-
-j = 0
-
-while j<i:
-
-print("\* ",end='')
-
-j+=1
-
-print("\n",end='')
-
-i+=1
+   i = 1
+   while i<6:
+   j = 0
+   while j<i:
+   print("\* ",end='')
+   j+=1
+   print("\n",end='')
+   i+=1
 
 说明：
 
@@ -539,22 +467,16 @@ print函数在输出后就自动换行。实际上，只要在输出函数中设
 +-------+--------+--------+--------+--------+--------+--------+--------+--------+
 
 分析：九九乘法表的整体排列和案例5-8中的图形类似，不同的是，之前每个*号变成了乘法表中的每个乘法算式。如果使用while嵌套循环来实现，同样使用变量i来控制行号，它从1变化到9；变量j来控制列号，它也从1变化到9，这样输出i*j的值即为九九乘法表中的值。程序如下：
+::
 
-i=1
-
-while i<10:
-
-j=1
-
-while j<=i:
-
-print("%d*%d=%d "%(i,j,i*j),end='')
-
-j+=1
-
-print("\n",end='')
-
-i+=1
+   i=1
+   while i<10:
+   j=1
+   while j<=i:
+   print("%d*%d=%d "%(i,j,i*j),end='')
+   j+=1
+   print("\n",end='')
+   i+=1
 
 5.5.2 for-in循环嵌套
 
@@ -578,74 +500,53 @@ for 循环变量 in 序列:
 【案例5-10】打印出1、2、3这三个数字的所有排列。
 
 分析：所谓的排列是指从给定个数的元素中取出指定个数的元素再进行排序。全排列是指所有个体全部参与排列。而在该题中，显然属于全排列，因此排列数为6种（3!）情况。
+::
 
-for i in range(1,4):
-
-for j in range(1,4):
-
-for k in range(1,4):
-
-if i!=j and j!=k and i!=k:
-
-print(i,j,k)
-
+   for i in range(1,4):
+   for j in range(1,4):
+   for k in range(1,4):
+   if i!=j and j!=k and i!=k:
+   print(i,j,k)
 运行结果：
+::
 
-1 2 3
-
-1 3 2
-
-2 1 3
-
-2 3 1
-
-3 1 2
-
-3 2 1
+   1 2 3
+   1 3 2
+   2 1 3
+   2 3 1
+   3 1 2
+   3 2 1
 
 【案例5-11】找出2~100之间的所有素数。
 
 分析：在案例5-6中已经掌握了如何去判断一个整数n是否为素数，要找出2~100之间的所有素数，只要把n作为一个循环变量，从2循环到100为止即可。程序如下：
+::
 
-count = 0
-
-for n in range(2,101):
-
-#flag标志素数
-
-flag = 1
-
-for m in range(2,n):
-
-if n%m= =0:
+   count = 0
+   for n in range(2,101):
+   #flag标志素数
+   flag = 1
+   for m in range(2,n):
+   if n%m= =0:
 
 #如果能整除，那么n不是素数，flag=0，退出m的内循环
+::
 
-flag = 0
-
-break
-
-if flag==1:
-
-print("%5d"%n,end='')
-
-count+=1
-
-if count%5= =0:
-
-print()
-
+   flag = 0
+   break
+   if flag==1:
+   print("%5d"%n,end='')
+   count+=1
+   if count%5= =0:
+   print()
 运行结果：
+::
 
-2 3 5 7 11
-
-13 17 19 23 29
-
-31 37 41 43 47
-
-53 59 61 67 71
-
-73 79 83 89 97
+   2 3 5 7 11
+   13 17 19 23 29
+   31 37 41 43 47
+   53 59 61 67 71
+   73 79 83 89 97
 
 说明：
 
@@ -663,50 +564,33 @@ print()
 5.5.4 循环嵌套的退出
 
 如果有两个循环嵌套，那么内部循环执行break时仅仅退出内部循环，而不是退出外部循环，外部循环执行break时退出外部循环。即break只退出它所在的那层循环，不会因为内部循环的一个break而使得整个循环都退出。例如：
+::
 
-for i in range(1,4):
-
-print("进入内层循环")
-
-for j in range(1,4):
-
-print(i,j)
-
-if j%2==0:
-
-break
-
-print("退出内层循环")
-
-print("退出外层循环")
+   for i in range(1,4):
+   print("进入内层循环")
+   for j in range(1,4):
+   print(i,j)
+   if j%2==0:
+   break
+   print("退出内层循环")
+   print("退出外层循环")
 
 运行结果：
+::
 
-进入内层循环
-
-1 1
-
-1 2
-
-退出内层循环
-
-进入内层循环
-
-2 1
-
-2 2
-
-退出内层循环
-
-进入内层循环
-
-3 1
-
-3 2
-
-退出内层循环
-
-退出外层循环
+   #进入内层循环
+   1 1
+   1 2
+   #退出内层循环
+   #进入内层循环
+   2 1
+   2 2
+   #退出内层循环
+   #进入内层循环
+   3 1
+   3 2
+   #退出内层循环
+   #退出外层循环
 
 由此可见，break是退出内部的j循环，而不是退出外部的i循环。
 
@@ -742,44 +626,33 @@ print("退出外层循环")
 具体做法：将开启关闭LED的操作作为一个循环体，设置一个循环变量进行一百次的计数作为循环条件，即可实现上述要求。
 
 程序如下：
+::
 
-count = 0
-
-while count<100:
-
-led1.value(0) #开启LED1
-
-time.sleep(3)
-
-led1.value(1) #关闭LED1
-
-time.sleep(3)
-
-count = count + 1
+   count = 0
+   while count<100:
+   led1.value(0) #开启LED1
+   time.sleep(3)
+   led1.value(1) #关闭LED1
+   time.sleep(3)
+   count = count + 1
 
 同样，对于实现不停的LED灯的开启和关闭操作，也可以通过循环结构来完成，只需要将循环的条件设置为始终为True即可。程序修改如下：
+::
 
-while True:
-
-led1.value(0)
-
-time.sleep(3)
-
-led1.value(1)
-
-time.sleep(3)
+   while True:
+   led1.value(0)
+   time.sleep(3)
+   led1.value(1)
+   time.sleep(3)
 
 其中，关闭所有LED的操作，可以通过将LED1~LED4存入一个数组中，然后采用循环结构来依次关闭，具体代码如下：
+::
 
-#定义LED数组
-
-leds = [led1, led2, led3, led4]
-
-#将所有LED关闭
-
-for l in leds:
-
-l.value(1)
+   #定义LED数组
+   leds = [led1, led2, led3, led4]
+   #将所有LED关闭
+   for l in leds:
+   l.value(1)
 
 修改后的流程图5-12中，开启下一盏LED的操作，具体开启顺序为：
 .. image:: /Chapter/picture/image094.png
@@ -787,82 +660,51 @@ l.value(1)
 图5-12 LED开启顺序
 
 第一次启动程序后，先开启LED1，然后按照LED的顺序依次开启，当开启LED4后，下一次需要重新开启LED1，具体代码如下：
+::
 
-#定义LED数组
-
-leds = [led1, led2, led3, led4]
-
-#初始化循环变量
-
-i = 0
-
-#开始循环
-
-while True:
-
-#开启特定的LED
-
-leds[i].value(0)
-
-#计算下一个需要开启的LED编号
-
-i = (i+1)%4
+   #定义LED数组
+   leds = [led1, led2, led3, led4]
+   #初始化循环变量
+   i = 0
+   #开始循环
+   while True:
+   #开启特定的LED
+   leds[i].value(0)
+   #计算下一个需要开启的LED编号
+   i = (i+1)%4
 
 注意：
 
 为了保证开启LED4后，下一次顺利开启LED1，需要将循环变量的改变设置为i=(i+1)%4。
 
 为保证能够在Skids开发板上实现跑马灯的效果，还需要在程序运行前，完成引脚的一些初始化操作，以及LED灯的使能控制等操作。完整程序代码如下：
+::
 
-from machine import Pin
-
-import time
-
-#获取引脚
-
-led_en = Pin(2, Pin.OUT)
-
-led1 = Pin(14, Pin.OUT)
-
-led2 = Pin(27, Pin.OUT)
-
-led3 = Pin(33, Pin.OUT)
-
-led4 = Pin(32, Pin.OUT)
-
-#定义LED数组，以便于后续操作
-
-leds = [led1, led2, led3, led4]
-
-#使能LED控制
-
-led_en.value(1)
-
-#初始化循环变量
-
-i = 0
-
-#开始循环
-
-while True:
-
-#将所有LED关闭
-
-for l in leds:
-
-l.value(1)
-
-#开启特定的LED
-
-leds[i].value(0)
-
-#计算下一个需要开启的LED编号
-
-i = (i+1)%4
-
-#延时1秒
-
-time.sleep(1)
+   from machine import Pin
+   import time
+   #获取引脚
+   led_en = Pin(2, Pin.OUT)
+   led1 = Pin(14, Pin.OUT)
+   led2 = Pin(27, Pin.OUT)
+   led3 = Pin(33, Pin.OUT)
+   led4 = Pin(32, Pin.OUT)
+   #定义LED数组，以便于后续操作
+   leds = [led1, led2, led3, led4]
+   #使能LED控制
+   led_en.value(1)
+   #初始化循环变量
+   i = 0
+   #开始循环
+   while True:
+   #将所有LED关闭
+   for l in leds:
+   l.value(1)
+   #开启特定的LED
+   leds[i].value(0)
+   #计算下一个需要开启的LED编号
+   i = (i+1)%4
+   #延时1秒
+   time.sleep(1)
 
 思考：
 
@@ -901,32 +743,26 @@ time.sleep(1)
 二、选择题
 
 1.下列选项中，屏幕会输出1,2,3三个数字的是（ ）。
+::
 
-A. for i in range(3): B. for i in range(2):
-
-print(i) print( i + 1)
-
-C. aList = [0,1,2] D. i = 1
-
-for i in aList: while i< 3:
-
-print( i + 1) print(i)
-
-i = i + 1
+   A. for i in range(3): 
+   B. for i in range(2):
+      print(i) print( i + 1)
+   C. aList = [0,1,2] 
+   D. i = 1
+   for i in aList: while i< 3:
+      print( i + 1) print(i)
+      i = i + 1
 
 2.阅读下面的代码：
+::
 
-sum = 0
-
-for i in range(100):
-
-if(i%10):
-
-continue
-
-sum = sum + i
-
-print(sum)
+   sum = 0
+   for i in range(100):
+   if(i%10):
+   continue
+   sum = sum + i
+   print(sum)
 
 上述程序的执行结果是（ ）。
 
