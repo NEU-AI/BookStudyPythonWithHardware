@@ -17,7 +17,7 @@ ABC语言并没有成功，究其原因，吉多认为是非开放造成的。�
 Python's Flying
 Circus）的爱好者，他希望这门新的语言能实现他的理念，一种在C和Shell之间，功能全面，易学易用，全面开放的可拓展的语言。
 
-.. image:: 第一章/第一章图片/image002.png
+.. image:: /Chapter/picture/image002.png
 
 图1-1 Python的标识
 
@@ -62,7 +62,7 @@ Python内置了众多预编译并可移植的功能模块，涵盖了从字符�
 
 解释型语言就没有这个编译的过程，而是在程序运行的时候，通过解释器对程序逐行作出解释，然后直接运行，最典型的例子是Ruby。
 
-.. image:: 第一章/第一章图片/image003.jpg
+.. image:: /Chapter/picture/image003.jpg
 
 图1-2 编程语言执行过程
 
@@ -90,7 +90,7 @@ Python可以应用于人工智能领域，当今人工智能领域展现出一�
 
 此外Python还广泛应用于Web全栈开发、网络编程、游戏开发、Linux服务器、自动化运维、金融分析、科学运算等诸多领域中。如图1-3所示，Python的用途十分广泛。所以如果有这么一门语言即易学易懂，又应用广泛，如果让你选择，为什么不去学习它呢？
 
-.. image:: 第一章/第一章图片/image004.jpg
+.. image:: /Chapter/picture/image004.jpg
 
 图1-3 Python用途
 
@@ -167,13 +167,13 @@ world!"，然后再次显示提示符，这种交互式的解释器方便我们�
 
 那么除了上面介绍的这种交互的方式在shell或者命令提示符下运行，Python有没有自己的集成开发环境呢？答案是有，而且有很多，Python就自带了一个IDLE，界面如图1-4所示。
 
-.. image:: 第一章/第一章图片/image005.png
+.. image:: /Chapter/picture/image005.png
 
 图1-4 IDLE界面
 
 另一个交互式的开发环境是IPython，它的交互界面如图1-5所示所示，IPython是一个增强的Python交互shell，它拥有很多有趣的特性包括交互式的输入与输出，可使用shell命令，增强的调试和许多其它特性。
 
-.. image:: 第一章/第一章图片/image006.png
+.. image:: /Chapter/picture/image006.png
 
 图1-5 IPython界面
 
@@ -186,9 +186,9 @@ notebook。
 Jupyter
 notebook是基于Web技术的交互式计算文档格式，支持Markdown和Latex语法，支持代码运行、文本输入、数学公式编辑、内嵌式画图和其他如图片文件的插入，是一个对代码友好的笔记本。
 
-.. image:: 第一章/第一章图片/image007.jpg
+.. image:: /Chapter/picture/image007.jpg
 
-.. image:: 第一章/第一章图片/image008.png
+.. image:: /Chapter/picture/image008.png
 
 图1-6 Jupyter notebook界面
 
@@ -197,9 +197,9 @@ IDE。它的运行界面如图1-7所示。我们知道VS2010的重构插件Resha
 App
 Engine，支持\ `IronPython <http://www.oschina.net/p/ironpython>`__\ 。
 
-.. image:: 第一章/第一章图片/image009.png
+.. image:: /Chapter/picture/image009.png
 
-.. image:: 第一章/第一章图片/image0010.png
+.. image:: /Chapter/picture/image0010.png
 
 图1-7 PyCharm界面
 
@@ -209,9 +209,9 @@ Spyder的界面由许多窗格构成，如图1-8所示。用户可以根据自�
 inspector”、“Variable explorer”、“File explorer”、“Console”、“History
 log”以及两个显示图像的窗格。在View菜单中可以设置是否显示这些窗格。
 
-.. image:: 第一章/第一章图片/image011.png
+.. image:: /Chapter/picture/image011.png
 
-.. image:: 第一章/第一章图片/image012.jpg
+.. image:: /Chapter/picture/image012.jpg
 
 图1-8 Spyder界面
 
@@ -225,7 +225,7 @@ log”以及两个显示图像的窗格。在View菜单中可以设置是否显�
 Skids开发板的处理器为双核32位MCU，主频高达230MHz，计算能力可达600DMIPS，集成了WIFI和蓝牙功能；并可以扩展支持Zigbee协议，如图1-9所示正面搭配了2.8寸高清液晶屏，在屏幕下方集成了4个用户按键，在屏幕右侧提供了Micro
 USB接口，可以很方便的与PC连接，在开发板右下角提供了3.5mm音频接口，在开发板背面右侧中间位置提供了TF卡插槽，支持TF卡，在背面预留了电池接口，因此Skids支持两种方式的供电，通过USB接口供电和采用电池供电，学习或开发过程，推荐使用USB接口来供电，开发板独特的电源管理和低功耗技术确保设备适用于各种物联网应用场景。
 
-.. image:: 第一章/第一章图片/image013.jpg\ .. image:: 第一章/第一章图片/image014.jpg
+.. image:: /Chapter/picture/image013.jpg\ .. image:: /Chapter/picture/image014.jpg
 
 图1-9 Skids开发板
 
@@ -234,19 +234,19 @@ USB接口，可以很方便的与PC连接，在开发板右下角提供了3.5mm�
 Skids无需额外的调试器， Skids开发板的Micro
 USB接口在侧面如图1-10所示，通过USB线连接至PC即可。
 
-.. image:: 第一章/第一章图片/image015.jpg\ .. image:: 第一章/第一章图片/image016.jpg
+.. image:: /Chapter/picture/image015.jpg\ .. image:: /Chapter/picture/image016.jpg
 
 图1-10 Skids的Micro USB接口
 
 Skids通过USB线连接至PC后，如图1-11所示开启电源开关（向上拨开关），设备上电启动，屏幕点亮。
 
-.. image:: 第一章/第一章图片/image017.jpg\ .. image:: 第一章/第一章图片/image018.jpg
+.. image:: /Chapter/picture/image017.jpg\ .. image:: /Chapter/picture/image018.jpg
 
 图1-11 Skids电源开关
 
 Skids连接至PC后，会自动进行驱动安装，无需人为操作，安装完驱动后，在设备管理器中会出现相应的串口，如图1-12所示。
 
-.. image:: 第一章/第一章图片/image019.jpg
+.. image:: /Chapter/picture/image019.jpg
 
 图1-12 PC显示的串口信息
 
@@ -262,7 +262,7 @@ https://raw.githubusercontent.com/DFRobot/uPyCraft/master/uPyCraft.exe
 
 uPyCraft为绿色版软件，直接运行即可，无需安装，uPyCraft使用monaco编程字体，如果系统中没有这个字体，会弹出对话框提示安装，如图1-13所示，点击OK进行安装字体库或者选择Cancel取消安装均可。
 
-.. image:: 第一章/第一章图片/image020.jpg
+.. image:: /Chapter/picture/image020.jpg
 
 图1-13 monaco编程字体
 
@@ -276,13 +276,13 @@ uPy_lib：显示IDE自带的库文件。
 
 workSpace：用户自定义目录，保存用户自己的文件。
 
-.. image:: 第一章/第一章图片/image021.jpg
+.. image:: /Chapter/picture/image021.jpg
 
 图1-14 uPyCraft界面
 
 终端框在界面的下方，用于命令行的执行，显示程序执行的信息，显示提示信息，如果有错误则显示错误信息等 。终端框相当于远程登录到了Skids上，可以在里面输入代码来直接运行，如图1-15所示。
 
-.. image:: 第一章/第一章图片/image022.jpg
+.. image:: /Chapter/picture/image022.jpg
 
 图1-15 终端显示界面
 
@@ -301,13 +301,13 @@ Language》(C程序设计语言)中使用它做为第一个演示程序，非常
 REPL意为读取-求值-打印-循环（Read Evaluate Print
 Loop），是Python的交互式命令行，Skids通过USB线连接到电脑后，打开uPyCraft，主界面下部的终端框即为REPL，如图1-16所示。目前说来，调试和测试代码的最简便方法即使用REPL。
 
-.. image:: 第一章/第一章图片/image023.jpg
+.. image:: /Chapter/picture/image023.jpg
 
 图1-16 REPL界面
 
 REPL是一个命令行形式的用户操作界面，类似Windows或Linux的命令行。RPEL的>>>箭头为命令输入提示符，此处表示您应在该提示符后输入命令或文本，在命令行中键入的任何内容都将在您点击Enter键后执行，如图1-17所示，即运行您输入的代码并打印出结果（若存在结果）。若输入的内容有误，则将打印错误信息。
 
-.. image:: 第一章/第一章图片/image024.jpg\ |.. image:: 第一章/第一章图片/image025.jpg
+.. image:: /Chapter/picture/image024.jpg\ |.. image:: /Chapter/picture/image025.jpg
 
 图1-17 正常和错误提示
 
@@ -322,7 +322,7 @@ machine）。然后输入”.”，再次点击Tab键即可显示machine模块�
 
 粘贴模式：按下Ctrl+E组合键将进入特殊的粘贴模式。这允许将文本块复制并粘贴到REPL。按下Ctrl+E组合键，如图1-18所示将看到粘贴模式提示。
 
-.. image:: 第一章/第一章图片/image026.jpg
+.. image:: /Chapter/picture/image026.jpg
 
 图1-18 粘贴提示
 
@@ -332,19 +332,19 @@ machine）。然后输入”.”，再次点击Tab键即可显示machine模块�
 
 换行和自动缩进：输入的某些内容可能需要换行，即需要更多的文本行来创建适当的Python语句。此时提示符将从>>>变为…，如图1-19所示，光标将自动缩进正确数量，可直接开始输入下一行。
 
-.. image:: 第一章/第一章图片/image027.jpg
+.. image:: /Chapter/picture/image027.jpg
 
 图1-19 换行和缩进
 
 连续三次输入Enter键，即可完成复合语句，返回到>>>提示符，如图1-20所示；完成复合语句的另一方式为点击退格键回到行的起始处，再点击Enter键；若要忽略所有的输入，直接按下Ctrl+C组合键即可。
 
-.. image:: 第一章/第一章图片/image028.jpg
+.. image:: /Chapter/picture/image028.jpg
 
 图1-20 返回提示符
 
 输入Help()，则会显示Skids的帮助信息，如图1-21所示。
 
-.. image:: 第一章/第一章图片/image029.jpg
+.. image:: /Chapter/picture/image029.jpg
 
 图1-21 帮助信息
 
@@ -353,13 +353,13 @@ machine）。然后输入”.”，再次点击Tab键即可显示machine模块�
 那么对于Hello
 World这种小程序或者进行代码调试与验证，我们就在终端框中用REPL的方式来执行。在uPyCraft的终端框上输入语句，如图1-22所示。
 
-.. image:: 第一章/第一章图片/image030.jpg
+.. image:: /Chapter/picture/image030.jpg
 
 图1-22 uPyCraft的HellowWorld
 
 可以直接看到程序的执行结果如图1-23所示。
 
-.. image:: 第一章/第一章图片/image031.jpg
+.. image:: /Chapter/picture/image031.jpg
 
 图1-23 HellowWorld运行结果
 
@@ -370,32 +370,32 @@ World这些字符，说明程序执行成功，大多数程序都可以直接在
 
 如果要执行Skids上的某个Python文件，选中该文件后，点击鼠标右键，在弹出菜单中选择Run，即可执行该文件，如图1-24所示。
 
-.. image:: 第一章/第一章图片/image032.jpg
+.. image:: /Chapter/picture/image032.jpg
 
 图1-24 uPyCraft运行程序
 
 如果要执行PC本地的某个Python文件，选中该文件后，点击右侧工具栏的DownloadAndRun按钮即可，如图1-25所示main.py文件将被下载到Skids并执行；在Device列表中可以看到main.py文件（因为已经被下载Skids开发板上）。
 
-.. image:: 第一章/第一章图片/image033.jpg
+.. image:: /Chapter/picture/image033.jpg
 
 图1-25 uPyCraft下载并运行程序
 
 如果要执行PC本地的某个Python文件，选中该文件后，也可以直接将文件拖拽至device列表中，则该文件会被自动下载到Skids，然后在device的文件列表中，选中该文件，在鼠标右键的弹出菜单中选择Run即可执行该文件，如图1-26所示。如果终止正在运行的Python程序，则点击右侧工具栏的Stop按钮即可。
 
-.. image:: 第一章/第一章图片/image034.jpg
+.. image:: /Chapter/picture/image034.jpg
 
 图1-26 uPyCraft终止运行程序
 
 另外在代码编辑完后可以点击工具栏的SyntaxCheck按钮对程序进行语法检查（注意：只会检查语法，不会对程序逻辑做检查），如图1-27所示，并可在终端框中看到打印信息。
 
-.. image:: 第一章/第一章图片/image035.jpg
+.. image:: /Chapter/picture/image035.jpg
 
 图1-27 uPyCraft语法检查
 
 如果程序语法正确，则终端框中只打印“syntax
 finish”信息，如图1-28所示，否则还会打印出错误信息。
 
-.. image:: 第一章/第一章图片/image036.jpg
+.. image:: /Chapter/picture/image036.jpg
 
 图1-28 uPyCraft语法正确的显示信息
 
@@ -415,7 +415,7 @@ finish”信息，如图1-28所示，否则还会打印出错误信息。
 2. 在uPyCraft的主菜单上，选择Tool s->
 Serial，如图1-29所示，选中对应的串口即可。
 
-.. image:: 第一章/第一章图片/image037.jpg
+.. image:: /Chapter/picture/image037.jpg
 
 图1-29 uPyCraft的主菜单
 
@@ -424,7 +424,7 @@ Serial，如图1-29所示，选中对应的串口即可。
 4.
 同时，在左侧目录树中的Device选项，前面会出现小箭头，如图1-30所示，点击可显示Skids中的文件列表。
 
-.. image:: 第一章/第一章图片/image038.jpg\ .. image:: 第一章/第一章图片/image039.jpg
+.. image:: /Chapter/picture/image038.jpg\ .. image:: /Chapter/picture/image039.jpg
 
 图1-30 uPyCraft连接成功
 
@@ -434,21 +434,21 @@ Serial，如图1-29所示，选中对应的串口即可。
 
 1. 在uPyCraft 的主菜单上，选择Tools-> BurnFireware，如图1-31所示。
 
-.. image:: 第一章/第一章图片/image040.jpg
+.. image:: /Chapter/picture/image040.jpg
 
 图1-31 uPyCraft烧录菜单
 
 2. 烧录固件对话框将被弹出，在burn_addr选项中选择0x1000，在Firmware
 Choose选项中选中Users，如图1-32所示，点击Choose按钮，从本地目录中选择要烧录的firmware.bin固件。
 
-.. image:: 第一章/第一章图片/image041.jpg
+.. image:: /Chapter/picture/image041.jpg
 
 图1-32 uPyCraft烧录对话框
 
 3.
 选中待烧录的固件后，点击OK将开始烧录固件，并弹出如下窗口显示进度，如图1-33所示。
 
-.. image:: 第一章/第一章图片/image042.jpg
+.. image:: /Chapter/picture/image042.jpg
 
 图1-33 uPyCraft烧录进度条
 
@@ -473,13 +473,13 @@ main.py
 
 假定Skids开机后要自动执行snake.py这个贪吃蛇游戏程序，就需要将文件命名为main.py，那么选择Device列表中的snake.py，在鼠标右键弹出菜单中选择Rename，在弹出的对话框中将文件名改为main.py，如图1-34所示。
 
-.. image:: 第一章/第一章图片/image043.jpg\ .. image:: 第一章/第一章图片/image044.jpg
+.. image:: /Chapter/picture/image043.jpg\ .. image:: /Chapter/picture/image044.jpg
 
 图1-34 uPyCraft文件重命名
 
 然后点击OK，关闭Skids电源开关，再打开Skids电源开关，重启启动Skids，贪吃蛇游戏就会自动运行，如图1-35所示。
 
-.. image:: 第一章/第一章图片/image045.jpg
+.. image:: /Chapter/picture/mage045.jpg
 
 图1-35 开机运行贪吃蛇游戏
 
