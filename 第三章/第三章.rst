@@ -1166,7 +1166,7 @@ False
 
 4. 画界面
 
-.. image:: /Chapter/picture/image066.png
+.. image:: /Chapter/picture/image135.jpg
 
 
 图3-4 界面
@@ -1261,11 +1261,12 @@ text.draw(self.keydict[num], int(x), int(y), 0x000000, 0xffffff)
 
 1）按键定义，如图3-5所示。
 
-|3-5|
+.. image:: /Chapter/picture/image066.png
 
 图3-5 按键定义
 
-|image62| |6e152c9709c65d63cc18e209293a4dc|
+.. image:: /Chapter/picture/image067.png
+.. image:: /Chapter/picture/image068.png
 
 图3-6 按键对应的MCU引脚 图3-7 按键外围电路
 
@@ -1441,8 +1442,7 @@ else:
 
 print('input error')
 
-步骤2：清空显示区，首先确定显示部分的坐标，然后调用text.draw(
-)函数对该区域进行清除。
+步骤2：清空显示区，首先确定显示部分的坐标，然后调用text.draw()函数对该区域进行清除。
 
 步骤3：最后，将计算结果result进行显示，详见案例代码。
 
