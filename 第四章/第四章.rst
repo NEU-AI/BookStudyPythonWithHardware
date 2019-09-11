@@ -14,18 +14,19 @@
 举个生活中的例子，我们早上去学校，天气是晴天，我们直接出门。如果是下雨天，我们出门前需要带把雨伞。雨天就会把我们的日常生活打乱。
 
 按照题目描述，先用伪代码实现，大致思路如下：
+::
 
-起床
+    起床
 
-   吃早餐
+      吃早餐
 
-   出门前准备
+      出门前准备
 
-   if 天气是下雨天:
+      if 天气是下雨天:
+   
+      带伞
 
-   带伞
-
-   出门
+      出门
 
 当我们起床、吃早餐、出门前准备三步都执行完时候，我们需要对天气进行判断，当天气是下雨天的时候，我们执行带伞操作，执行完以后跳出了分支结构，继续执行最后的出门（总共5步操作）。如果天气不是下雨天，那么我们就跳过分支结构，直接执行分支结构后面的出门（总共4步操作）。
 
@@ -34,8 +35,9 @@
 举个生活中的例子，我们去ATM机取款时，在插入银行卡后，机器上会提示用户输入银行卡的密码。如果密码输入正确，则系统进入业务办理主界面。否则，系统会提示用户密码输入错误的信息。
 
 按照题目描述，先用伪代码实现，大致思路如下：
+::
 
-插入银行卡
+ 插入银行卡
 
    输入密码
 
@@ -56,29 +58,19 @@
 举个生活中的例子，在某些情况下，我们需要将学生的考试成绩转换成等级的形式存入数据库。比如，考试成绩在90-100分之间的，输出等级为“A”，考试成绩在80-89分之间的，输出等级为“B”，考试成绩在70-79分之间的，输出等级为“C”，考试成绩在60-69分之间的，输出等级为“D”，考试成绩在60以下的，输出等级为“E”。
 
 按照题目描述，先用伪代码实现，大致思路如下：
+::
 
    输入考试成绩
-
    if 成绩在90-100:
-
    等级为“A”
-
    elif 成绩在80-89:
-
    等级为“B”
-
    elif 成绩在70-79:
-
    等级为“C”
-
    elif 成绩在60-69:
-
    等级为“D”
-
    elif 成绩在0-59:
-
    等级为“E”
-
    保存数据库
 
 当我们输入学生考试成绩后，系统将根据输入的成绩自动转换成相应的等级，并存入数据库中。当用户输入的考试成绩在90-100分之间，则会执行第一个分支，将等级“A”写入数据库中，当输入的成绩在80-89分之间，则会执行第二个分支，将等级“B”写入数据库，此次类推，当输入的成绩在0-59分之间，则会执行最后一个分支，将等级“E”写入数据库，最后执行保存数据库的操作。
@@ -111,20 +103,20 @@
 【案例4-1】 逻辑运算符。
 
 1. 定义一个整数变量 age，要求人的年龄在0-120之间。
+::
 
-..
 
    age>=0 and age<=120
 
 2. 定义两个整数变量 python_score、c_score，要求只要有一门成绩>60分就算合格。
 
-..
+::
 
    python_score>60 or c_score>60
 
 3. 定义一个布尔型变量 is_employee，判断是否是本公司员工，如果不是提示不允许入内。
 
-..
+::
 
    not is_employee
 
@@ -138,16 +130,19 @@ and b or not c中，先运算not c，之后运算a and b，最后才运算or。
 逻辑运算常常与关系运算相结合，形成逻辑运算表达式。逻辑表达式的值是一个逻辑值，即“True”或“False”。在Python编译系统中，判断一个量是否为“真”时，以0表示“假”，以非0表示“真”。
 
 在逻辑表达式中，关系运算要先于逻辑运算，例如：
+::
 
-1. a+b>c and a+c>b and b+c>a；
+   1. a+b>c and a+c>b and b+c>a；
 
 只有当a+b>c，同时a+c>b，同时b+c>a这3个条件都成立时，表达式的结果才为True。
+::
 
-2. a>b or a>c;
+   2. a>b or a>c;
 
 只要a>b与a>c中的任意一个条件成立，表达式的结果就为True。
+::
 
-3. not a or b>c;
+   3. not a or b>c;
 
 只要not a为True（即a为False）与b>c之一成立，结果就为True。
 
@@ -170,8 +165,9 @@ and b or not c中，先运算not c，之后运算a and b，最后才运算or。
    2) 年份可被400整除。
 
 因此，年份y是否是闰年的条件，可以通过以下逻辑表达式来进行判定：
+::
 
-(y%4==0)and(y%100!=0)or(y%400==0)
+   (y%4==0)and(y%100!=0)or(y%400==0)
 
 若表达式的值为True，则年份y为闰年，若值为False，则年份y为非闰年。
 
@@ -233,24 +229,17 @@ Python条件语句是通过一条或多条语句的执行结果（True或者Fals
 【案例4-3】比较两个数的大小。
 
 分析：这是求两个数中最大值的问题，假设输入的数为a与b，当a>b时，最大值是a，否则为b。
+::
 
-a = input(“a=”)
-
-b = input(“b=”)
-
-a = float(a)
-
-b = float(b)
-
-if a>b :
-
-c = a
-
-else:
-
-c = b
-
-print(c)
+   a = input(“a=”)
+   b = input(“b=”)
+   a = float(a)
+   b = float(b)
+   if a>b :
+   c = a
+   else:
+   c = b
+   print(c)
 
 ◆格式3
 
@@ -286,76 +275,48 @@ if的缩写。if语句执行有个特点，它是从上往下判断，如果程�
 【案例4-4】输入一个学生的整数成绩m，按[90,100]、[80,89]、[70,79]、[60,69]、[0,59]的范围分别给出A、B、C、D、E的等级。
 
 分析：输入的成绩可能不合法（小于0或者大于100），也可能在[90,100]、[80,89]、[70,79]、[60,69]、[0,59]的其中一段之内，可以用负责分支的if-elif语句来处理。
+::
 
-score = input(“Enter mark:”)
-
-if score<0 or score>100:
-
-print(“Invalid”)
-
-elif score>=90 and score<=100:
-
-print(“A”)
-
-elif score>=80 and score<=89:
-
-print(“B”)
-
-elif score>=70 and score<=79:
-
-print(“C”)
-
-elif score>=60 and score<=69:
-
-print(“D”)
-
-elif score>=0 and score<=59:
-
-print(“E”)
+   score = input(“Enter mark:”)
+   if score<0 or score>100:
+   print(“Invalid”)
+   elif score>=90 and score<=100:
+   print(“A”)
+   elif score>=80 and score<=89:
+   print(“B”)
+   elif score>=70 and score<=79:
+   print(“C”)
+   elif score>=60 and score<=69:
+   print(“D”)
+   elif score>=0 and score<=59:
+   print(“E”)
 
 当然，if-elif语句可以和else语句一起使用。在上面的例子中，也可以将最后0~59分的条件判断，直接改成else判断。
 
 【案例4-5】输入0~6的整数，并把它作为星期，其中0对应星期日，1对应星期一，以此类推，最终在屏幕上输出Sunday，Monday，Tuesday，Wednesday，Thursday，Friday，Saturday。
 
 分析：假设输入的整数为w，根据w的值可以用if-elif-else语句分为多种情况，当输入的值不在0~6范围内，直接输出“Error”。
+::
 
-w = input(“w=”)
-
-w = int(w)
-
-if w==0:
-
-s = “Sunday”
-
-elif w==1:
-
-s = “Monday”
-
-elif w==2:
-
-s = “Tuesday”
-
-elif w==3:
-
-s = “Wednesday”
-
-elif w==4:
-
-s = “Thursday”
-
-elif w==5:
-
-s = “Friday”
-
-elif w==6:
-
-s = “Saturday”
-
-else:
-
-s = “Error”
-
-print(s)
+   w = input(“w=”)
+   w = int(w)
+   if w==0:
+   s = “Sunday”
+   elif w==1:
+   s = “Monday”
+   elif w==2:
+   s = “Tuesday”
+   elif w==3:
+   s = “Wednesday”
+   elif w==4:
+   s = “Thursday”
+   elif w==5:
+   s = “Friday”
+   elif w==6:
+   s = “Saturday”
+   else:
+   s = “Error”
+   print(s)
 
 4.4 条件语句的嵌套使用
 ----------------------
@@ -383,32 +344,21 @@ if 条件2:
 4.4.1 if嵌套
 
 例如，当我们乘坐火车或者地铁时，必须得先买票，只有买到票，才能进入车站进行安检，只有安检通过了才可以正常乘车。在乘坐火车或者地铁的过程中，后面的判断条件是在前面的判断成立的基础上进行的，针对这种情况，可以使用if嵌套来实现。
+::
 
-ticket = 1 #用1代表有车票，0代表没有车票
-
-knifeLength = 0 #刀子的长度，单位为cm
-
-if ticket == 1:
-
-print(“有车票，可以进站”)
-
-if knifeLength < 10:
-
-print(“通过安检”)
-
-print(“终于可以见到Ta了，美滋滋~~~”)
-
-else:
-
-print(“没有通过安检”)
-
-print(“刀子的长度超过规定，等待警察处理…”)
-
-else:
-
-print(“没有车票，不能进站”)
-
-print(“亲爱的，那就下次见了，一票难求啊~~~~(>_<)~~~~”)
+   ticket = 1 #用1代表有车票，0代表没有车票
+   knifeLength = 0 #刀子的长度，单位为cm
+   if ticket == 1:
+   print(“有车票，可以进站”)
+   if knifeLength < 10:
+   print(“通过安检”)
+   print(“终于可以见到Ta了，美滋滋~~~”)
+   else:
+   print(“没有通过安检”)
+   print(“刀子的长度超过规定，等待警察处理…”)
+   else:
+   print(“没有车票，不能进站”)
+   print(“亲爱的，那就下次见了，一票难求啊~~~~(>_<)~~~~”)
 
 1. 假设ticket = 1 、knifeLength = 9，程序的运行结果如图4-5所示。
 
@@ -438,56 +388,36 @@ print(“亲爱的，那就下次见了，一票难求啊~~~~(>_<)~~~~”)
 
 分析：根据数学知识，只有当a不为0时，才满足该方程为一元二次方程，然后再判断Δ的值，如果b\ :sup:`2`-4ac>0，则方程有两个不相等的实数根，.. image:: /Chapter/picture/image077.png，如果b\ :sup:`2`-4ac=0，则方程有两个相等的实数根，x1
 = x2 = .. image:: /Chapter/picture/image078.png ，如果b\ :sup:`2`-4ac<0，则方程无实数根。
+::
 
-import math
-
-a = input(“a=”)
-
-b = input(“b=”)
-
-c = input(“c=”)
-
-a = float(a)
-
-b = float(b)
-
-c = float(c)
-
-if a!=0:
-
-d = b*b-4*a*c
-
-if d>0:
-
-d = math.sqrt(d)
-
-x1 = (-b+d) / 2 / a
-
-x2 = (-b-d) / 2 / a
-
-print(“x1=”,x1, “x2=”,x2)
-
-elif d==0:
-
-print(“x1,x2=”,-b/2/a)
-
-else:
-
-print(“无实数解”)
-
-else:
-
-print(“不是一元二次方程！”)
-
+   import math
+   a = input(“a=”)
+   b = input(“b=”)
+   c = input(“c=”)
+   a = float(a)
+   b = float(b)
+   c = float(c)
+   if a!=0:
+   d = b*b-4*a*c
+   if d>0:
+   d = math.sqrt(d)
+   x1 = (-b+d) / 2 / a
+   x2 = (-b-d) / 2 / a
+   print(“x1=”,x1, “x2=”,x2)
+   elif d==0:
+   print(“x1,x2=”,-b/2/a)
+   else:
+   print(“无实数解”)
+   else:
+   print(“不是一元二次方程！”)
+   
 程序运行结果：
+::
 
-a = 1
-
-b = 2
-
-c = 1
-
-x1,x2= -1.0
+   a = 1
+   b = 2
+   c = 1
+   x1,x2= -1.0
 
 .. image:: /Chapter/picture/image079.jpg
 
@@ -548,510 +478,290 @@ x1,x2= -1.0
 1. 硬件初始化
 
 通过类的构造函数，从而实现对硬件（屏幕显示和按键设置）进行初始化，同时将游戏的一些统计数据进行清零。
+::
 
-def \__init__(self, playerName, computerName):
+   def \__init__(self, playerName, computerName):
+   #将游戏的统计数据进行清零
+   self.gameStart = False
+   self.playerName = playerName
+   self.computerName = computerName
+   self.playerScore = 0
+   self.computerScore = 0
+   self.equalNum = 0
+   self.playerStatus = 0
+   self.playerMessage = ""
+   self.computerStatus = 0
+   self.computerMessage = ""
+   #设置按键数组
+   for p in pins:
+   keys.append(Pin(p,Pin.IN))
+   #初始化屏幕
+   self.displayInit()
+   
+在构造函数__init__()中，调用了displayInit()函数来进行屏幕初始化工作，主要负责完成屏幕顶部的游戏规则和操作说明显示。
+::
 
-#将游戏的统计数据进行清零
-
-self.gameStart = False
-
-self.playerName = playerName
-
-self.computerName = computerName
-
-self.playerScore = 0
-
-self.computerScore = 0
-
-self.equalNum = 0
-
-self.playerStatus = 0
-
-self.playerMessage = ""
-
-self.computerStatus = 0
-
-self.computerMessage = ""
-
-#设置按键数组
-
-for p in pins:
-
-keys.append(Pin(p,Pin.IN))
-
-#初始化屏幕
-
-self.displayInit()
-
-在构造函数__init__(
-)中，调用了displayInit()函数来进行屏幕初始化工作，主要负责完成屏幕顶部的游戏规则和操作说明显示。
-
-def displayInit(self, x=10, y=10, w=222, h=303):
-
-   #显示游戏规则信息
-
-   mentionStr1 = "游戏规则："
-
-   mentionStr2 = "按键1.剪刀 按键2.石头"
-
-   mentionStr3 = "按键3.布 按键4.结束"
-
-   text.draw(mentionStr1, 20, 20, 0x000000, 0xffffff)
-
-   text.draw(mentionStr2, 20, 36, 0x000000, 0xffffff)
-
-text.draw(mentionStr3, 20, 52, 0x000000, 0xffffff)
-text.draw("-------------", 20, 68, 0x000000, 0xffffff) #更新界面显示
-
-   self.updateTotolArea()
-
-   #设置游戏运行状态
-
-self.gameStart = True
+   def displayInit(self, x=10, y=10, w=222, h=303):#显示游戏规则信息
+      mentionStr1 = "游戏规则："
+      mentionStr2 = "按键1.剪刀 按键2.石头"
+      mentionStr3 = "按键3.布 按键4.结束"
+      text.draw(mentionStr1, 20, 20, 0x000000, 0xffffff)
+      text.draw(mentionStr2, 20, 36, 0x000000, 0xffffff)
+      text.draw(mentionStr3, 20, 52, 0x000000, 0xffffff)
+      text.draw("-------------", 20, 68, 0x000000, 0xffffff) #更新界面显示
+      self.updateTotolArea()#设置游戏运行状态
+      self.gameStart = True
 
 2. 开启游戏
 
 通过类的成员函数startGame()负责启动游戏的主流程，并等待用户的按键操作。
+::
 
-def startGame(self):
-
-   print("-------猜拳游戏开始-------")
-
+   def startGame(self):
+      print("-------猜拳游戏开始-------")
    while True:
-
-   i = 0
-
-   j = -1
-
-   for k in keys:
-
-   if(k.value() == 0):
-
-   if i!=j:
-
-   j = i
-
-   self.pressKeyboardEvent(i)
-
-   i = i+1;
-
-   if(i > 3):
-
-   i = 0
-
+      i = 0
+      j = -1
+      for k in keys:
+        if(k.value() == 0):
+         if i!=j:
+            j = i
+            self.pressKeyboardEvent(i)
+            i = i+1;
+         if(i > 3):
+            i = 0
    time.sleep_ms(100) #按键防抖
 
 3. 处理用户按键事件
 
 当用户按下按键后，类的成员函数pressKeyboardEvent()负责进行具体的处理。在该函数中，首先判断游戏是否已经开始，如果游戏未开始，则不必处理键盘输入，函数直接返回。该函数是整个程序中最重要的函数，负责完成具体的游戏过程处理。
+::
 
-def pressKeyboardEvent(self, key):
-
-keymatch=["Key1","Key2","Key3","Key4"]
+   def pressKeyboardEvent(self, key):
+      keymatch=["Key1","Key2","Key3","Key4"]
 
 #游戏还未开始，不必处理键盘输入
+::
 
-if(self.gameStart == False):
-
-   return
+   if(self.gameStart == False):
+      return
 
 一旦监听到用户有输入，则对用户按下的按键进行判断，这里设定按键1代表剪刀、按键2代表石头、按键3代表布，按键4代表游戏结束；用数字1、2、3分别代表剪刀、石头和布。
+::
 
-if(keymatch[key] == "Key1"):
-
-self.playerStatus = 1
-
-self.playerMessage = "%s出拳为：剪刀"%self.playerName
-
-bmp_jiandao.draw(40, 140)
-
-elif(keymatch[key] == "Key2"):
-
-self.playerStatus = 2
-
-self.playerMessage = "%s出拳为：石头"%self.playerName
-
-bmp_shitou.draw(40, 140)
-
-elif(keymatch[key] == "Key3"):
-
-self.playerStatus = 3
-
-self.playerMessage = "%s出拳为：布 "%self.playerName
-
-bmp_bu.draw(40, 140)
-
-else:
-
-text.draw("游戏结束", 90, 210, 0x000000, 0xffffff)
-
-#设置游戏运行状态
-
-self.gameStart = False
-
-return
+   if(keymatch[key] == "Key1"):
+      self.playerStatus = 1
+      self.playerMessage = "%s出拳为：剪刀"%self.playerName
+      bmp_jiandao.draw(40, 140)
+   elif(keymatch[key] == "Key2"):
+      self.playerStatus = 2
+      self.playerMessage = "%s出拳为：石头"%self.playerName
+      bmp_shitou.draw(40, 140)
+   elif(keymatch[key] == "Key3"):
+      self.playerStatus = 3
+      self.playerMessage = "%s出拳为：布 "%self.playerName
+      bmp_bu.draw(40, 140)
+   else:
+      text.draw("游戏结束", 90, 210, 0x000000, 0xffffff)#设置游戏运行状态
+      self.gameStart = False
+      return
 
 4. 为计算机选择随机数
 
 确定用户的出拳情况后，为计算机选择一个随机数（1~3），分别代表剪刀、石头和布，并作为计算机的出拳情况。
+::
 
-#电脑的出拳为一个随机值
-
-self.computerStatus = random.randint(1,3)
-
-print(self.computerStatus)
-
-if(self.computerStatus == 1):
-
-self.computerMessage = "%s出拳为：剪刀"%self.computerName
-
-bmp_jiandao.draw(150, 140)
-
-if(self.computerStatus == 2):
-
-self.computerMessage = "%s出拳为：石头"%self.computerName
-
-bmp_shitou.draw(150, 140)
-
-if(self.computerStatus == 3):
-
-self.computerMessage = "%s出拳为：布 "%self.computerName
-
-bmp_bu.draw(150, 140)
-
-#显示电脑和玩家的出拳信息
-
-text.draw(self.playerMessage, 20, 84, 0x000000, 0xffffff)
-
-text.draw(self.computerMessage, 20, 100, 0x000000, 0xffffff)
+   #电脑的出拳为一个随机值
+   self.computerStatus = random.randint(1,3)
+   print(self.computerStatus)
+   if(self.computerStatus == 1):
+      self.computerMessage = "%s出拳为：剪刀"%self.computerName
+   bmp_jiandao.draw(150, 140)
+   if(self.computerStatus == 2):
+      self.computerMessage = "%s出拳为：石头"%self.computerName
+      bmp_shitou.draw(150, 140)
+   if(self.computerStatus == 3):
+      self.computerMessage = "%s出拳为：布 "%self.computerName
+      bmp_bu.draw(150, 140)
+   #显示电脑和玩家的出拳信息
+      text.draw(self.playerMessage, 20, 84, 0x000000, 0xffffff)
+      text.draw(self.computerMessage, 20, 100, 0x000000, 0xffffff)
 
 5. 判断胜负情况
 
 确定了用户和计算机的出拳后，对胜负情况进行判断，并记录结果。
+::
 
-#判断胜负并显示结果
-
-resultMessage = " 平局 "
-
-#出拳相同，为平局
-
-if(self.playerStatus == self.computerStatus):
-
-self.equalNum+=1 #平局次数加1
-
-#用户剪刀、计算机布，用户胜
-
-elif(self.playerStatus==1 and self.computerStatus==3):
-
-resultMessage = "%s胜出"%self.playerName
-
-self.playerScore+=1 #用户获胜次数加1
-
-#用户石头、计算机剪刀，用户胜
-
-elif(self.playerStatus==2 and self.computerStatus==1):
-
-resultMessage = "%s胜出"%self.playerName
-
-self.playerScore+=1
-
-#用户布、计算机石头，用户胜
-
-elif(self.playerStatus==3 and self.computerStatus==2):
-
-resultMessage = "%s胜出"%self.playerName
-
-   self.playerScore+=1
-
-else: #其它情况，计算机胜
-
-resultMessage = "%s胜出"%self.computerName
-
-self.computerScore+=1 #计算机获胜次数加1
-
-#更新界面显示
-
-text.draw(resultMessage, 90, 210, 0x000000, 0xffffff)
-
-self.updateTotolArea()
+   #判断胜负并显示结果
+   resultMessage = " 平局 "
+   #出拳相同，为平局
+   if(self.playerStatus == self.computerStatus):
+      self.equalNum+=1 #平局次数加1
+   #用户剪刀、计算机布，用户胜
+   elif(self.playerStatus==1 and self.computerStatus==3):
+      resultMessage = "%s胜出"%self.playerName
+      self.playerScore+=1 #用户获胜次数加1
+   #用户石头、计算机剪刀，用户胜
+   elif(self.playerStatus==2 and self.computerStatus==1):
+      resultMessage = "%s胜出"%self.playerName
+      self.playerScore+=1
+   #用户布、计算机石头，用户胜
+   elif(self.playerStatus==3 and self.computerStatus==2):
+      resultMessage = "%s胜出"%self.playerName
+      self.playerScore+=1
+   else: #其它情况，计算机胜
+      resultMessage = "%s胜出"%self.computerName
+      self.computerScore+=1 #计算机获胜次数加1
+   #更新界面显示
+      text.draw(resultMessage, 90, 210, 0x000000, 0xffffff)
+      self.updateTotolArea()
 
 6. 更新界面显示
 
 在游戏界面的汇总区域，计算并显示电脑和用户玩家的胜平负次数。
+::
 
-def updateTotolArea(self):
-
-#汇总区域用于显示电脑和玩家的胜平负次数
-
-print("-------更新汇总区域--------")
-
-playerTotal = "%s赢了%d局" % (self.playerName, self.playerScore)
-
-computerTotal = "%s赢了%d局" % (self.computerName, self.computerScore)
-
-equalTotal = "平局%d次" % self.equalNum
-
-text.draw("-------------", 20, 240, 0x000000, 0xffffff)
-
-text.draw(playerTotal, 20, 256, 0x000000, 0xffffff)
-
-text.draw(computerTotal, 20, 272, 0x000000, 0xffffff)
-
-text.draw(equalTotal, 20, 288, 0x000000, 0xffffff)
+   def updateTotolArea(self):
+   #汇总区域用于显示电脑和玩家的胜平负次数
+   print("-------更新汇总区域--------")
+   playerTotal = "%s赢了%d局" % (self.playerName, self.playerScore)
+   computerTotal = "%s赢了%d局" % (self.computerName, self.computerScore)
+   equalTotal = "平局%d次" % self.equalNum
+   text.draw("-------------", 20, 240, 0x000000, 0xffffff)
+   text.draw(playerTotal, 20, 256, 0x000000, 0xffffff)
+   text.draw(computerTotal, 20, 272, 0x000000, 0xffffff)
+   text.draw(equalTotal, 20, 288, 0x000000, 0xffffff)
 
 7. 完整程序
 
 在Skids开发板上实现猜拳游戏的完整代码如下所示：
-
-from machine import Pin
-
-import random
-
-import time
-
-import screen
-
-import ubitmap
-
-import text
-
-#清除屏幕显示
-
-screen.clear()
-
-#定义图片文件
-
-bmp_shitou = ubitmap.BitmapFromFile("shitou")
-
-bmp_jiandao = ubitmap.BitmapFromFile("jiandao")
-
-bmp_bu = ubitmap.BitmapFromFile("bu")
-
-#定义Skids开发板的按键引脚数组
-
-pins = [36,39,34,35]
-
-keys = []
-
-class Game():
-
-   def \__init__(self, playerName, computerName):
-
-self.gameStart = False
-
-self.playerName = playerName
-
-self.computerName = computerName
-
-self.playerScore = 0
-
-self.computerScore = 0
-
-self.equalNum = 0
-
-self.playerStatus = 0;
-
-self.playerMessage = ""
-
-self.computerStatus = 0
-
-self.computerMessage = ""
-
-for p in pins:
-
-keys.append(Pin(p,Pin.IN))
-
-self.displayInit()
-
-def displayInit(self, x=10, y=10, w=222, h=303):
-
-#显示游戏规则信息
-
-mentionStr1 = "游戏规则："
-
-mentionStr2 = "按键1.剪刀 按键2.石头"
-
-mentionStr3 = "按键3.布 按键4.结束"
-
-text.draw(mentionStr1, 20, 20, 0x000000, 0xffffff)
-
-text.draw(mentionStr2, 20, 36, 0x000000, 0xffffff)
-
-text.draw(mentionStr3, 20, 52, 0x000000, 0xffffff)
-
-text.draw("-------------", 20, 68, 0x000000, 0xffffff)
-
-self.updateTotolArea()
-
-#设置游戏运行状态
-
-self.gameStart = True
-
-def pressKeyboardEvent(self, key):
-
-keymatch=["Key1","Key2","Key3","Key4"]
-
-#游戏还未开始，不必处理键盘输入
-
-if(self.gameStart == False):
-
-return
-
-print(keymatch[key])
-
-if(keymatch[key] == "Key1"):
-
-self.playerStatus = 1
-
-self.playerMessage = "%s出拳为：剪刀"%self.playerName
-
-bmp_jiandao.draw(40, 140)
-
-elif(keymatch[key] == "Key2"):
-
-self.playerStatus = 2
-
-self.playerMessage = "%s出拳为：石头"%self.playerName
-
-bmp_shitou.draw(40, 140)
-
-   elif(keymatch[key] == "Key3"):
-
-self.playerStatus = 3
-
-self.playerMessage = "%s出拳为：布 "%self.playerName
-
-bmp_bu.draw(40, 140)
-
-else:
-
-text.draw("游戏结束", 90, 210, 0x000000, 0xffffff)
-
-#设置游戏运行状态
-
-self.gameStart = False
-
-return
-
-#电脑的出拳为一个随机值
-
-self.computerStatus = random.randint(1,3)
-
-print(self.computerStatus)
-
-if(self.computerStatus == 1):
-
-self.computerMessage = "%s出拳为：剪刀"%self.computerName
-
-bmp_jiandao.draw(150, 140)
-
-if(self.computerStatus == 2):
-
-self.computerMessage = "%s出拳为：石头"%self.computerName
-
-bmp_shitou.draw(150, 140)
-
-if(self.computerStatus == 3):
-
-self.computerMessage = "%s出拳为：布 "%self.computerName
-
-bmp_bu.draw(150, 140)
-
-#显示电脑和玩家的出拳信息
-
-text.draw(self.playerMessage, 20, 84, 0x000000, 0xffffff)
-
-text.draw(self.computerMessage, 20, 100, 0x000000, 0xffffff)
-
-#判断胜负并显示结果
-
-resultMessage = " 平局 "
-
-if(self.playerStatus == self.computerStatus):
-
-self.equalNum+=1
-
-elif(self.playerStatus==1 and self.computerStatus==3):
-
-resultMessage = "%s胜出"%self.playerName
-
-self.playerScore+=1
-
-elif(self.playerStatus==2 and self.computerStatus==1):
-
-resultMessage = "%s胜出"%self.playerName
-
-self.playerScore+=1
-
-elif(self.playerStatus==3 and self.computerStatus==2):
-
-resultMessage = "%s胜出"%self.playerName
-
-self.playerScore+=1
-
-else:
-
-resultMessage = "%s胜出"%self.computerName
-
-self.computerScore+=1
-
-text.draw(resultMessage, 90, 210, 0x000000, 0xffffff)
-
-self.updateTotolArea()
-
-def startGame(self):
-
-print("-------猜拳游戏开始-------")
-
-while True:
-
-i = 0
-
-j = -1
-
-for k in keys:
-
-if(k.value() == 0):
-
-if i!=j:
-
-j = i
-
-self.pressKeyboardEvent(i)
-
-i = i+1;
-
-if(i > 3):
-
-i = 0
-
-time.sleep_ms(100) #按键防抖
-
-def updateTotolArea(self):
-
-#汇总区域用于显示电脑和玩家的胜平负次数
-
-print("-------更新汇总区域-------")
-
-playerTotal = "%s赢了%d局" % (self.playerName, self.playerScore)
-
-computerTotal = "%s赢了%d局" % (self.computerName, self.computerScore)
-
-equalTotal = "平局%d次" % self.equalNum
-
-text.draw("-------------", 20, 240, 0x000000, 0xffffff)
-
-text.draw(playerTotal, 20, 256, 0x000000, 0xffffff)
-
-text.draw(computerTotal, 20, 272, 0x000000, 0xffffff)
-
-text.draw(equalTotal, 20, 288, 0x000000, 0xffffff)
-
-if \__name_\_ == '__main__':
-
-newGame = Game("玩家", "电脑")
-
-newGame.startGame()
+::
+
+   from machine import Pin
+   import random
+   import time
+   import screen
+   import ubitmap
+   import text
+   #清除屏幕显示
+   screen.clear()
+   #定义图片文件
+   bmp_shitou = ubitmap.BitmapFromFile("shitou")
+   bmp_jiandao = ubitmap.BitmapFromFile("jiandao")
+   bmp_bu = ubitmap.BitmapFromFile("bu")
+   #定义Skids开发板的按键引脚数组
+   pins = [36,39,34,35]
+   keys = []
+   class Game():
+      def \__init__(self, playerName, computerName):
+         self.gameStart = False
+         self.playerName = playerName
+         self.computerName = computerName
+         self.playerScore = 0
+         self.computerScore = 0
+         self.equalNum = 0
+         self.playerStatus = 0;
+         self.playerMessage = ""
+         self.computerStatus = 0
+         self.computerMessage = ""
+         for p in pins:
+            keys.append(Pin(p,Pin.IN))
+            self.displayInit()
+      def displayInit(self, x=10, y=10, w=222, h=303):
+   #显示游戏规则信息
+         mentionStr1 = "游戏规则："
+         mentionStr2 = "按键1.剪刀 按键2.石头"
+         mentionStr3 = "按键3.布 按键4.结束"
+         text.draw(mentionStr1, 20, 20, 0x000000, 0xffffff)
+         text.draw(mentionStr2, 20, 36, 0x000000, 0xffffff)
+         text.draw(mentionStr3, 20, 52, 0x000000, 0xffffff)
+         text.draw("-------------", 20, 68, 0x000000, 0xffffff)
+         self.updateTotolArea()
+   #设置游戏运行状态
+         self.gameStart = True
+      def pressKeyboardEvent(self, key):
+         keymatch=["Key1","Key2","Key3","Key4"]
+   #游戏还未开始，不必处理键盘输入
+      if(self.gameStart == False):
+         return
+         print(keymatch[key])
+         if(keymatch[key] == "Key1"):
+            self.playerStatus = 1
+            self.playerMessage = "%s出拳为：剪刀"%self.playerName
+            bmp_jiandao.draw(40, 140)
+         elif(keymatch[key] == "Key2"):
+            self.playerStatus = 2
+            self.playerMessage = "%s出拳为：石头"%self.playerName
+            bmp_shitou.draw(40, 140)
+         elif(keymatch[key] == "Key3"):
+            self.playerStatus = 3
+            self.playerMessage = "%s出拳为：布 "%self.playerName
+            bmp_bu.draw(40, 140)
+         else:
+            text.draw("游戏结束", 90, 210, 0x000000, 0xffffff)
+   #设置游戏运行状态
+            self.gameStart = False
+            return
+   #电脑的出拳为一个随机值
+            self.computerStatus = random.randint(1,3)
+            print(self.computerStatus)
+      if(self.computerStatus == 1):
+         self.computerMessage = "%s出拳为：剪刀"%self.computerName
+         bmp_jiandao.draw(150, 140)
+      if(self.computerStatus == 2):
+         self.computerMessage = "%s出拳为：石头"%self.computerName
+         bmp_shitou.draw(150, 140)
+      if(self.computerStatus == 3):
+         self.computerMessage = "%s出拳为：布 "%self.computerName
+         bmp_bu.draw(150, 140)
+   #显示电脑和玩家的出拳信息
+         text.draw(self.playerMessage, 20, 84, 0x000000, 0xffffff)
+         text.draw(self.computerMessage, 20, 100, 0x000000, 0xffffff)
+   #判断胜负并显示结果
+         resultMessage = " 平局 "
+      if(self.playerStatus == self.computerStatus):
+         self.equalNum+=1
+      elif(self.playerStatus==1 and self.computerStatus==3):
+         resultMessage = "%s胜出"%self.playerName
+         self.playerScore+=1
+      elif(self.playerStatus==2 and self.computerStatus==1):
+         resultMessage = "%s胜出"%self.playerName
+         self.playerScore+=1
+      elif(self.playerStatus==3 and self.computerStatus==2):
+         resultMessage = "%s胜出"%self.playerName
+         self.playerScore+=1
+      else:
+         resultMessage = "%s胜出"%self.computerName
+         self.computerScore+=1
+         text.draw(resultMessage, 90, 210, 0x000000, 0xffffff)
+         self.updateTotolArea()
+   def startGame(self):
+      print("-------猜拳游戏开始-------")
+      while True:
+          i = 0
+          j = -1
+         for k in keys:
+            if(k.value() == 0):
+               if i!=j:
+                   j = i
+                   self.pressKeyboardEvent(i)
+               i = i+1
+               if(i > 3):
+                   i = 0
+               time.sleep_ms(100) #按键防抖
+   def updateTotolArea(self):
+   #汇总区域用于显示电脑和玩家的胜平负次数
+      print("-------更新汇总区域-------")
+      playerTotal = "%s赢了%d局" % (self.playerName, self.playerScore)
+      computerTotal = "%s赢了%d局" % (self.computerName, self.computerScore)
+      equalTotal = "平局%d次" % self.equalNum
+      text.draw("-------------", 20, 240, 0x000000, 0xffffff)
+      text.draw(playerTotal, 20, 256, 0x000000, 0xffffff)
+      text.draw(computerTotal, 20, 272, 0x000000, 0xffffff)
+      text.draw(equalTotal, 20, 288, 0x000000, 0xffffff)
+    if \__name_\_ == '__main__':
+          newGame = Game("玩家", "电脑")
+         newGame.startGame()
 
 实践练习：
 
