@@ -124,9 +124,7 @@ Python是一种跨平台的编程语言，这意味着它能够运行在所有�
 
 安装Python后，尝试启动交互式解释器。要从命令行启动Python，只需执行命令python。如果同时安装了较旧的版本，可能需要执行命令python3。启动Python后，可看到类似于下面的提示符：
 
-
-
->>>Python 3.6.4 (default, Jul 8 2017, 04:57:36)
+>>> Python 3.6.4 (default, Jul 8 2017, 04:57:36)
 
 [GCC 4.2.1 Compatible Apple LLVM 7.0.0 (clang-700.1.76)] on darwin
 
@@ -138,9 +136,7 @@ Python提供了交互式的解释器，可以尝试像下面这样做：
 
 等你按下回车键后，将出现如下输出：
 
-
-
->>>Hello, world!
+>>> Hello, world!
 
 上面的 >>> 是 Python
 提示符（prompt）。提示符是程序等待你键入信息时显示的符
