@@ -10,16 +10,13 @@
 7.1.1 定义函数
 
 下面是一个打印问候语的简单函数，名为greet_user()
+::
 
-def greet_user():
-
-"""显示简单的问候语"""
-
-print("Hello!")
-
-print("This is function")
-
-greet_user()
+   def greet_user():
+   """显示简单的问候语"""
+   print("Hello!")
+   print("This is function")
+   greet_user()
 
 这个示例演示了最简单的函数结构。使用关键字def来告诉Python你要定义一个
 
@@ -28,31 +25,25 @@ greet_user()
 紧跟在def
 greet_user():后面的所有缩进行构成了函数体。"""的文本是被称为文档字符串的注释，描述了函数是做什么的。文档字符串用三引号括起，Python使用它们来生成有关程序中函数的文档。
 
-代码行print("Hello!")和print("This is
-function")是函数体内的代码，greet_user()只做一项工作：打印Hello!和This
-is function。
+代码行print("Hello!")和print("This isfunction")是函数体内的代码，greet_user()只做一项工作：打印Hello!和This is function。
 
 要使用这个函数，可以调用它。函数调用让Python执行函数的代码。要调用函数，可依次指定函数名以及用括号括起的必要信息，由于这个函数不需要任何信息，因此调用它时只需输入greet_user()即可。和预期的一样，它的功能是打印如下结果：
+::
 
-Hello!
-
-This is function
+   Hello!
+   This is function
 
 7.1.2 调用过程
 
 上面那个例子的最后一行是对函数的调用，这句中的greet_user()可以认为是主程序，这里给出函数名和括号来调用这个函数。整个程序就从这行开始运行。正是这一行让程序开始运行刚才定义的函数中的代码。
+::
 
-def greet_user():
-
- """显示简单的问候语"""
-
- print("Hello!")
-
-print("This is function")
-
-greet_user()
-
-print("This is end")
+   def greet_user():
+   """显示简单的问候语"""
+   print("Hello!")
+   print("This is function")
+   greet_user()
+   print("This is end")
 
 图7-1 函数调用执行的过程
 
@@ -92,34 +83,29 @@ Step 4.：函数完成时，从离开主程序的那个位置继续执行。
 【案例7-1】 编写函数打印宠物类型和名字
 
 分析：传入一种动物类型和一个名字，打印相关的宠物信息，需要两个参数一种动物类型和一个名字。
+::
 
-def describe_pet(animal_type, pet_name):
-
-"""显示宠物的信息"""
-
-print("\nI have a " + animal_type + ".")
-
-print("My " + animal_type + "'s name is " + pet_name.title() + ".")
-
-describe_pet('hamster', 'harry')
+   def describe_pet(animal_type, pet_name):
+   """显示宠物的信息"""
+   print("\nI have a " + animal_type + ".")
+   print("My " + animal_type + "'s name is " + pet_name.title() + ".")
+   describe_pet('hamster', 'harry')
 
 调用describe_pet()时，需要按顺序提供一种动物类型和一个名字。例如，在前面的函数调用中，实参'hamster'存储在形参animal_type中，而实参'harry'存储在形参pet_name中。在函数体内，使用了这两个形参来显示宠物的信息。输出描述了一只名为Harry的仓鼠：
+::
 
-I have a hamster.
-
-My hamster's name is Harry.
+   I have a hamster.
+   My hamster's name is Harry.
 
 你可以根据需要调用函数任意次。要再描述一个宠物，只需再次调用describe_pet()即可：
+::
 
-describe_pet('dog', 'willie')
+   describe_pet('dog', 'willie')
 
-第二次调用describe_pet()函数时，我们向它传递了实参'dog'和'willie'。与第一次调用时
-
-一样，Python将实参'dog'关联到形参animal_type，并将实参'willie'关联到形参pet_name。与前面一样，这个函数完成其任务，但打印的是一条名为Willie的小狗的信息。至此，我们有一只名为Harry的仓鼠，还有一条名为Willie的小狗：
-
-I have a dog.
-
-My dog's name is Willie.
+第二次调用describe_pet()函数时，我们向它传递了实参'dog'和'willie'。与第一次调用时一样，Python将实参'dog'关联到形参animal_type，并将实参'willie'关联到形参pet_name。与前面一样，这个函数完成其任务，但打印的是一条名为Willie的小狗的信息。至此，我们有一只名为Harry的仓鼠，还有一条名为Willie的小狗：
+::
+   I have a dog.
+   My dog's name is Willie.
 
 调用函数多次是一种效率极高的工作方式。我们只需在函数中编写描述宠物的代码一次，然后每当需要描述新宠物时，都可调用这个函数，并向它提供新宠物的信息。即便描述宠物的代码增加到了10行，依然只需使用一行调用函数的代码，就可描述一个新宠物。
 
@@ -128,68 +114,59 @@ My dog's name is Willie.
 关键字实参是传递给函数的名称—值对。你直接在实参中将名称和值关联起来了，因此向函数传递实参时不会混淆（不会得到名为Hamster的harry这样的结果）。关键字实参让你无需考虑函数调用中的实参顺序，还清楚地指出了函数调用中各个值的用途。
 
 下面来重新编写，在其中使用关键字实参来调用describe_pet()：
+::
 
-def describe_pet(animal_type, pet_name):
-
-"""显示宠物的信息"""
-
-print("\nI have a " + animal_type + ".")
-
-print("My " + animal_type + "'s name is " + pet_name.title() + ".")
-
-describe_pet(animal_type='hamster', pet_name='harry')
+   def describe_pet(animal_type, pet_name):
+   """显示宠物的信息"""
+   print("\nI have a " + animal_type + ".")
+   print("My " + animal_type + "'s name is " + pet_name.title() + ".")
+   describe_pet(animal_type='hamster', pet_name='harry')
 
 函数describe_pet()还是原来那样，但调用这个函数时，我们向Python明确地指出了各个实参对应的形参。看到这个函数调用时，Python知道应该将实参'hamster'和'harry'分别存储在形参animal_type和pet_name中。输出正确无误，它指出我们有一只名为Harry的仓鼠。关键字实参的顺序无关紧要，因为Python知道各个值该存储到哪个形参中。下面两个函数调用是等效的：
+::
 
-describe_pet(animal_type='hamster', pet_name='harry')
-
-describe_pet(pet_name='harry', animal_type='hamster')
+   describe_pet(animal_type='hamster', pet_name='harry')
+   describe_pet(pet_name='harry', animal_type='hamster')
 
 编写函数时，可给每个形参指定默认值。在调用函数中给形参提供了实参时，Python将使用指定的实参值；否则，将使用形参的默认值。因此，给形参指定默认值后，可在函数调用中省略相应的实参。使用默认值可简化函数调用，还可清楚地指出函数的典型用法。
 
 例如，如果你发现调用describe_pet()时，描述的大都是小狗，就可将形参animal_type的默认值设置为'dog'。这样，调用describe_pet()来描述小狗时，就可不提供这种信息
+::
 
-def describe_pet(pet_name, animal_type='dog'):
-
-"""显示宠物的信息"""
-
-print("\nI have a " + animal_type + ".")
-
-print("My " + animal_type + "'s name is " + pet_name.title() + ".")
-
-describe_pet(pet_name='willie')
+   def describe_pet(pet_name, animal_type='dog'):
+   """显示宠物的信息"""
+   print("\nI have a " + animal_type + ".")
+   print("My " + animal_type + "'s name is " + pet_name.title() + ".")
+   describe_pet(pet_name='willie')
 
 这里修改了函数describe_pet()的定义，在其中给形参animal_type指定了默认值'dog'。这样，调用这个函数时，如果没有给animal_type指定值，Python将把这个形参设置为'dog'：
+::
 
-I have a dog.
-
-My dog's name is Willie.
+   I have a dog.
+   My dog's name is Willie.
 
 请注意，在这个函数的定义中，修改了形参的排列顺序。由于给animal_type指定了默认值，无需通过实参来指定动物类型，因此在函数调用中只包含一个实参——宠物的名字。然而，Python依然将这个实参视为位置实参，因此如果函数调用中只包含宠物的名字，这个实参将关联到函数定义中的第一个形参。这就是需要将pet_name放在形参列表开头的原因所在。现在，使用这个函数的最简单的方式是，在函数调用中只提供小狗的名字
+::
 
-describe_pet('willie')
+   describe_pet('willie')
 
 如果要描述的动物不是小狗，可使用类似于下面的函数调用：
+::
 
-describe_pet(pet_name='harry', animal_type='hamster')
+   describe_pet(pet_name='harry', animal_type='hamster')
 
 由于显式地给animal_type提供了实参，因此Python将忽略这个形参的默认值。
 
 基于这种定义，在任何情况下都必须给pet_name提供实参；指定该实参时可以使用位置方式，也可以使用关键字方式。如果要描述的动物不是小狗，还必须在函数调用中给animal_type提供实参；同样，指定该实参时可以使用位置方式，也可以使用关键字方式。下面对这个函数的所有调用都可行：
+::
 
-# 一条名为Willie的小狗
-
-describe_pet('willie')
-
-describe_pet(pet_name='willie')
-
-# 一只名为Harry的仓鼠
-
-describe_pet('harry', 'hamster')
-
-describe_pet(pet_name='harry', animal_type='hamster')
-
-describe_pet(animal_type='hamster', pet_name='harry')
+   # 一条名为Willie的小狗
+   describe_pet('willie')
+   describe_pet(pet_name='willie')
+   # 一只名为Harry的仓鼠
+   describe_pet('harry', 'hamster')
+   describe_pet(pet_name='harry', animal_type='hamster')
+   describe_pet(animal_type='hamster', pet_name='harry')
 
 这些函数调用的输出与前面的示例相同。
 
@@ -200,88 +177,66 @@ describe_pet(animal_type='hamster', pet_name='harry')
 【案例7-2】 编写函数接受名和姓并返回完整的姓名
 
 分析：这个函数接收两个参数名和姓。它将姓和名合二为一，在它们之间加上一个空格并将结果返回给调用者。
+::
 
-def get_formatted_name(first_name, last_name):
-
-"""返回整洁的姓名"""
-
-full_name = first_name + ' ' + last_name
-
-return full_name.title()
-
-musician = get_formatted_name('jimi', 'hendrix')
-
-print(musician)
+   def get_formatted_name(first_name, last_name):
+   """返回整洁的姓名"""
+   full_name = first_name + ' ' + last_name
+   return full_name.title()
+   musician = get_formatted_name('jimi', 'hendrix')
+   print(musician)
 
 函数get_formatted_name()的定义通过形参接受名和姓。将姓名组合后将结果存储在变量full_name中。然后，将full_name的值转换为首字母大写格式，并将结果返回到函数调用行。调用返回值的函数时，需要提供一个变量，用于存储返回的值。在这里，将返回值存储在了变量musician中。输出为完整的姓名：
+::
 
-Jimi Hendrix
+   Jimi Hendrix
 
-我们将上面的例子进一步扩展，外国人的姓名可以分为三部分first_name,
-middle_name,
-last_name，last_name一般是姓，名字可以由两部分组成first_name和middle_name，具体的要求如下：
+我们将上面的例子进一步扩展，外国人的姓名可以分为三部分first_name,middle_name,last_name，last_name一般是姓，名字可以由两部分组成first_name和middle_name，具体的要求如下：
 
-【案例7-3】 编写函数接受first_name, middle_name,
-last_name并返回完整的姓名
+【案例7-3】 编写函数接受first_name, middle_name,last_name并返回完整的姓名
 
 分析：有时候，需要让实参变成可选的，这样使用函数的人就只需在必要时才提供额外的信息。可使用默认值来让实参变成可选的。假设我们要扩展函数get_formatted_name()，使其还处理中间名。为此，可将其修改成类似于下面这样：
+::
 
-def get_formatted_name(first_name, middle_name, last_name):
-
-"""返回整洁的姓名"""
-
-full_name = first_name + ' ' + middle_name + ' ' + last_name
-
-return full_name.title()
-
-musician = get_formatted_name('john', 'lee', 'hooker')
-
-print(musician)
+   def get_formatted_name(first_name, middle_name, last_name):
+   """返回整洁的姓名"""
+   full_name = first_name + ' ' + middle_name + ' ' + last_name
+   return full_name.title()
+   musician = get_formatted_name('john', 'lee', 'hooker')
+   print(musician)
 
 再对这个函数进行优化，目前只要同时提供名、中间名和姓，这个函数就能正确地运行。它根据这三部分创建一个字符串，在适当的地方加上空格，并将结果转换为首字母大写格式。然而，并非所有的人都有中间名，但如果你调用这个函数时只提供了名和姓，它将不能正确地运行。为让中间名变成可选的，可给形参middle_name指定一个默认值——空字符串，并在用户没有提供中间名时不使用这个形参。为让get_formatted_name()在没有提供中间名时依然可行，可给实参middle_name指定一个默认值——空字符串，并将其移到形参列表的末尾：
+::
 
-def get_formatted_name(first_name, last_name, middle_name=''):
-
-"""返回整洁的姓名"""
-
-if middle_name:
-
-full_name = first_name + ' ' + middle_name + ' ' + last_name
-
-else:
-
-full_name = first_name + ' ' + last_name
-
-return full_name.title()
-
-musician = get_formatted_name('jimi', 'hendrix')
-
-print(musician)
-
-musician = get_formatted_name('john', 'hooker', 'lee')
-
-print(musician)
+   def get_formatted_name(first_name, last_name, middle_name=''):
+   """返回整洁的姓名"""
+   if middle_name:
+   full_name = first_name + ' ' + middle_name + ' ' + last_name
+   else:
+   full_name = first_name + ' ' + last_name
+   return full_name.title()
+   musician = get_formatted_name('jimi', 'hendrix')
+   print(musician)
+   musician = get_formatted_name('john', 'hooker', 'lee')
+   print(musician)
 
 在这个示例中，姓名是根据三个可能提供的部分创建的。由于人都有名和姓，因此在函数定义中首先列出了这两个形参。中间名是可选的，因此在函数定义中最后列出该形参，并将其默认值设置为空字符串。在函数体中，我们检查是否提供了中间名。Python将非空字符串解读为True，因此如果函数调用中提供了中间名，if
 middle_name将为True。如果提供了中间名，就将名、中间名和姓合并为姓名，然后将其修改为首字母大写格式，并返回到函数调用行。在函数调用行，将返回的值存储在变量musician中；然后将这个变量的值打印出来。如果没有提供中间名，middle_name将为空字符串，导致if测试未通过，进而执行else代码块：只使用名和姓来生成姓名，并将设置好格式的姓名返回给函数调用行。在函数调用行，将返回的值存储在变量musician中；然后将这个变量的值打印出来。调用这个函数时，如果只想指定名和姓，调用起来将非常简单。如果还要指定中间名，就必须确保它是最后一个实参，这样Python才能正确地将位置实参关联到形参。
 
 函数可返回任何类型的值，包括列表和字典等较复杂的数据结构。例如，下面的函数接受姓名的组成部分，并返回一个表示人的字典：
+::
 
-def build_person(first_name, last_name):
-
-"""返回一个字典，其中包含有关一个人的信息"""
-
-person = {'first': first_name, 'last': last_name}
-
-return person
-
-musician = build_person('jimi', 'hendrix')
-
-print(musician)
+   def build_person(first_name, last_name):
+   """返回一个字典，其中包含有关一个人的信息"""
+   person = {'first': first_name, 'last': last_name}
+   return person
+   musician = build_person('jimi', 'hendrix')
+   print(musician)
 
 函数build_person()接受名和姓，并将这些值封装到字典中。存储first_name的值时，使用的键为'first'，而存储last_name的值时，使用的键为'last'。最后，返回表示人的整个字典。打印这个返回的值，此时原来的两项文本信息存储在一个字典中：
+::
 
-{'first': 'jimi', 'last': 'hendrix'}
+   {'first': 'jimi', 'last': 'hendrix'}
 
 7.2.4 传递可变数量的实参
 
@@ -293,98 +248,64 @@ print(musician)
 分析：传统的编程方式可以不使用函数实现这一需求，具体代码如下：
 
 # 首先创建一个列表，其中包含一些要打印的设计
+::
 
-unprinted_designs = ['iphone case', 'robot pendant', 'dodecahedron']
+   unprinted_designs = ['iphone case', 'robot pendant', 'dodecahedron']
+   completed_models = []
 
-completed_models = []
-
-# 模拟打印每个设计，直到没有未打印的设计为止
-
-# 打印每个设计后，都将其移到列表completed_models中
-
-while unprinted_designs:
-
-current_design = unprinted_designs.pop()
-
-#模拟根据设计制作3D打印模型的过程
-
-print("Printing model: " + current_design)
-
-completed_models.append(current_design)
-
-# 显示打印好的所有模型
-
-print("\nThe following models have been printed:")
-
-for completed_model in completed_models:
-
-print(completed_model)
+   # 模拟打印每个设计，直到没有未打印的设计为止
+   # 打印每个设计后，都将其移到列表completed_models中
+   while unprinted_designs:
+   current_design = unprinted_designs.pop()
+   #模拟根据设计制作3D打印模型的过程
+   print("Printing model: " + current_design)
+   completed_models.append(current_design)
+   # 显示打印好的所有模型
+   print("\nThe following models have been printed:")
+   for completed_model in completed_models:
+   print(completed_model)
 
 这个程序首先创建一个需要打印的设计列表，还创建一个名为completed_models的空列表，每个设计打印都将移到这个列表中。只要列表unprinted_designs中还有设计，while循环就模拟打印设计的过程：从该列表末尾删除一个设计，将其存储到变量current_design中，并显示一条消息，指出正在打印当前的设计，再将该设计加入到列表completed_models中。循环结束后，显示已打印的所有设计：
+::
 
-Printing model: dodecahedron
-
-Printing model: robot pendant
-
-Printing model: iphone case
-
-The following models have been printed:
-
-dodecahedron
-
-robot pendant
-
-iphone case
+   Printing model: dodecahedron
+   Printing model: robot pendant
+   Printing model: iphone case
+   The following models have been printed:
+   dodecahedron
+   robot pendant
+   iphone case
 
 为重新组织这些代码，我们可编写两个函数，每个都做一件具体的工作。大部分代码都与原来相同，只是效率更高。第一个函数将负责处理打印设计的工作，而第二个将概述打印了哪些设计：
+::
 
-def print_models(unprinted_designs, completed_models):
-
-"""
-
-模拟打印每个设计，直到没有未打印的设计为止
-
-打印每个设计后，都将其移到列表completed_models中
-
-"""
-
-while unprinted_designs:
-
-current_design = unprinted_designs.pop()
-
-# 模拟根据设计制作3D打印模型的过程
-
-print("Printing model: " + current_design)
-
-completed_models.append(current_design)
-
-def show_completed_models(completed_models):
-
-"""显示打印好的所有模型"""
-
-print("\nThe following models have been printed:")
-
-for completed_model in completed_models:
-
-print(completed_model)
-
-unprinted_designs = ['iphone case', 'robot pendant', 'dodecahedron']
-
-completed_models = []
-
-print_models(unprinted_designs, completed_models)
-
-show_completed_models(completed_models)
+   def print_models(unprinted_designs, completed_models):
+   """
+   模拟打印每个设计，直到没有未打印的设计为止
+   打印每个设计后，都将其移到列表completed_models中
+   """
+   while unprinted_designs:
+   current_design = unprinted_designs.pop()
+   # 模拟根据设计制作3D打印模型的过程
+   print("Printing model: " + current_design)
+   completed_models.append(current_design)
+   def show_completed_models(completed_models):
+   """显示打印好的所有模型"""
+   print("\nThe following models have been printed:")
+   for completed_model in completed_models:
+   print(completed_model)
+   unprinted_designs = ['iphone case', 'robot pendant', 'dodecahedron']
+   completed_models = []
+   print_models(unprinted_designs, completed_models)
+   show_completed_models(completed_models)
 
 在上面，我们定义了函数print_models()，它包含两个形参：一个需要打印的设计列表和一个打印好的模型列表。给定这两个列表，这个函数模拟打印每个设计的过程：将设计逐个地从未打印的设计列表中取出，并加入到打印好的模型列表中。我们定义了函数show_completed_models()，它包含一个形参：打印好的模型列表。给定这个列表，函数show_completed_models()显示打印出来的每个模型的名称。这个程序的输出与未使用函数的版本相同，但组织更为有序。完成大部分工作的代码都移到了两个函数中，让主程序更容易理解。只要看看主程序，你就知道这个程序的功能容易看清得多：
+::
 
-unprinted_designs = ['iphone case', 'robot pendant', 'dodecahedron']
-
-completed_models = []
-
-print_models(unprinted_designs, completed_models)
-
-show_completed_models(completed_models)
+   unprinted_designs = ['iphone case', 'robot pendant', 'dodecahedron']
+   completed_models = []
+   print_models(unprinted_designs, completed_models)
+   show_completed_models(completed_models)
 
 我们创建了一个未打印的设计列表，还创建了一个空列表，用于存储打印好的模型。接下来，由于我们已经定义了两个函数，因此只需调用它们并传入正确的实参即可。我们调用print_models()并向它传递两个列表；像预期的一样，print_models()模拟打印设计的过程。接下来，我们调用show_completed_models()，并将打印好的模型列表传递给它，让其能够指出打印了哪些模型。描述性的函数名让别人阅读这些代码时也能明白，虽然其中没有任何注释。相比于没有使用函数的版本，这个程序更容易扩展和维护。如果以后需要打印其他设计，只需再次调用print_models()即可。如果我们发现需要对打印代码进行修改，只需修改这些代码一次，就能影响所有调用该函数的地方；与必须分别修改程序的多个地方相比，这种修改的效率更高。
 
@@ -393,52 +314,39 @@ show_completed_models(completed_models)
 【案例7-5】一个制作比萨的函数，它需要接受很多配料，但你无法预先确定顾客要多少种配料，函数内打印所有的配料信息。
 
 分析：生活中经常会遇到这种不确定性的问题，例如题目中的配料的个数，那就需要程序能够适应这些变化，好在Python为我们提供了传入可变数量的参数的方式。下面的函数只有一个形参*toppings，但不管调用语句提供了多少实参，这个形参都将它们统统收入囊中：
+::
 
-def make_pizza(*toppings):
-
-"""打印顾客点的所有配料"""
-
-print(toppings)
-
-make_pizza('pepperoni')
-
-make_pizza('mushrooms', 'green peppers', 'extra cheese')
+   def make_pizza(*toppings):
+   """打印顾客点的所有配料"""
+   print(toppings)
+   make_pizza('pepperoni')
+   make_pizza('mushrooms', 'green peppers', 'extra cheese')
 
 形参名*toppings中的星号让Python创建一个名为toppings的空元组，并将收到的所有值都封装到这个元组中。函数体内的print语句通过生成输出来证明Python能够处理使用一个值调用函数的情形，也能处理使用三个值来调用函数的情形。它以类似的方式处理不同的调用，注意，Python将实参封装到一个元组中，即便函数只收到一个值也如此：
+::
 
-('pepperoni',)
-
-('mushrooms', 'green peppers', 'extra cheese')
+   ('pepperoni',)
+   ('mushrooms', 'green peppers', 'extra cheese')
 
 现在，我们可以将这条print语句替换为一个循环，对配料列表进行遍历，并对顾客点的比萨进行描述：
+::
 
-def make_pizza(*toppings):
-
-"""概述要制作的比萨"""
-
-print("\nMaking a pizza with the following toppings:")
-
-for topping in toppings:
-
-print("- " + topping)
-
-make_pizza('pepperoni')
-
-make_pizza('mushrooms', 'green peppers', 'extra cheese')
-
+   def make_pizza(*toppings):
+   """概述要制作的比萨"""
+   print("\nMaking a pizza with the following toppings:")
+   for topping in toppings:
+   print("- " + topping)
+   make_pizza('pepperoni')
+   make_pizza('mushrooms', 'green peppers', 'extra cheese')
 不管收到的是一个值还是三个值，这个函数都能妥善地处理，不管函数收到的实参是多少个，这种语法都管用。
+::
 
-Making a pizza with the following toppings:
-
-- pepperoni
-
-Making a pizza with the following toppings:
-
-- mushrooms
-
-- green peppers
-
-- extra cheese
+   Making a pizza with the following toppings:
+   - pepperoni
+   Making a pizza with the following toppings:
+   - mushrooms
+   - green peppers
+   - extra cheese
 
 7.3 将函数存储在模块中
 ----------------------
@@ -458,74 +366,61 @@ Making a pizza with the following toppings:
 【案例7-6】将上节的制作比萨的函数放入模块，在新的程序中导入模块，使用模块中的制作比萨的函数。
 
 分析：首先要创建一个包含函数make_pizza()的模块。为此，我们将文件pizza.py中除函数make_pizza()之外的其他代码都删除，剩下函数主体部分如下：
+::
 
-**pizza.py**
-
-def make_pizza(*toppings):
-
-"""概述要制作的比萨"""
-
-print("\nMaking a pizza with the following toppings:")
-
-for topping in toppings:
-
-print("- " + topping)
-
-接下来，我们在pizza.py所在的目录中创建另一个名为making_pizzas.py的文件，这个文件导入刚创建的模块，再调用make_pizza()两次
-
-**making_pizzas.py**
-
-import pizza
-
-pizza.make_pizza(16, 'pepperoni')
-
-pizza.make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
+   **pizza.py**
+   def make_pizza(*toppings):
+   """概述要制作的比萨"""
+   print("\nMaking a pizza with the following toppings:")
+   for topping in toppings:
+   print("- " + topping)
+   接下来，我们在pizza.py所在的目录中创建另一个名为making_pizzas.py的文件，这个文件导入刚创建的模块，再调用make_pizza()两次
+   **making_pizzas.py**
+   import pizza
+   pizza.make_pizza(16, 'pepperoni')
+   pizza.make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
 
 Python读取这个文件时，代码行import
 pizza让Python打开文件pizza.py，并将其中的所有函数都复制到这个程序中。你看不到复制的代码，因为这个程序运行时，Python在幕后复制这些代码。你只需知道，在making_pizzas.py中，可以使用pizza.py中定义的所有函数。要调用被导入的模块中的函数，可指定导入的模块的名称pizza和函数名make_pizza()，并用句点分隔它们。这些代码的输出与没有导入模块的原始程序相同：
+::
 
-Making a 16-inch pizza with the following toppings:
-
-- pepperoni
-
-Making a 12-inch pizza with the following toppings:
-
-- mushrooms
-
-- green peppers
-
-- extra cheese
+   Making a 16-inch pizza with the following toppings:
+   - pepperoni
+   Making a 12-inch pizza with the following toppings:
+   - mushrooms
+   - green peppers
+   - extra cheese
 
 这就是一种导入方法：只需编写一条import语句并在其中指定模块名，就可在程序中使用该模块中的所有函数。如果你使用这种import语句导入了名为module_name.py的整个模块，就可使用下面的语法来使用其中任何一个函数
+::
 
-import module_name
-
-module_name.function_name()
+   import module_name
+   module_name.function_name()
 
 你还可以导入模块中的特定函数，这种导入方法的语法如下：
+::
 
-from module_name import function_name
+   from module_name import function_name
 
 通过用逗号分隔函数名，可根据需要从模块中导入任意数量的函数：
+::
 
-from module_name import function_0, function_1, function_2
+   from module_name import function_0, function_1, function_2
 
 对于前面的making_pizzas.py示例，如果只想导入要使用的函数，代码将类似于下面这样：
+::
 
-**making_pizzas.py**
-
-from pizza import make_pizza
-
-make_pizza(16, 'pepperoni')
-
-make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
+   **making_pizzas.py**
+   from pizza import make_pizza
+   make_pizza(16, 'pepperoni')
+   make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
 
 若使用这种语法，调用函数时就无需使用句点。由于我们在import语句中显式地导入了函数make_pizza()，因此调用它时只需指定其名称。
 
-这里要注意在引用时不要加“py”，不能写成import
-myModule.py，被引用的模块要放在与引用程序相同的目录下，或者放在Python能够找到的目录下，如果被引用的模块和当前模块不在同一目录，需要增加目录名，例如：
+这里要注意在引用时不要加“py”，不能写成import myModule.py，被引用的模块要放在与引用程序相同的目录下，或者放在Python能够找到的目录下，如果被引用的模块和当前模块不在同一目录，需要增加目录名，例如：
+::
 
-from directories.module_name import function_name
+   from directories.module_name import function_name
 
 7.3.2 使用as指定别名
 
@@ -533,30 +428,29 @@ from directories.module_name import function_name
 
 下面给函数make_pizza()指定了别名mp()。这是在import语句中使用make_pizza
 as mp实现的，关键字as将函数重命名为你提供的别名：
+::
 
-from pizza import make_pizza as mp
-
-mp(16, 'pepperoni')
-
-mp(12, 'mushrooms', 'green peppers', 'extra cheese')
+   from pizza import make_pizza as mp
+   mp(16, 'pepperoni')
+   mp(12, 'mushrooms', 'green peppers', 'extra cheese')
 
 上面的import语句将函数make_pizza()重命名为mp()；在这个程序中，每当需要调用
-
 make_pizza()时，都可简写成mp()，而Python将运行make_pizza()中的代码，这可避免与这个程序可能包含的函数make_pizza()混淆。指定别名的通用语法如下：
+::
 
-from module_name import function_name as fn
+   from module_name import function_name as fn
 
 你还可以给模块指定别名。通过给模块指定简短的别名（如给模块pizza指定别名p），让你能够更轻松地调用模块中的函数。相比于pizza.make_pizza()，p.make_pizza()更为简洁：
+::
 
-import pizza as p
-
-p.make_pizza(16, 'pepperoni')
-
-p.make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
+   import pizza as p
+   p.make_pizza(16, 'pepperoni')
+   p.make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
 
 上述import语句给模块pizza指定了别名p，但该模块中所有函数的名称都没变。调用函数make_pizza()时，可编写代码p.make_pizza()而不是pizza.make_pizza()，这样不仅能使代码更简洁，还可以让你不再关注模块名，而专注于描述性的函数名。这些函数名明确地指出了函数的功能，对理解代码而言，它们比模块名更重要。给模块指定别名的通用语法如下：
+::
 
-import module_name as mn
+   import module_name as mn
 
 7.4 全局变量和局部变量
 ----------------------
@@ -576,60 +470,40 @@ import module_name as mn
 【案例7-7】局部变量的使用，编写一个求和函数。
 
 分析：设计一个函数传入参数m，函数对1+2+3+...+m求和，这里应该会用到循环具体代码如下：
+::
 
-def sum(m):
-
-s=0
-
-# 计算1+2+3+...+m的和
-
-for p in range(m+1)：
-
-s=s+p
-
-return s
-
-m=10
-
-s=sum(m)
-
-print(s)
+   def sum(m):
+   s=0
+   # 计算1+2+3+...+m的和
+   for p in range(m+1)：
+   s=s+p
+   return s
+   m=10
+   s=sum(m)
+   print(s)
 
 其函数中的m，p，s变量都是局部变量，注意函数中定义的变量只能在函数中使用，不能在其他函数中使用，同时一个函数中也不能使用其他函数中定义的变量，各个函数之间是平行的关系，每个函数都封装了自己的区域，互补干扰。形参变量是属于被调用函数的局部变量，而实参变量是属于调用函数的局部变量。允许在不同的函数中使用相同的变量名，但是他们代表的是不同的对象，分配不同的存储单元，互不干扰，也不会发生混淆，在本例中sum函数的m、s变量和主程序的m、s变量同名，但是他们是不同的变量。
 
 7.4.3 全局变量
 
 如果一个函数内部要用到主程序的变量，那么可以在该函数内部声明这个变量为global变量，这样函数内部使用的这个变量就是主程序的变量，当在函数改变了全局变量的值的时候，会直接影响主程序中的变量的值。例如下面这个例子：
+::
 
-def A(x):
+   def A(x):
+   global y
+   y=0
+   x=0
+   def B(x):
+   global y
+   y=10
+   x=0
+   x=1
+   y=2
+   A(x)
+   B(x)
+   print(x,y)
 
-global y
-
-y=0
-
-x=0
-
-def B(x):
-
-global y
-
-y=10
-
-x=0
-
-x=1
-
-y=2
-
-A(x)
-
-B(x)
-
-print(x,y)
-
-在A，B函数中都使用了global
-y声明A，B中使用的y不是本地的y变量而是主程序的y变量，所以执行结果为：1
-10。
+在A，B函数中都使用了global y声明A，B中使用的y不是本地的y变量而是主程序的y变量，所以执行结果为：110。
 
 这里要注意全局变量的作用域是整个程序，它在程序开始时就存在，任何函数都可以访问它，而且所有函数访问的同名称的全局变量是用一个变量，全局变量只有在程序结束时才销毁，局部变量是函数内部范围内的变量，当执行此函数时才有效，退出函数后局部变量就被销毁。不同函数之间的局部变量是不同的，即使同名的也互不相干。
 
@@ -640,7 +514,7 @@ y声明A，B中使用的y不是本地的y变量而是主程序的y变量，所�
 7.5 制作2048游戏
 ----------------
 
-《2048》是一款热门的数字益智游戏，最早于2014年3月20日发行。原版《2048》首先在GitHub网站上发布，后被移植到各个平台。这款游戏是基于《\ `1024 <https://baike.baidu.com/item/1024/19932524>`__\ 》和《\ `小3传奇 <https://baike.baidu.com/item/%E5%B0%8F3%E4%BC%A0%E5%A5%87/13131575>`__\ 》的玩法开发而成的新型数字游戏，游戏规则很简单，操作容易，玩家要想办法不断的叠加最终拼凑出2048这个数字就算成功。
+《2048》是一款热门的数字益智游戏，最早于2014年3月20日发行。原版《2048》首先在GitHub网站上发布，后被移植到各个平台。这款游戏是基于《1024》和《小传奇》的玩法开发而成的新型数字游戏，游戏规则很简单，操作容易，玩家要想办法不断的叠加最终拼凑出2048这个数字就算成功。
 
 7.5.1 预备知识
 
@@ -673,107 +547,68 @@ y声明A，B中使用的y不是本地的y变量而是主程序的y变量，所�
 
 2. 按键控制：四个按键是方向键，分别代表上下左右；
 
-3.
-游戏控制：游戏不间断运行，当触发按键时计算相应的值并控制界面变化，统计新的总分数，当达成胜利条件或失败条件时结束游戏；
+3. 游戏控制：游戏不间断运行，当触发按键时计算相应的值并控制界面变化，统计新的总分数，当达成胜利条件或失败条件时结束游戏；
 
 4. 胜利条件：当出现2048这个数字时游戏胜利并结束；
 
-5.
-失败条件：棋盘填满数字，无法再进行变换，也就是变换之后的矩阵和变换前的相同，则游戏结束；
+5. 失败条件：棋盘填满数字，无法再进行变换，也就是变换之后的矩阵和变换前的相同，则游戏结束；
 
 7.5.3 任务实施
 
 1. 网格类
 
 构造Grid类，主要功能是绘制背景及网格、得分情况信息，并提供了在网格中绘制数字的方法，更新网格下方得分的方法。
+::
 
-class Grid(object):
+   class Grid(object):
+   def \__init__(self, master = None, x = 10, y = 10, w = 222, h = 222):
+   self.x = x
+   self.y = y
+   self.w = w
+   self.h = h
+   self.width = w//35 - 1
+   self.height = h//55 - 1
+   self.bg = 0x000000
+   print(self.width, self.height)
+   #画背景
+   for i in range(320):
+   screen.drawline(0, i, 239, i, 1, self.bg);
+   self.initial()
 
-def \__init__(self, master = None, x = 10, y = 10, w = 222, h = 222):
+在构造函数__init__()中，调用了screen.drawline函数来画直线，通过循环画出最外层的边框。
+::
 
-self.x = x
-
-self.y = y
-
-self.w = w
-
-self.h = h
-
-self.width = w//35 - 1
-
-self.height = h//55 - 1
-
-self.bg = 0x000000
-
-print(self.width, self.height)
-
-#画背景
-
-for i in range(320):
-
-screen.drawline(0, i, 239, i, 1, self.bg);
-
-self.initial()
-
-在构造函数__init__(
-)中，调用了screen.drawline函数来画直线，通过循环画出最外层的边框。
-
-def initial(self):
-
-for i in range(0, 4):
-
-for j in range(0, 4):
-
-x = i \* 55 + self.x + 1
-
-y = j \* 55 + self.y + 1
-
-#画边界
-
-screen.drawline(x,y,x + 55 - 1,y,1, 0xFFFFFF);
-
-screen.drawline(x + 55 - 1,y,x + 55 - 1, y + 55,1,0xFFFFFF);
-
-screen.drawline(x,y + 55,x + 55 - 1,y + 55,1, 0xFFFFFF);
-
-screen.drawline(x,y,x,y + 55, 1,0xFFFFFF);
-
-initial主要实现画内部的棋盘，通过双重循环画出网格状棋盘。
-
+   def initial(self):
+   for i in range(0, 4):
+   for j in range(0, 4):
+   x = i \* 55 + self.x + 1
+   y = j \* 55 + self.y + 1
+   #画边界
+   screen.drawline(x,y,x + 55 - 1,y,1, 0xFFFFFF);
+   screen.drawline(x + 55 - 1,y,x + 55 - 1, y + 55,1,0xFFFFFF);
+   screen.drawline(x,y + 55,x + 55 - 1,y + 55,1, 0xFFFFFF);
+   screen.drawline(x,y,x,y + 55, 1,0xFFFFFF);
+   initial主要实现画内部的棋盘，通过双重循环画出网格状棋盘。
    def draw(self, pos, color, num):
-
    x = pos[0] \* 55 + self.x
-
    y = pos[1] \* 55 + self.y
-
    text.draw("", x + 3, y + 19, color, 0x000000)
-
    if num < 16:
-
    text.draw(str(num), x + 19, y + 19, color, 0x000000)
-
    elif num < 128:
-
    text.draw(str(num), x + 11, y + 19, color, 0x000000)
-
    elif num < 1024:
-
    text.draw(str(num), x + 3, y + 19, color, 0x000000)
-
    elif num == 1024:
-
    text.draw("1K", x + 11, y + 19, color, 0x000000)
-
    else:
-
    text.draw("2K", x + 11, y + 19, color, 0x000000)
 
 draw方法是将pos列表中的两个值转换成实际屏幕坐标，再在这个坐标上显示传入的num数字，但是数字长度不一，会根据数字长度对实际坐标位置进行修正。
+::
 
    def printscore(self, msg, score):
-
    print(msg + str(score))
-
    text.draw(msg + str(score), 20, 250, 0xFF0000, 0x000000)
 
 printscore方法主要是将当前成绩score显示在屏幕网格下方。
@@ -781,177 +616,108 @@ printscore方法主要是将当前成绩score显示在屏幕网格下方。
 2. 矩阵类
 
 矩阵类Matrix，是游戏的主要实现类。实际网格中的数字可以看做一个4*4的矩阵，对网格的上下左右的移动就是对矩阵的操作，矩阵根据算法产生变化，在矩阵变化的同时要计算网格中应该显示数字，再将数字显示到网格中。这样就完成了游戏的互动操作。
+::
 
    class Matrix(object):
-
    def \__init__(self, grid):
-
    self.grid = grid
-
    self.matrix = [[0 for i in range(4)] for i in range(4)]
-
    self.matrix_o = [[0 for i in range(4)] for i in range(4)]
-
    self.vacancy = []
-
    self.gamewin = False
-
    #使用一个字典将数字与其对应的颜色存放起来
-
    self.color ={
-
    0 : 0xFFFFFF,
-
    2 : 0x000099,
-
    4 : 0x009900,
-
    8 : 0x990000,
-
    16 : 0x999900,
-
    32 : 0x990099,
-
    64 : 0x00FFFF,
-
    128 : 0x0000FF,
-
    256 : 0x00FF00,
-
    512 : 0xFF0000,
-
    1024 : 0xFFFF00,
-
    2048 : 0xFF00FF
-
    }
 
 \__init__函数主要进行初始化操作，初始化矩阵，字体颜色，0值的列表，胜利标志等参数。
+::
 
    def void(self):
-
    self.vacancy = []
-
    for x in range(0, 4):
-
    for y in range(0, 4):
-
    if self.matrix[x][y] == 0:
-
    self.vacancy.append((x, y))
-
    return len(self.vacancy)
-
+   
 void方法主要是双重循环遍历矩阵，当发现值为0的点时将坐标加到vacancy列表中。
+::
 
    def generate(self):
-
    pos = choice(self.vacancy)
-
    if randint(0, 5) == 4:
-
    self.matrix[pos[0]][pos[1]] = 4
-
    else:
-
    self.matrix[pos[0]][pos[1]] = 2
-
    del self.vacancy[self.vacancy.index((pos[0], pos[1]))]
 
 generate方法在vacancy列表中取随机的点，并根据随机数的值来判断生成的是2还是4，并将vacancy列表删除新生成的点的坐标。
+::
 
    def draw(self):
-
    for i in range (0, 4):
-
    for j in range (0, 4):
-
    pos = (i, j)
-
    num = self.matrix[i][j]
-
    color = self.color[int(self.matrix[i][j])]
-
    self.grid.draw(pos, color, num)
-
+   
 draw方法就是遍历矩阵，通过调用grid类的draw方法将矩阵中的数据显示到网格中。
+::
 
    def initial(self):
-
    self.matrix = [[0 for i in range(4)] for i in range(4)]
-
    self.void()
-
    self.generate()
-
    self.generate()
-
    self.draw()
-
    self.gamewin = False
-
    for i in range(0, 4):
-
    for j in range(0, 4):
-
    self.matrix_o[i][j] = self.matrix[i][j]
 
 initial方法综合调用前面定义的各种方法，初始化矩阵，并收集0值列表，产生两个随机的2或者4放入0值位置上，并调用draw在网格中显示矩阵，并将当前矩阵记录在原始矩阵matrix_o中。
+::
 
    def up(self):
-
    ss = 0
-
    for i in range(0, 4):
-
    for j in range(0, 3):
-
    s = 0
-
    if not self.matrix[i][j] == 0:
-
    for k in range(j + 1, 4):
-
    if not self.matrix[i][k] == 0:
-
    if self.matrix[i][j] == self.matrix[i][k]:
-
    ss = ss + self.matrix[i][k]
-
    self.matrix[i][j] = self.matrix[i][j] \* 2
-
    if self.matrix[i][j] == 2048:
-
    self.gamewin = True
-
    self.matrix[i][k] = 0
-
    s = 1
-
    break
-
    else:
-
    break
-
    if s == 1:
-
    break
-
    for i in range(0, 4):
-
    s = 0
-
    for j in range(0, 3):
-
    if self.matrix[i][j - s] == 0:
-
    self.matrix[i].pop(j - s)
-
    self.matrix[i].append(0)
-
    s = s + 1
-
    return ss
 
 up函数实现点击向上按钮之后的矩阵变换。首先循环遍历所有的点，s为判断标志用来跳出循环，当发现某个位置的值不为0时，循环遍历这列当前节点之下的所有位置，当发现临近的点的值和当前的值相等时则当前值翻倍，当到达2048时则结束游戏。然后重新调整矩阵，将矩阵上移，并将值为0的点删除，在底部用0补全如图7-6所示。
@@ -959,145 +725,80 @@ up函数实现点击向上按钮之后的矩阵变换。首先循环遍历所有
 .. image:: /Chapter/picture/image136.jpg
 
 图7-6 上移矩阵变化
+::
 
    def down(self):
-
    for i in range(0, 4):
-
    self.matrix[i].reverse()
-
    ss = self.up()
-
    for i in range(0, 4):
-
    self.matrix[i].reverse()
-
    return ss
 
 下移过程将矩阵颠倒，然后调用上移方法，完成后再颠倒过来。
+::
 
    def left(self):
-
    ss = 0
-
    for i in range(0, 4):
-
    for j in range(0, 3):
-
    s = 0
-
    if not self.matrix[j][i] == 0:
-
    for k in range(j + 1, 4):
-
    if not self.matrix[k][i] == 0:
-
    if self.matrix[j][i] == self.matrix[k][i]:
-
    ss = ss + self.matrix[k][i]
-
    self.matrix[j][i] = self.matrix[j][i] \* 2
-
    if self.matrix[j][i] == 2048:
-
    self.gamewin = True
-
    self.matrix[k][i] = 0
-
    s = 1
-
    break
-
    else:
-
    break
-
    if s == 1:
-
    break
-
    for i in range(0, 4):
-
    s = 0
-
    for j in range(0, 3):
-
    if self.matrix[j - s][i] == 0:
-
    for k in range(j - s, 3):
-
    self.matrix[k][i] = self.matrix[k + 1][i]
-
    self.matrix[3][i] = 0
-
    s = s + 1
-
    return ss
-
    def right(self):
-
    ss = 0
-
    for i in range(0, 4):
-
    for j in range(0, 3):
-
    s = 0
-
    if not self.matrix[3-j][i] == 0:
-
    k = 3-j-1
-
    while k >= 0:
-
    if not self.matrix[k][i] == 0:
-
    if self.matrix[3-j][i] == self.matrix[k][i]:
-
    ss = ss + self.matrix[k][i]
-
    self.matrix[3-j][i] = self.matrix[3-j][i] \* 2
-
    if self.matrix[3-j][i] == 2048:
-
    self.gamewin = True
-
    self.matrix[k][i] = 0
-
    s = s+1
-
    break
-
    else:
-
    break
-
    k = k -1
-
    if s == 1:
-
    break
-
    for i in range(0, 4):
-
    s = 0
-
    for j in range(0, 3):
-
    if self.matrix[3 - j + s][i] == 0:
-
    k = 3 - j + s
-
    while k > 0:
-
    self.matrix[k][i] = self.matrix[k - 1][i]
-
    k = k - 1
-
    self.matrix[0][i] = 0
-
    s = s + 1
-
    return ss
 
 矩阵左移和右移方式和上移相似，就不再具体描述了。
@@ -1105,101 +806,63 @@ up函数实现点击向上按钮之后的矩阵变换。首先循环遍历所有
 3. 游戏类
 
 游戏类主要是负责按键控制的对应操作，同时聚合了上面两个类。
+::
 
    class Game():
-
    def \__init__(self):
-
    self.grid = Grid()
-
    self.matrix = Matrix(self.grid)
-
    self.status = ['run', 'stop']
-
    #界面左侧显示分数
-
    self.initial()
-
 初始化当前状态，聚合网格类和矩阵类。
+::
 
    def initial(self):
-
    self.score = 0
-
    self.grid.printscore("成绩为：", self.score)
-
    self.matrix.initial()
-
+   
 初始化成绩并显示，初始化矩阵
+::
 
    def key_release(self, key):
-
-keymatch=["Down", "Left", "Up", "Right"]
-
-if keymatch[key] == "Up":
-
-ss = self.matrix.up()
-
-self.run(ss)
-
-elif keymatch[key] == "Down":
-
-ss = self.matrix.down()
-
-self.run(ss)
-
-elif keymatch[key] == "Left":
-
-ss = self.matrix.left()
-
-self.run(ss)
-
-elif keymatch[key] == "Right":
-
-ss = self.matrix.right()
-
-self.run(ss)
+   keymatch=["Down", "Left", "Up", "Right"]
+   if keymatch[key] == "Up":
+   ss = self.matrix.up()
+   self.run(ss)
+   elif keymatch[key] == "Down":
+   ss = self.matrix.down()
+   self.run(ss)
+   elif keymatch[key] == "Left":
+   ss = self.matrix.left()
+   self.run(ss)
+   elif keymatch[key] == "Right":
+   ss = self.matrix.right()
+   self.run(ss)
 
 按键控制不同的按键对应调用矩阵类的不同的变换。
+::
 
    def run(self, ss):
-
    if not self.matrix.matrix == self.matrix.matrix_o:
-
    self.score = self.score + int(ss)
-
    self.grid.printscore("成绩为：", self.score)
-
    if self.matrix.gamewin == True:
-
    self.matrix.draw()
-
    self.grid.printscore("恭喜获胜，成绩为：", self.score)
-
    if message == 'ok':
-
    self.initial()
-
    else:
-
    self.matrix.void()
-
    self.matrix.generate()
-
    for i in range(0, 4):
-
    for j in range(0, 4):
-
    self.matrix.matrix_o[i][j] = self.matrix.matrix[i][j]
-
    self.matrix.draw()
-
    else:
-
    v = self.matrix.void()
-
    if v < 1:
-
    self.grid.printscore("你输了，成绩为：", self.score)
 
 Run方法首先判判断变换前后是否相同，相同则游戏失败，不同，则判断是否已经生成2048达成胜利条件，如果没有则继续生成随机的2或4，记录当前的矩阵到matrix_o中。
@@ -1207,39 +870,24 @@ Run方法首先判判断变换前后是否相同，相同则游戏失败，不�
 4. 主循环
 
 主循环是游戏的入口，开始后不断循环监听按键输入，并调用游戏类的按键处理方法。
+::
 
    if \__name_\_ == '__main__':
-
    game = Game()
-
    while True:
-
    gc.collect()
-
    i = 0
-
    j = -1
-
    for k in keys:
-
    if k.value() == 0:
-
    if i != j:
-
    print("i=", i)
-
    print("j=", j)
-
    j = i
-
    game.key_release(i)
-
    i = i+ 1
-
    if i > 3:
-
    i = 0
-
    time.sleep_ms(125)
 
 .. _本章小结-6:
