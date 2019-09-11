@@ -199,7 +199,7 @@ Engine，支持\ `IronPython <http://www.oschina.net/p/ironpython>`__\ 。
 
 .. image:: /Chapter/picture/image009.png
 
-.. image:: /Chapter/picture/image0010.png
+.. image:: /Chapter/picture/image010.png
 
 图1-7 PyCharm界面
 
@@ -225,7 +225,8 @@ log”以及两个显示图像的窗格。在View菜单中可以设置是否显�
 Skids开发板的处理器为双核32位MCU，主频高达230MHz，计算能力可达600DMIPS，集成了WIFI和蓝牙功能；并可以扩展支持Zigbee协议，如图1-9所示正面搭配了2.8寸高清液晶屏，在屏幕下方集成了4个用户按键，在屏幕右侧提供了Micro
 USB接口，可以很方便的与PC连接，在开发板右下角提供了3.5mm音频接口，在开发板背面右侧中间位置提供了TF卡插槽，支持TF卡，在背面预留了电池接口，因此Skids支持两种方式的供电，通过USB接口供电和采用电池供电，学习或开发过程，推荐使用USB接口来供电，开发板独特的电源管理和低功耗技术确保设备适用于各种物联网应用场景。
 
-.. image:: /Chapter/picture/image013.jpg\ .. image:: /Chapter/picture/image014.jpg
+.. image:: /Chapter/picture/image013.jpg 
+.. image:: /Chapter/picture/image014.jpg
 
 图1-9 Skids开发板
 
@@ -234,13 +235,15 @@ USB接口，可以很方便的与PC连接，在开发板右下角提供了3.5mm�
 Skids无需额外的调试器， Skids开发板的Micro
 USB接口在侧面如图1-10所示，通过USB线连接至PC即可。
 
-.. image:: /Chapter/picture/image015.jpg\ .. image:: /Chapter/picture/image016.jpg
+.. image:: /Chapter/picture/image015.jpg
+.. image:: /Chapter/picture/image016.jpg
 
 图1-10 Skids的Micro USB接口
 
 Skids通过USB线连接至PC后，如图1-11所示开启电源开关（向上拨开关），设备上电启动，屏幕点亮。
 
-.. image:: /Chapter/picture/image017.jpg\ .. image:: /Chapter/picture/image018.jpg
+.. image:: /Chapter/picture/image017.jpg
+.. image:: /Chapter/picture/image018.jpg
 
 图1-11 Skids电源开关
 
@@ -307,7 +310,8 @@ Loop），是Python的交互式命令行，Skids通过USB线连接到电脑后�
 
 REPL是一个命令行形式的用户操作界面，类似Windows或Linux的命令行。RPEL的>>>箭头为命令输入提示符，此处表示您应在该提示符后输入命令或文本，在命令行中键入的任何内容都将在您点击Enter键后执行，如图1-17所示，即运行您输入的代码并打印出结果（若存在结果）。若输入的内容有误，则将打印错误信息。
 
-.. image:: /Chapter/picture/image024.jpg\ |.. image:: /Chapter/picture/image025.jpg
+.. image:: /Chapter/picture/image024.jpg 
+.. image:: /Chapter/picture/image025.jpg
 
 图1-17 正常和错误提示
 
@@ -424,7 +428,8 @@ Serial，如图1-29所示，选中对应的串口即可。
 4.
 同时，在左侧目录树中的Device选项，前面会出现小箭头，如图1-30所示，点击可显示Skids中的文件列表。
 
-.. image:: /Chapter/picture/image038.jpg\ .. image:: /Chapter/picture/image039.jpg
+.. image:: /Chapter/picture/image038.jpg
+.. image:: /Chapter/picture/image039.jpg
 
 图1-30 uPyCraft连接成功
 
@@ -473,7 +478,8 @@ main.py
 
 假定Skids开机后要自动执行snake.py这个贪吃蛇游戏程序，就需要将文件命名为main.py，那么选择Device列表中的snake.py，在鼠标右键弹出菜单中选择Rename，在弹出的对话框中将文件名改为main.py，如图1-34所示。
 
-.. image:: /Chapter/picture/image043.jpg\ .. image:: /Chapter/picture/image044.jpg
+.. image:: /Chapter/picture/image043.jpg
+.. image:: /Chapter/picture/image044.jpg
 
 图1-34 uPyCraft文件重命名
 
