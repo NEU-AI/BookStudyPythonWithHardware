@@ -12,23 +12,22 @@ turtle是Python内置的一个比较有趣味的模块，俗称海龟绘图，�
 
 画布就是turtle为我们展开用于绘图区域，我们可以设置它的大小和初始位置。常用的设置画布参数的方法有两个：turtle.screensize()和turtle.setup()
 
-第一个方法是：turtle.screensize(canvwidth=None, canvheight=None,
-bg=None)，参数分别为画布的宽(单位像素), 高, 背景颜色。
+第一个方法是：turtle.screensize(canvwidth=None, canvheight=None,bg=None)，参数分别为画布的宽(单位像素), 高, 背景颜色。
 
 【案例2-1】 设置画布
+::
 
-turtle.screensize(800,600, "green")
-
-turtle.screensize() #返回默认大小(400, 300)
-
+   turtle.screensize(800,600, "green")
+   turtle.screensize() #返回默认大小(400, 300)
+   
 另外一个设置的方法是turtle.setup(width=None,
 height=None,startx=None,starty=None)，参数：width, height:
 输入宽和高为整数时，表示像素。为小数时，表示占据电脑屏幕的比例。(startx,
 starty)这一坐标表示矩形窗口左上角顶点的位置，如果为空，则窗口位于屏幕中心。
+::
 
-turtle.setup(width=0.6,height=0.6)
-
-turtle.setup(width=800,height=800, startx=100, starty=100)
+   turtle.setup(width=0.6,height=0.6)
+   turtle.setup(width=800,height=800, startx=100, starty=100)
 
 2.1.2 画笔
 
@@ -42,9 +41,8 @@ turtle.setup(width=800,height=800, startx=100, starty=100)
 
 1) turtle.pensize()：设置画笔的宽度；
 
-2)
-turtle.pencolor()：这里可以有参数也可以没有，如果没有参数传入，返回当前画笔颜色，如果传入参数设置画笔颜色，可以是字符串如"green"，"red"，也可以是RGB
-3元组。
+2) turtle.pencolor()：这里可以有参数也可以没有，如果没有参数传入，返回当前画笔颜色，如果传入参数设置画笔颜色，可以是字符串如"green"，"red"，也可以是RGB
+3 元组。
 
 3 绘图命令
 
@@ -169,34 +167,24 @@ turtle.pencolor()：这里可以有参数也可以没有，如果没有参数传
 【案例2-2】 设置画笔速度。
 
 >>> turtle.speed()
-
 3
-
 >>> turtle.speed('normal')
-
 >>> turtle.speed()
-
 6
-
 >>> turtle.speed(9)
-
 >>> turtle.speed()
-
 9
 
 4. 函数原型：goto\ *(*\ x, y=None)
 
 功能说明：海龟移动到一个绝对坐标。如画笔已落下将会画线，不改变海龟的朝向。
 
-参数说明：x：一个数值或数值对/向量；y：一个数值或 None,如果 y 为 None，x 应为一个表示坐标的数值对或 \ `Vec2D <https://docs.python.org/zh-cn/3/library/turtle.html#turtle.Vec2D>`__ 类对象
-(例如 `pos() <https://docs.python.org/zh-cn/3/library/turtle.html#turtle.pos>`__ 返回的对象)。
+参数说明：x：一个数值或数值对/向量；y：一个数值或 None,如果 y 为 None，x 应为一个表示坐标的数值对或类对象(例如 pos()返回的对象)。
 
 【案例2-3】 设置画笔移动到一个绝对位置。
 
 >>> turtle.goto(60,30)
-
 >>> turtle.pos()
-
 (60.00,30.00)
 
 5. 函数原型：heading()
@@ -220,9 +208,7 @@ turtle.pencolor()：这里可以有参数也可以没有，如果没有参数传
 功能说明：设置海龟的朝向为 angle。
 
 参数说明：angle: 一个角度数值
-(整型或浮点型)，具体是顺时针或者逆时针取决于turtle.mode()的值，默认turtle.mode()
-=
-standard表示逆时针方向，logo表示顺时针，以下是以角度表示的几个常用方向如表2-5所示。
+(整型或浮点型)，具体是顺时针或者逆时针取决于turtle.mode()的值，默认turtle.mode()=standard表示逆时针方向，logo表示顺时针，以下是以角度表示的几个常用方向如表2-5所示。
 
 表2-5 角度设置
 
@@ -241,9 +227,7 @@ standard表示逆时针方向，logo表示顺时针，以下是以角度表示�
 【案例2-5】 设置海龟当前的朝向。
 
 >>> turtle.setheading(90)
-
 >>> turtle.heading()
-
 90.0
 
 7. 函数原型：turtle.forward(distance)
@@ -266,28 +250,18 @@ standard表示逆时针方向，logo表示顺时针，以下是以角度表示�
 函数改变设置。角度的正负由海龟模式确定。
 
 【案例2-6】 设置海龟运动距离。
-
-turtle.penup()
-
-turtle.goto(x,y)
-
-turtle.pendown()
-
-turtle.pencolor(color)
-
-turtle.setheading(0)
-
-turtle.forward(height)
-
-turtle.right(90)
-
-turtle.forward(height)
-
-turtle.right(90)
-
-turtle.forward(width)
-
-turtle.right(90)
+::
+   turtle.penup()
+   turtle.goto(x,y)
+   turtle.pendown()
+   turtle.pencolor(color)
+   turtle.setheading(0)
+   turtle.forward(height)
+   turtle.right(90)
+   turtle.forward(height)
+   turtle.right(90)
+   turtle.forward(width)
+   turtle.right(90)
 
 2.2.2 画圆
 
@@ -299,33 +273,19 @@ turtle.right(90)
 (或 None)。【案例2-7】 设置海龟画圆。
 
 >>> turtle.home()
-
 >>> turtle.position()
-
 (0.00,0.00)
-
 >>> turtle.heading()
-
 0.0
-
 >>> turtle.circle(50)
-
 >>> turtle.position()
-
 (-0.00,0.00)
-
 >>> turtle.heading()
-
 0.0
-
 >>> turtle.circle(120, 180) # 画一个半圆
-
 >>> turtle.position()
-
 (0.00,240.00)
-
 >>> turtle.heading()
-
 180.0
 
 2.3 如何上颜色
@@ -350,18 +310,15 @@ turtle.right(90)
 
 函数原型：turtle.end_fill( )
 
-功能说明：填充上次调用 \ `begin_fill() <https://docs.python.org/zh-cn/3/library/turtle.html#turtle.begin_fill>`__ 之后绘制的形状。
+功能说明：填充上次调用之后绘制的形状。
 
 参数说明：无参数。
 
 【案例2-8】 设置颜色填充。
 
 >>> turtle.color("black", "red")
-
 >>> turtle.begin_fill()
-
 >>> turtle.circle(80)
-
 >>> turtle.end_fill()
 
 2.4 在开发板上画德国国旗
@@ -369,7 +326,7 @@ turtle.right(90)
 
 2.4.1 预备知识
 
-德国国旗长方形。旗面自上而下由黑、红、金三个平行相等的横长方形组成。黑红金为\ `德意志 <https://baike.baidu.com/item/%E5%BE%B7%E6%84%8F%E5%BF%97>`__\ 民族所喜爱的颜色，在德国历史上都有着重要的意义，也常常获得不同的解释。最新的解释是：黑、红、金代表二战后的\ `共和 <https://baike.baidu.com/item/%E5%85%B1%E5%92%8C/11011835>`__\ 民主政体体制，也代表德国联邦和自由的联合体，这种自由不仅仅是德国的自由，还包含了德国人民的民主自由。
+德国国旗长方形。旗面自上而下由黑、红、金三个平行相等的横长方形组成。黑红金为 民族所喜爱的颜色，在德国历史上都有着重要的意义，也常常获得不同的解释。最新的解释是：黑、红、金代表二战后的共和民主政体体制，也代表德国联邦和自由的联合体，这种自由不仅仅是德国的自由，还包含了德国人民的民主自由。
 
 2.4.2 任务要求
 
@@ -408,26 +365,18 @@ F: (75,-50)
 2. 填充三个矩形
 
 首先，画矩形实际上是画四条直线，形成矩形。首先需要根据坐标知道第一个黑色矩形的长与宽，这里面利用一个abs()绝对值函数来进行计算，已经两个点A,B分别为左上角和右下角的坐标，那么矩形的宽度为abs(75-(-75))，这里面定义了一个变量width变量用于存储宽度。abs(75-(-75))。同理，黑色矩形的高度为abs(15-44)。并赋值给一个变量height=abs(15-44)。之后，依次进行画笔颜色设置，抬笔，移动海龟到起点处，设置默认海龟方向，设置填充颜色，画矩形，填充。代码如下：
+::
 
    turtle.fillcolor(color)
-
    turtle.begin_fill()
-
    turtle.fd(width)
-
    turtle.right(90)
-
    turtle.forward(height)
-
-turtle.right(90)
-
-turtle.forward(width)
-
-turtle.right(90)
-
-turtle.forward(height)
-
-turtle.end_fill()
+   turtle.right(90)
+   turtle.forward(width)
+   turtle.right(90)
+   turtle.forward(height)
+   turtle.end_fill()
 
 程序运行效果如图2-4所示。
 
@@ -439,41 +388,25 @@ turtle.end_fill()
 3. 改进
 
 在上面的程序中，需要重复画三个矩形，代码显得过于笨拙。可以定义一个画矩形的函数，然后三次调用这个函数，传入相应的参数，就可以实现画国旗了。关于函数的详细介绍，会在后面章节中体现。函数定义如下：
+::
 
    def rect(x, y, color, x2, y2):
-
    width = abs(x2 - x)
-
    height = abs(y2 - y)
-
    turtle.pencolor(color)
-
    turtle.penup()
-
    turtle.goto(x,y)
-
    turtle.pendown()
-
    turtle.setheading(0)
-
    turtle.fillcolor(color)
-
    turtle.begin_fill()
-
    turtle.fd(width)
-
    turtle.right(90)
-
    turtle.forward(height)
-
    turtle.right(90)
-
    turtle.forward(width)
-
    turtle.right(90)
-
    turtle.forward(height)
-
    turtle.end_fill()
 
 定义好函数，只需要三次调用该函数，传入相应的坐标参数即可。
@@ -485,9 +418,9 @@ turtle.end_fill()
    rect(-75,-17,'gold',75,-50)
 
 4. 源程序设计
+::
 
    import uturtle
-
    turtle = uturtle.Turtle() def rect(x, y, color, x2, y2): width =
    abs(x2 - x) height = abs(y2 - y) turtle.pencolor(color)
    turtle.penup() turtle.goto(x,y) turtle.pendown() turtle.setheading(0)
@@ -503,9 +436,9 @@ turtle.end_fill()
 
 2.5.1 预备知识
 
-中华人民共和国国旗的设计者是\ `曾联松 <https://baike.baidu.com/item/%E6%9B%BE%E8%81%94%E6%9D%BE/3550900>`__\ ，来自浙江\ `瑞安 <https://baike.baidu.com/item/%E7%91%9E%E5%AE%89>`__\ 。随着\ `中国共产党 <https://baike.baidu.com/item/%E4%B8%AD%E5%9B%BD%E5%85%B1%E4%BA%A7%E5%85%9A/117227>`__\ 在解放战争中取得胜利，新政治协商会议筹备会在1949年7月发出了征集国旗图案的通告，曾联松设计并提交了他的国旗样稿。在2992幅 应征国旗图案中，曾联松的设计被选入38幅候选草图。经过多次讨论和少量修改，他的设计被选为了新政权的国旗。
+中华人民共和国国旗的设计者是曾联松来自浙江随着中国共产党 在解放战争中取得胜利，新政治协商会议筹备会在1949年7月发出了征集国旗图案的通告，曾联松设计并提交了他的国旗样稿。在2992幅应征国旗图案中，曾联松的设计被选入38幅候选草图。经过多次讨论和少量修改，他的设计被选为了新政权的国旗。
 
-五星红旗旗面为红色，长宽比例为3:2。左上方缀黄色\ `五角星 <https://baike.baidu.com/item/%E4%BA%94%E8%A7%92%E6%98%9F/7724631>`__\ 五颗，四颗小星环拱在一颗大星的右面，并各有一个角尖正对大星的中心点，如图2-5所示。红色代表革命，及烈士的鲜血。黄色是为了在红地上显出光明。大五角黄星代表中国共产党，四颗小五角黄星代表中国人民的四个阶级：工人阶级、农民阶级、小资产阶级和民族资产阶级。四星环绕大星象征中国共产党领导下的革命人民大团结。
+五星红旗旗面为红色，长宽比例为3:2。左上方缀黄色五角星五颗，四颗小星环拱在一颗大星的右面，并各有一个角尖正对大星的中心点，如图2-5所示。红色代表革命，及烈士的鲜血。黄色是为了在红地上显出光明。大五角黄星代表中国共产党，四颗小五角黄星代表中国人民的四个阶级：工人阶级、农民阶级、小资产阶级和民族资产阶级。四星环绕大星象征中国共产党领导下的革命人民大团结。
 
 .. image:: /Chapter/picture/image055.jpg
 
@@ -567,10 +500,12 @@ y2: 右下角纵坐标。
 在该函数中，通过调用海龟绘图中的内置函数实现图形的绘制的。步骤如下：
 
 1）计算国旗的宽度和高度的绝对值。
+::
 
-width = abs(x2 - x1) height = abs(y2 - y1)
+   width = abs(x2 - x1) height = abs(y2 - y1)
 
 2）抬笔，并移动到左上角位置，落笔。
+::
 
    turtle.penup() turtle.goto(x1,y1) turtle.pendown()
 
@@ -587,6 +522,7 @@ turtle.setheading(0)是海龟绘图中的内置函数，前面章节有详细介
 利用turtle.color(color1,color2)内置函数实现颜色的设置，两个参数分别代表画线颜色和填充颜色。
 
 5. 画图并进行填充
+::
 
    turtle.begin_fill() for i in range(2): turtle.forward(width)
    turtle.right(90) turtle.forward(height) turtle.right(90)
@@ -595,6 +531,7 @@ turtle.setheading(0)是海龟绘图中的内置函数，前面章节有详细介
 6. 画五角星
 
 画五角星通过调用以下函数来实现。
+::
 
    def star(center_x, center_y, radius, big_center_x, big_center_y):
    turtle.penup() turtle.goto(center_x, center_y) turtle.pendown()
@@ -606,6 +543,7 @@ turtle.setheading(0)是海龟绘图中的内置函数，前面章节有详细介
 big_center_y-1)和(big_center_x,
 big_center_y)，然后再利用turtle.circle(-radius,
 72)内置函数，实现五个顶点坐标的确定。
+::
 
    turtle.penup() pt1=turtle.pos() turtle.circle(-radius, 72)
    pt2=turtle.pos() turtle.circle(-radius, 72) pt3=turtle.pos()
@@ -616,13 +554,11 @@ big_center_y)，然后再利用turtle.circle(-radius,
 72)函数确定五个顶点坐标，与大五角星同理。
 
 7. 源程序设计
+::
 
    import uturtle
-
    turtle = uturtle.Turtle()
-
    def draw_rect(x1, y1, color, x2, y2):
-
    width = abs(x2 - x1) height = abs(y2 - y1) turtle.penup()
    turtle.goto(x1,y1) turtle.pendown() turtle.setheading(0)
    turtle.color(color, color) turtle.begin_fill() for i in range(2):
@@ -672,29 +608,17 @@ big_center_y)，然后再利用turtle.circle(-radius,
 通过id函数可以具体查看创建变量和变量重新赋值时内存空间的变化过程，如下所示：
 
 >>> x=19
-
 >>> id(x)
-
 504538784
-
 >>> y=x
-
 >>> id(y)
-
 504538784
-
 >>> y
-
 19
-
 >>> x=30
-
 >>> id(x)
-
 504539136
-
 >>> y
-
 19
 
 从上面代码可以直观的看出，一个变量在初次赋值时就会获得一块内存空间来存放变量值。当令变量y等于变量x时，其实是一种内存地址的传递，变量y获得的是存储变量x值的内存地址，所以当变量x改变时，变量y并不会发生改变。此外还可以看出，变量x的值改变时，系统会重新分配另一块内存空间存放新的变量值。
@@ -706,9 +630,7 @@ big_center_y)，然后再利用turtle.circle(-radius,
 变量的命名必须严格遵守标识符的规则，python中还有一类非保留字的特殊字符串（如内置函数名），这些字符串具有某种特殊功能，虽然用于变量名时不会出错，但会造成相应的功能丢失。如len函数可以用来返回字符串长度，但是一旦用来作为变量名，其就失去了返回字符串长度的功能。因此，在取变量名时，不仅要避免phthon中的保留字，还要避开具有特殊作用的保留字，以避免发生一些不必要的错误，如下所示：
 
 >>> import keyword
-
 >>> keyword.iskeyword("and")
-
 True
 
 如果一段代码中有大量变量名，而且这些变量没有错，只是取名都很随意，风格不一，这样的解读代码时就会出现一些混淆，接下来几种命名法：
@@ -732,33 +654,19 @@ True
 最简单的变量赋值就是把一个变量值赋给一个变量名，只需要用（=）就可以实现。同时，Python还可以将一个值同时赋给多个变量，如下所示：
 
 >>> a=b=c=10
-
 >>> a
-
 10
-
 >>> b
-
 10
-
 >>> c
-
 10
-
 >>> e,f,g=11,12,"hello"
-
 >>> e
-
 11
-
 >>> f
-
 12
-
 >>> g
-
 'hello'
-
 2.7 数字与数据类型
 ------------------
 
@@ -786,27 +694,16 @@ Python的数据类型主要包括数值类型、布尔类型、字符串类型�
 接下来，看一些整形的示例代码，具体如下：
 
 >>> a=30
-
 >>> type(a)
-
 <class 'int'>
-
 >>> bin(a)
-
 '0b11110'
-
 >>> oct(a)
-
 '0o36'
-
 >>> hex(a)
-
 '0x1e'
 
-上述代码中，第1行代码的变量a的值是一个十进制整数，它属于int型，它点在第2~3行中的代码中得到了验证。第4~5行代码输出a的值，结果是二进制的30，通过二进制转换函数bin(
-)来完成。第6~7行代码输出a的值，结果是八进制的30，通过八进制转换函数oct(
-)来完成。第8~9行代码输出a的值，结果是十六进制的30，通过十六进制转换函数hex(
-)来完成。
+上述代码中，第1行代码的变量a的值是一个十进制整数，它属于int型，它点在第2~3行中的代码中得到了验证。第4~5行代码输出a的值，结果是二进制的30，通过二进制转换函数bin()来完成。第6~7行代码输出a的值，结果是八进制的30，通过八进制转换函数oct()来完成。第8~9行代码输出a的值，结果是十六进制的30，通过十六进制转换函数hex()来完成。
 
 Python的整数可以表示的范围是有限的，它和系统的最大位数相关，例如，32位机上的整型是32位，可以表示的范围是-2\ :sup:`31`\ ~2\ :sup:`31`-1。在64位机上的整数是64位的，可以表示的数的范围是-2:sup:`64`\ ~2\ :sup:`64`-1。
 
