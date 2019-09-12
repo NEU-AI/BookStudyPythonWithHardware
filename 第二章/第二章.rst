@@ -555,10 +555,14 @@ big_center_y)，然后再利用turtle.circle(-radius,
 72)内置函数，实现五个顶点坐标的确定。
 ::
 
-   turtle.penup() pt1=turtle.pos() turtle.circle(-radius, 72)
-   pt2=turtle.pos() turtle.circle(-radius, 72) pt3=turtle.pos()
-   turtle.circle(-radius, 72) pt4=turtle.pos() turtle.circle(-radius,
-   72) pt5=turtle.pos()
+   turtle.penup() pt1=turtle.pos() 
+   turtle.circle(-radius, 72)
+   pt2=turtle.pos() 
+   turtle.circle(-radius, 72) 
+   pt3=turtle.pos()
+   turtle.circle(-radius, 72) 
+   pt4=turtle.pos() turtle.circle(-radius,72) 
+   pt5=turtle.pos()
 
 然后，再绘制4个小五角星，在本项目中，要求每个小五角星有一个角指向大五角星中心，所以，同样需要利用两点连线坐标确认起始角度，然后利用turtle.circle(-radius,
 72)函数确定五个顶点坐标，与大五角星同理。
