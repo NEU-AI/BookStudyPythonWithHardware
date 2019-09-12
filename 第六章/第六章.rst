@@ -567,49 +567,49 @@ height)，这两个坐标分别是矩形区域的左上角坐标和宽度高度�
 ::
 
    def move(self, new):
-   self.body.insert(0, new)
-   pop = self.body.pop()
-   self.grid.draw(pop, self.grid.bg)
-   self.grid.draw(new, self.color)
+      self.body.insert(0, new)
+      pop = self.body.pop()
+      self.grid.draw(pop, self.grid.bg)
+      self.grid.draw(new, self.color)
 
 蛇类的成员方法中，add()方法的功能是在蛇吃到正常的食物时，将自身的长度加1，并将body列表进行插入更新，最后通过draw方法渲染所在的单元格。
 ::
 
    def add(self ,new):
-   self.body.insert(0, new)
-   self.grid.draw(new, self.color)
+      self.body.insert(0, new)
+      self.grid.draw(new, self.color)
 
 cut_down()方法的功能是在蛇吃到特殊食物1时，将自身的长度加1，并将body列表进行插入更新，最后通过draw方法渲染所在的单元格。然后，利用一个循环操作，将body列表弹出指定个数的元素，从而实现蛇身体减1.最后利用grid.draw(pop,
 self.grid.bg)将弹出的元素渲染成背景色。
 ::
 
    def cut_down(self,new):
-   self.body.insert(0, new)
-   self.grid.draw(new, self.color)
-   for i in range(0,3):
-   pop = self.body.pop()
-   self.grid.draw(pop, self.grid.bg)
+      self.body.insert(0, new)
+      self.grid.draw(new, self.color)
+      for i in range(0,3):
+         pop = self.body.pop()
+         self.grid.draw(pop, self.grid.bg)
 
 init()方法的功能是在蛇吃到特殊食物2时，将自身的长度恢复成最初的样子，首先将body列表进行插入更新，最后通过draw方法渲染所在的单元格。然后，利用一个循环操作，将body列表弹出指定个数的元素，从而实现蛇身体长度为3.最后利用grid.draw(pop,
 self.grid.bg)将弹出的元素渲染成背景色。
 ::
 
    def init(self, new):
-   self.body.insert(0, new)
-   self.grid.draw(new, self.color)
-   while len(self.body) > 3:
-   pop = self.body.pop()
-   self.grid.draw(pop, self.grid.bg)
+      self.body.insert(0, new)
+      self.grid.draw(new, self.color)
+      while len(self.body) > 3:
+         pop = self.body.pop()
+         self.grid.draw(pop, self.grid.bg)
 
 change()方法的功能是在蛇吃到特殊食物3时，改变自身颜色。首先将body列表进行插入更新，最后通过draw方法渲染所在的单元格。然后利用grid.draw(item,
 self.color)将蛇身渲染成其他颜色。
 ::
 
    def change(self, new, color):
-   self.color = color
-   self.body.insert(0, new)
-   for item in self.body:
-   self.grid.draw(item, self.color)
+      self.color = color
+      self.body.insert(0, new)
+      for item in self.body:
+         self.grid.draw(item, self.color)
 
 4）定义游戏类
 
@@ -617,50 +617,52 @@ self.color)将蛇身渲染成其他颜色。
 ::
 
    class SnakeGame():
-   def \__init__(self):
-   self.grid = Grid()
-   self.snake = Snake(self.grid)
-   self.food = Food(self.grid)
-   self.gameover = False
-   self.score = 0
-   self.status = ['run', 'stop']
-   self.speed = 300
-   self.display_food()
+      def \__init__(self):
+         self.grid = Grid()
+         self.snake = Snake(self.grid)
+         self.food = Food(self.grid)
+         self.gameover = False
+         self.score = 0
+         self.status = ['run', 'stop']
+         self.speed = 300
+         self.display_food()
 
 display_food（）方法用于在网格中显示随机生成的食物。为了增加游戏的趣味性，食物分为四个类型，分别是type1:普通食物，颜色用self.food.color= color565(0x00, 0xff, 0x00)表示；type2:减少长度，颜色用self.food.color= color565(0xff, 0xff,0xff)表示；type3:大乐透，回到最初状态，颜色用self.food.color =color565(0x00, 0xff, 0x00)表示；type4:吃了会变色，颜色用self.food.color= color565(0x00, 0x00,0xff)表示。需要注意的是，随机在网格中生成食物以后，每次都要检查，该食物是否有蛇身体的列表重复。如果重复，则重新生成。如下示例代码：
 ::
 
    def display_food(self):
-   self.food.color = color565(0xff, 0x00, 0x00)
-   self.food.type = 1
-   if randint(0, 40) == 5:
-   self.food.color = color565(0x00, 0xff, 0x00)
-   self.food.type = 3
-   while (self.food.pos in self.snake.body):
-   self.food.set_pos()
-   self.food.display()
-   elif randint(0, 4) == 2:
-   self.food.color = color565(0x00, 0x00, 0xff)
-   self.food.type = 4
-   while (self.food.pos in self.snake.body):
-   self.food.set_pos()
-   self.food.display()
-   elif len(self.snake.body) > 10 and randint(0, 16) == 5:
-   self.food.color = color565(0xff, 0xff, 0xff)
-   self.food.type = 2
-   while (self.food.pos in self.snake.body):
-   self.food.set_pos()
-   self.food.display()
-   else:
-   while (self.food.pos in self.snake.body):
-   self.food.set_pos()
-   self.food.display()
-   print(self.food.type)
+      self.food.color = color565(0xff, 0x00, 0x00)
+      self.food.type = 1
+      if randint(0, 40) == 5:
+         self.food.color = color565(0x00, 0xff, 0x00)
+         self.food.type = 3
+         while (self.food.pos in self.snake.body):
+            self.food.set_pos()
+            self.food.display()
+      elif randint(0, 4) == 2:
+         self.food.color = color565(0x00, 0x00, 0xff)
+         self.food.type = 4
+         while (self.food.pos in self.snake.body):
+            self.food.set_pos()
+            self.food.display()
+      elif len(self.snake.body) > 10 and randint(0, 16) == 5:
+         self.food.color = color565(0xff, 0xff, 0xff)
+         self.food.type = 2
+         while (self.food.pos in self.snake.body):
+            self.food.set_pos()
+            self.food.display()
+      else:
+         while (self.food.pos in self.snake.body):
+            self.food.set_pos()
+            self.food.display()
+            print(self.food.type)
    initial(self)方法用于游戏重新开始时初始化游戏，包括游戏标志位设置、成绩初始为0以及蛇类重新初始化：
+   ::
+   
    def initial(self):
-   self.gameover = False
-   self.score = 0
-   self.snake.initial()
+      self.gameover = False
+      self.score = 0
+      self.snake.initial()
 
 run(self)方法是游戏类的运行代码，在游戏开始时循环运行。首先循环判断是否有按键按下，并记录哪个按键按下，以决定蛇身体向哪个方向移动；然后判断游戏是否暂停或者结束，如果暂停则游戏类调用initial(self)函数。最后，根据按键按下的情况，处理蛇身体列表数据；并实时检查吃到的食物类型，进行相应的处理。当吃到的食物坐标属于自己本身体列表中的数据后，游戏结束。如下示例代码：
 ::
