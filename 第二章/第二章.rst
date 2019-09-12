@@ -517,7 +517,9 @@ y2: 右下角纵坐标。
 2）抬笔，并移动到左上角位置，落笔。
 ::
 
-   turtle.penup() turtle.goto(x1,y1) turtle.pendown()
+   turtle.penup() 
+   turtle.goto(x1,y1) 
+   turtle.pendown()
 
 3. 设置海龟初始方向
 
@@ -534,9 +536,13 @@ turtle.setheading(0)是海龟绘图中的内置函数，前面章节有详细介
 5. 画图并进行填充
 ::
 
-   turtle.begin_fill() for i in range(2): turtle.forward(width)
-   turtle.right(90) turtle.forward(height) turtle.right(90)
-   turtle.end_fill()
+   turtle.begin_fill() 
+   for i in range(2): 
+      turtle.forward(width)
+      turtle.right(90) 
+      turtle.forward(height) 
+      turtle.right(90)
+      turtle.end_fill()
 
 6. 画五角星
 
@@ -544,10 +550,14 @@ turtle.setheading(0)是海龟绘图中的内置函数，前面章节有详细介
 ::
 
    def star(center_x, center_y, radius, big_center_x, big_center_y):
-   turtle.penup() turtle.goto(center_x, center_y) turtle.pendown()
-   turtle.left(turtle.towards(big_center_x,big_center_y)-turtle.heading())
-   turtle.forward(radius) turtle.right(90) draw_star(turtle.pos().x,
-   turtle.pos().y, radius, 'yellow')
+      turtle.penup() 
+      turtle.goto(center_x, center_y) 
+      turtle.pendown()
+      turtle.left(turtle.towards(big_center_x,big_center_y)-turtle.heading())
+      turtle.forward(radius) 
+      turtle.right(90) 
+      draw_star(turtle.pos().x,
+      turtle.pos().y, radius, 'yellow')
 
 首先，画大五角星需要确定五个顶点的坐标。计算坐标的方法是首先确定五角星中心，然后利用五角星中心和半径，每次画72度的圆弧，以此来确定各个顶点的坐标。由于大五角星有一个角是垂直向上的，因此，采用两个坐标的连线来确认起始画圆弧的角度。这两个坐标是：(big_center_x,
 big_center_y-1)和(big_center_x,
@@ -555,13 +565,15 @@ big_center_y)，然后再利用turtle.circle(-radius,
 72)内置函数，实现五个顶点坐标的确定。
 ::
 
-   turtle.penup() pt1=turtle.pos() 
+   turtle.penup() 
+   pt1=turtle.pos() 
    turtle.circle(-radius, 72)
    pt2=turtle.pos() 
    turtle.circle(-radius, 72) 
    pt3=turtle.pos()
    turtle.circle(-radius, 72) 
-   pt4=turtle.pos() turtle.circle(-radius,72) 
+   pt4=turtle.pos() 
+   turtle.circle(-radius,72) 
    pt5=turtle.pos()
 
 然后，再绘制4个小五角星，在本项目中，要求每个小五角星有一个角指向大五角星中心，所以，同样需要利用两点连线坐标确认起始角度，然后利用turtle.circle(-radius,
