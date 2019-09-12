@@ -114,15 +114,15 @@ ESP32芯片集成了丰富的硬件外设，如图9-5所示，包括电容式触
    sta_if = network.WLAN(network.STA_IF) #STA模式
    ap_if = network.WLAN(network.AP_IF) #AP模式
    if ap_if.active(): #如果AP模式开启了，则先关闭
-   ap_if.active(False)
-   if not sta_if.isconnected():
-   print('Connecting to network...')
-   sta_if.active(True) #激活STA
-   sta_if.connect(wifi_name, wifi_SSID)
-   #连接WiFi热点，参数为WiFi的SSID和密码
-   while not sta_if.isconnected():
-   pass
-
+      ap_if.active(False)
+      if not sta_if.isconnected():
+         print('Connecting to network...')
+         sta_if.active(True) #激活STA
+         sta_if.connect(wifi_name, wifi_SSID)
+         #连接WiFi热点，参数为WiFi的SSID和密码
+         while not sta_if.isconnected():
+            pass
+   
 9.3 认识MQTT协议
 ----------------
 
@@ -318,26 +318,26 @@ install paho-mqtt，并且自己搭建好服务端程序。客户端代码如下
    mqttClient = mqtt.Client()
    # 连接MQTT服务器
    def on_mqtt_connect():
-   mqttClient.connect(MQTTHOST, MQTTPORT, 60)
-   mqttClient.loop_start()
-   # publish 消息
+      mqttClient.connect(MQTTHOST, MQTTPORT, 60)
+      mqttClient.loop_start()
+      # publish 消息
    def on_publish(topic, payload, qos):
-   mqttClient.publish(topic, payload, qos)
+      mqttClient.publish(topic, payload, qos)
    # 消息处理函数
    def on_message_come(lient, userdata, msg):
-   print(msg.topic + "" + ":" + str(msg.payload))
-   # subscribe 消息
+      print(msg.topic + "" + ":" + str(msg.payload))
+      # subscribe 消息
    def on_subscribe():
-   mqttClient.subscribe("/server", 1)
-   mqttClient.on_message = on_message_come # 消息到来处理函数
+      mqttClient.subscribe("/server", 1)
+      mqttClient.on_message = on_message_come # 消息到来处理函数
    def main():
-   on_mqtt_connect()
-   on_publish("/test/server", "Hello Python!", 1)
-   on_subscribe()
-   while True:
-   pass
+      on_mqtt_connect()
+      on_publish("/test/server", "Hello Python!", 1)
+      on_subscribe()
+      while True:
+         pass
    if \__name_\_ == '__main__':
-   main()
+      main()
 
 程序启动后会调用on_mqtt_connect()方法连接服务端，然后在主题"/test/server"发布消息，订阅"/server"主题并设置回调函数on_message_come处理收到的消息。
 
@@ -396,62 +396,59 @@ install paho-mqtt，并且自己搭建好服务端程序。客户端代码如下
 ::
 
    def \__init__(self):
-   self.keys = [Pin(p, Pin.IN) for p in [35, 36, 39, 34]]
-   self.keymatch = ["Key1", "Key2", "Key3", "Key4"]
-   self.select=1
-   self.displayInit()
-   self.wifi_name = "wifi名称"
-   self.wifi_SSID = "wifi密码"
-   #MQTT服务端信息
-   self.SERVER = "服务器地址"
-   self.SERVER_PORT = MQTT服务器端口
-   self.DEVICE_ID = "设备ID"
-   self.TOPIC1 = b"/cloud-skids/online/dev/" + self.DEVICE_ID
-   self.TOPIC2 = b"/cloud-skids/message/server/" + self.DEVICE_ID
-   self.CLIENT_ID = "7e035cd4-15b4-4d4b-a706-abdb8151c57d"
-
-#设备状态
-::
-
-   self.ON = "1"
-   self.OFF = "0"
-   self.content=""#初始化要发送的信息
-   self.client = MQTTClient(self.CLIENT_ID, self.SERVER, self.SERVER_PORT)
+      self.keys = [Pin(p, Pin.IN) for p in [35, 36, 39, 34]]
+      self.keymatch = ["Key1", "Key2", "Key3", "Key4"]
+      self.select=1
+      self.displayInit()
+      self.wifi_name = "wifi名称"
+      self.wifi_SSID = "wifi密码"
+      #MQTT服务端信息
+      self.SERVER = "服务器地址"
+      self.SERVER_PORT = MQTT服务器端口
+      self.DEVICE_ID = "设备ID"
+      self.TOPIC1 = b"/cloud-skids/online/dev/" + self.DEVICE_ID
+      self.TOPIC2 = b"/cloud-skids/message/server/" + self.DEVICE_ID
+      self.CLIENT_ID = "7e035cd4-15b4-4d4b-a706-abdb8151c57d"
+      #设备状态
+      self.ON = "1"
+      self.OFF = "0"
+      self.content=""#初始化要发送的信息
+      self.client = MQTTClient(self.CLIENT_ID, self.SERVER, self.SERVER_PORT)
 
 在构造函数__init__()中，和mqttbox一样我们需要设置服务器地址，端口号，客户端名称，发布的主题，订阅的主题，客户端id，以及需要连接的wifi名称和密码，调用了displayInit()函数来进行屏幕初始化工作。
 ::
    def displayInit(self):#初始化
-   screen.clear()
-   self.drawInterface()
-   self.selectInit()
+      screen.clear()
+      self.drawInterface()
+      self.selectInit()
    def selectInit(self):#选择表情初始化
-   screen.drawline(20, 200, 92, 200, 2, 0xff0000)
-   screen.drawline(92, 200, 92, 272, 2, 0xff0000)
-   screen.drawline(92, 272, 20, 272, 2, 0xff0000)
-   screen.drawline(20, 272, 20, 200, 2, 0xff0000)
+      screen.drawline(20, 200, 92, 200, 2, 0xff0000)
+      screen.drawline(92, 200, 92, 272, 2, 0xff0000)
+      screen.drawline(92, 272, 20, 272, 2, 0xff0000)
+      screen.drawline(20, 272, 20, 200, 2, 0xff0000)
    def drawInterface(self):#界面初始化
-   bmp1=ubitmap.BitmapFromFile("pic/boy")
-   bmp2=ubitmap.BitmapFromFile("pic/girl")
-   bmp1.draw(20,200)#显示boy图片
-   bmp2.draw(140,200)#显示girl图片
-   screen.drawline(0, 160, 240, 160, 2, 0xff0000)
+      bmp1=ubitmap.BitmapFromFile("pic/boy")
+      bmp2=ubitmap.BitmapFromFile("pic/girl")
+      bmp1.draw(20,200)#显示boy图片
+      bmp2.draw(140,200)#显示girl图片
+      screen.drawline(0, 160, 240, 160, 2, 0xff0000)
 
 2. 开始游戏
 
 通过类的成员函数do_connect()负责连接wifi网络。
 ::
    def do_connect(self):
-   sta_if = network.WLAN(network.STA_IF) #STA模式
-   ap_if = network.WLAN(network.AP_IF) #AP模式
-   if ap_if.active():
-   ap_if.active(False) #关闭AP
-   if not sta_if.isconnected():
-   print('Connecting to network...')
-   sta_if.active(True) #激活STA
-   sta_if.connect(self.wifi_name, self.wifi_SSID) #WiFi的SSID和密码
-   while not sta_if.isconnected():
-   pass
-   gc.collect()
+      sta_if = network.WLAN(network.STA_IF) #STA模式
+      ap_if = network.WLAN(network.AP_IF) #AP模式
+      if ap_if.active():
+         ap_if.active(False) #关闭AP
+         if not sta_if.isconnected():
+            print('Connecting to network...')
+            sta_if.active(True) #激活STA
+            sta_if.connect(self.wifi_name, self.wifi_SSID) #WiFi的SSID和密码
+            while not sta_if.isconnected():
+            pass
+            gc.collect()
 
 通过类的成员函数esp()负责连接mqtt服务。
 ::
