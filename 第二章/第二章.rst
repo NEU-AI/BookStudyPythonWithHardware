@@ -557,8 +557,7 @@ turtle.setheading(0)是海龟绘图中的内置函数，前面章节有详细介
       turtle.left(turtle.towards(big_center_x,big_center_y)-turtle.heading())
       turtle.forward(radius) 
       turtle.right(90) 
-      draw_star(turtle.pos().x,
-      turtle.pos().y, radius, 'yellow')
+      draw_star(turtle.pos().x,turtle.pos().y, radius, 'yellow')
 
 首先，画大五角星需要确定五个顶点的坐标。计算坐标的方法是首先确定五角星中心，然后利用五角星中心和半径，每次画72度的圆弧，以此来确定各个顶点的坐标。由于大五角星有一个角是垂直向上的，因此，采用两个坐标的连线来确认起始画圆弧的角度。这两个坐标是：(big_center_x,
 big_center_y-1)和(big_center_x,
