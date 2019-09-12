@@ -208,8 +208,11 @@ for 变量 in 序列：
 ::
 
    for i in [0,1,2]：
-   print(i)
-   输出结果：
+      print(i)
+   
+输出结果：
+::
+
    0
    1
    2
@@ -224,7 +227,7 @@ for 变量 in 序列：
 ::
 
    for 循环变量 in range(start , end, step)：
-   循环体
+      循环体
 
 1)
 如果step>0，那么循环变量会从start开始增加，沿正方向变化，一直等于或者超过end后循环停止；如果一开始就start>=end，则已经到停止条件，循环一次也不执行。
@@ -236,7 +239,7 @@ for 变量 in 序列：
 ::
 
    for 循环变量 in range(end)：
-   循环体
+      循环体
 
 循环变量的值从0开始，按step=1的步长增加，一直逼近end，但不等于end，直到end的前一个值，即end-1。
 
@@ -244,7 +247,7 @@ for 变量 in 序列：
 ::
 
    for 循环变量 in range(start , end)：
-   循环体
+      循环体
    
 1) 如果start>end，则循环一次也不执行。
 2)
@@ -256,8 +259,7 @@ for 变量 in 序列：
 
 2. 不写start时,start = 0；不写step时,step = 1。
 
-3.
-在使用range(start,end)函数时，循环正常退出时循环变量的值等于end-1，而并非end。
+3. 在使用range(start,end)函数时，循环正常退出时循环变量的值等于end-1，而并非end。
 
 【案例5-4】计算1到100的总和。
 ::
