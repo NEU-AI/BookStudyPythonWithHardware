@@ -638,30 +638,30 @@ LCD显示屏幕是由许多像素点组成的，每个像素点都有对应的�
 
    def drawInterface(self):
    # 显示框
-   x1 = self.margin \* 2
-   y1 = self.margin \* 2
-   x2 = self.screen_width - self.margin \* 2
-   y2 = self.margin \* 2 + self.button_height
-   self.drawRect(x1, y1, x2, y2, 2, 0x00ffff)
-   # 16个按键
-   for i in range(4):
-   y = self.startY + i \* (self.button_height + self.margin)
-   for j in range(4):
-   x = self.startX + j \* (self.button_width + self.margin)
-   self.drawRect(x, y, x + self.button_width, y + self.button_height, 2,0x00ff00)
+      x1 = self.margin \* 2
+      y1 = self.margin \* 2
+      x2 = self.screen_width - self.margin \* 2
+      y2 = self.margin \* 2 + self.button_height
+      self.drawRect(x1, y1, x2, y2, 2, 0x00ffff)
+      # 16个按键
+      for i in range(4):
+         y = self.startY + i \* (self.button_height + self.margin)
+      for j in range(4):
+         x = self.startX + j \* (self.button_width + self.margin)
+         self.drawRect(x, y, x + self.button_width, y + self.button_height, 2,0x00ff00)
 
 画矩形函数drawRect( )利用直线画出矩形，是为画界面函数服务的。drawRect()通过调用drawline()函数实现矩形的绘制，绘制前要确定直线起点和终点的坐标。画矩形的函数示例代码如下：
 ::
 
    def drawRect(self, x1, y1, x2, y2, lineWidth, lineColor):
-   x = int(x1)
-   y = int(y1)
-   w = int(x2 - x1)
-   h = int(y2 - y1)
-   screen.drawline(x, y, x + w, y, lineWidth, lineColor)
-   screen.drawline(x + w, y, x + w, y + h, lineWidth, lineColor)
-   screen.drawline(x + w, y + h, x, y + h, lineWidth, lineColor)
-   screen.drawline(x, y + h, x, y, lineWidth, lineColor)
+      x = int(x1)
+      y = int(y1)
+      w = int(x2 - x1)
+      h = int(y2 - y1)
+      screen.drawline(x, y, x + w, y, lineWidth, lineColor)
+      screen.drawline(x + w, y, x + w, y + h, lineWidth, lineColor)
+      screen.drawline(x + w, y + h, x, y + h, lineWidth, lineColor)
+      screen.drawline(x, y + h, x, y, lineWidth, lineColor)
 
 5. 显示键盘字符
 
@@ -675,12 +675,12 @@ LCD显示屏幕是由许多像素点组成的，每个像素点都有对应的�
 ::
 
    def showKeyboard(self):
-   for i in range(4):
-   for j in range(4):
-   num = self.keyboard[j][i]
-   x = i \* (self.button_width + self.margin) + 28
-   y = (j + 1) \* (self.button_height + self.margin) + 30
-   text.draw(self.keydict[num], int(x), int(y), 0x000000, 0xffffff)
+      for i in range(4):
+         for j in range(4):
+            num = self.keyboard[j][i]
+            x = i \* (self.button_width + self.margin) + 28
+            y = (j + 1) \* (self.button_height + self.margin) + 30
+            text.draw(self.keydict[num], int(x), int(y), 0x000000, 0xffffff)
 
 6. 按键事件的处理
 
@@ -727,7 +727,7 @@ self.keys是计算器类中定义的一个列表，里面存放了四个按键�
 ::
 
    if self.keymatch[i] == "Key1": # 取消前一个选择 
-   num =self.keyboard[self.selectYi][self.selectXi] x = self.selectXi \*(self.button_width + self.margin) + self.startX y =      self.selectYi \*(self.button_height + self.margin) + self.startY self.drawRect(x, y,x + self.button_width, y + self.button_height, 2, 0x00ff00) #选择右边一个 
+      num =self.keyboard[self.selectYi][self.selectXi] x = self.selectXi \*(self.button_width + self.margin) + self.startX y =      self.selectYi \*(self.button_height + self.margin) + self.startY self.drawRect(x, y,x + self.button_width, y + self.button_height, 2, 0x00ff00) #选择右边一个 
    self.selectXi = (self.selectXi + 1) % 4 num =self.keyboard[self.selectYi][self.selectXi] x = self.selectXi \*(self.button_width + self.margin) + self.startX self.drawRect(x, y, x+ self.button_width, y + self.button_height, 2, 0xff0000)
 
 横向按键的处理主要分成两个步骤：首先应取消前一个选择键。因为前一个按键被选择时，会在屏幕上对应的计算器按键周围画一个红色方框，用来表示这个按键被选中，因此在按键横向移动后，要在屏幕上用绿色方框取代原来被选中的按键的红色方框，把原来的红色方框覆盖掉。self.keyboard是类中的一个列表，定义了计算器各个键的键名字，是一个二维的形式，self.selectYi和self.selectXi分别记录了要取消的键当前在二维列表中的脚标，并把当前所对应的键名存放到变量num中。在这里面，初始的脚标是0，所以对应到计算器键盘中的数字“1”。变量x，y会根据当前数字键所对应列表中的脚标，计算出当前方框的左上角和右下角的屏幕坐标，并重新在屏幕上画一个绿色方框，覆盖掉原来代表选中的红色方框，来实现“取消选中”的功能。
