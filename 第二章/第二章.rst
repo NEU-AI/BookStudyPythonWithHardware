@@ -485,12 +485,13 @@ F: (75,-50)
    pice = width/30
 
 在本项目中，屏幕中心点为坐标原点，而国旗处在屏幕的中心，所以国旗的中心点就是坐标原点，因此五颗星的坐标和半径分别为：
+::
 
-A: (-width/3，height/4)，半径为pice*3。
-B: (-width/6，height*2/5)，半径为pice。
-C: (-width/10，height*3/10)，半径为pice。
-D: (-width/10，height*3/20)，半径为pice。
-E: (-width/6，height/20)，半径为pice。
+   A: (-width/3，height/4)，半径为pice*3。
+   B: (-width/6，height*2/5)，半径为pice。
+   C: (-width/10，height*3/10)，半径为pice。
+   D: (-width/10，height*3/20)，半径为pice。
+   E: (-width/6，height/20)，半径为pice。
 
 2. 填充红色底色矩形框
 
