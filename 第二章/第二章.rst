@@ -406,26 +406,42 @@ F: (75,-50)
    turtle.end_fill()
 
 定义好函数，只需要三次调用该函数，传入相应的坐标参数即可。
+::
 
    rect(-75,50,'black',75,16)
-
    rect(-75,16,'red',75,-16)
-
    rect(-75,-17,'gold',75,-50)
 
 4. 源程序设计
 ::
 
    import uturtle
-   turtle = uturtle.Turtle() def rect(x, y, color, x2, y2): width =
-   abs(x2 - x) height = abs(y2 - y) turtle.pencolor(color)
-   turtle.penup() turtle.goto(x,y) turtle.pendown() turtle.setheading(0)
-   turtle.fillcolor(color) turtle.begin_fill() turtle.fd(width)
-   turtle.right(90) turtle.forward(height) turtle.right(90)
-   turtle.forward(width) turtle.right(90) turtle.forward(height)
-   turtle.end_fill() def germany(): rect(-75,50,'black',75,16)
-   rect(-75,16,'red',75,-16) rect(-75,-17,'gold',75,-50) turtle.reset()
-   turtle.speed(0) germany()
+   turtle = uturtle.Turtle() 
+   def rect(x, y, color, x2, y2): 
+   width =abs(x2 - x) 
+   height = abs(y2 - y) 
+   turtle.pencolor(color)
+   turtle.penup() 
+   turtle.goto(x,y) 
+   turtle.pendown() 
+   turtle.setheading(0)
+   turtle.fillcolor(color) 
+   turtle.begin_fill() 
+   turtle.fd(width)
+   turtle.right(90) 
+   turtle.forward(height) 
+   turtle.right(90)
+   turtle.forward(width) 
+   turtle.right(90) 
+   urtle.forward(height)
+   turtle.end_fill() 
+   def germany(): 
+   rect(-75,50,'black',75,16)
+   rect(-75,16,'red',75,-16) 
+   rect(-75,-17,'gold',75,-50) 
+   turtle.reset()
+   turtle.speed(0) 
+   germany()
 
 2.5 在开发板上画中国国旗
 ------------------------
