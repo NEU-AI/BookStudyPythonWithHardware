@@ -484,13 +484,13 @@ if 条件2:
         self.equalNum = 0
         self.playerStatus = 0
         self.playerMessage = ""
-         self.computerStatus = 0
-         self.computerMessage = ""
+        self.computerStatus = 0
+        self.computerMessage = ""
         #设置按键数组
         for p in pins:
-        keys.append(Pin(p,Pin.IN))
-        #初始化屏幕
-        self.displayInit()
+            keys.append(Pin(p,Pin.IN))
+            #初始化屏幕
+            self.displayInit()
    
 在构造函数__init__()中，调用了displayInit()函数来进行屏幕初始化工作，主要负责完成屏幕顶部的游戏规则和操作说明显示。
 ::
