@@ -602,11 +602,8 @@ False
 
    self.keys = [Pin(p, Pin.IN) for p in [35, 36, 39, 34]]
    self.keymatch = ["Key1", "Key2", "Key3", "Key4"]
-   self.keyboard = [[1, 2, 3, 123], [4, 5, 6, 456],[7, 8, 9, 789],[10,
-   0, 11, 12]]
-   self.keydict = {1: '1', 2: '2', 3: '3', 123: '+', 4: '4', 5: '5', 6:
-   '6', 456: '-', 7: '7', 8: '8', 9: '9', 789: '×', 10: '.', 0: '0', 11:
-   '=', 12: '÷'}
+   self.keyboard = [[1, 2, 3, 123], [4, 5, 6, 456],[7, 8, 9, 789],[10,0, 11, 12]]
+   self.keydict = {1: '1', 2: '2', 3: '3', 123: '+', 4: '4', 5: '5', 6:'6', 456: '-', 7: '7', 8: '8', 9: '9', 789: '×', 10: '.', 0: '0',11:'=', 12: '÷'}
    self.startX = self.margin \* 2
    self.startY = self.margin \* 2 + self.button_height + self.margin
    self.selectXi = 0
