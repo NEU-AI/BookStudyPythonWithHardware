@@ -171,11 +171,10 @@ Python不支持单字符类型，单字符在Python也是作为一个字符串�
 
 .. image:: /Chapter/picture/image142.jpg
 .. image:: /Chapter/picture/image143.jpg
-.. image:: /Chapter/picture/image144.jpg
 
 续表
 
-.. image:: /Chapter/picture/image145.jpg
+.. image:: /Chapter/picture/image144.jpg
 
 3.2 基本的数学运算
 ------------------
@@ -191,7 +190,7 @@ Python不支持单字符类型，单字符在Python也是作为一个字符串�
 
 表3-4 算术运算符
 
-.. image:: /Chapter/picture/image146.jpg
+.. image:: /Chapter/picture/image145.jpg
 
 为了让大家更好地理解算术运算符，通过实例演示Python运算符的操作，如下所示：
 
@@ -235,7 +234,7 @@ Python不支持单字符类型，单字符在Python也是作为一个字符串�
 
 表3-5 比较运算符
 
-.. image:: /Chapter/picture/image147.jpg
+.. image:: /Chapter/picture/image146.jpg
 
 为了让大家更好的理解比较运算符，通过举例如下：
 ::
@@ -284,7 +283,7 @@ Python不支持单字符类型，单字符在Python也是作为一个字符串�
 
 表3-6 赋值运算符
 
-.. image:: /Chapter/picture/image148.jpg
+.. image:: /Chapter/picture/image147.jpg
 
 以下实例演示了Python所有赋值运算符的操作：
 
@@ -324,7 +323,7 @@ Python不支持单字符类型，单字符在Python也是作为一个字符串�
 
 表3-7 位运算符
 
-.. image:: /Chapter/picture/image149.jpg
+.. image:: /Chapter/picture/image148.jpg
 
 以下实例演示了Python所有位运算符的操作：
 
@@ -360,7 +359,7 @@ Python不支持单字符类型，单字符在Python也是作为一个字符串�
 
 表3-8 成员运算符
 
-.. image:: /Chapter/picture/image150.jpg
+.. image:: /Chapter/picture/image149.jpg
 
 以下实例演示了Python所有成员运算符的操作：
 
@@ -398,7 +397,7 @@ Python不支持单字符类型，单字符在Python也是作为一个字符串�
 
 表3-9 运算符优先级
 
-.. image:: /Chapter/picture/image151.jpg
+.. image:: /Chapter/picture/image150.jpg
 
 以下实例演示了Python所有运算符优先级的操作：
 
