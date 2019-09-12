@@ -566,7 +566,7 @@ if 条件2:
    print(self.computerStatus)
    if(self.computerStatus == 1):
       self.computerMessage = "%s出拳为：剪刀"%self.computerName
-   bmp_jiandao.draw(150, 140)
+      bmp_jiandao.draw(150, 140)
    if(self.computerStatus == 2):
       self.computerMessage = "%s出拳为：石头"%self.computerName
       bmp_shitou.draw(150, 140)
@@ -612,15 +612,15 @@ if 条件2:
 ::
 
    def updateTotolArea(self):
-   #汇总区域用于显示电脑和玩家的胜平负次数
-   print("-------更新汇总区域--------")
-   playerTotal = "%s赢了%d局" % (self.playerName, self.playerScore)
-   computerTotal = "%s赢了%d局" % (self.computerName, self.computerScore)
-   equalTotal = "平局%d次" % self.equalNum
-   text.draw("-------------", 20, 240, 0x000000, 0xffffff)
-   text.draw(playerTotal, 20, 256, 0x000000, 0xffffff)
-   text.draw(computerTotal, 20, 272, 0x000000, 0xffffff)
-   text.draw(equalTotal, 20, 288, 0x000000, 0xffffff)
+     #汇总区域用于显示电脑和玩家的胜平负次数
+     print("-------更新汇总区域--------")
+     playerTotal = "%s赢了%d局" % (self.playerName, self.playerScore)
+     computerTotal = "%s赢了%d局" % (self.computerName, self.computerScore)
+     equalTotal = "平局%d次" % self.equalNum
+     text.draw("-------------", 20, 240, 0x000000, 0xffffff)
+     text.draw(playerTotal, 20, 256, 0x000000, 0xffffff)
+     text.draw(computerTotal, 20, 272, 0x000000, 0xffffff)
+     text.draw(equalTotal, 20, 288, 0x000000, 0xffffff)
 
 7. 完整程序
 
