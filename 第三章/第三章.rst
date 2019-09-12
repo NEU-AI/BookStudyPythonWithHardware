@@ -58,11 +58,12 @@ TypeError: 'str' object does not support item assignment
 不管使用单引号还是双引号包含，使用print输出字符串的时候，值都是一样的。至于为什么两种情况都可以表示字符串，是因为某些情况下它们会派上用场。
 
 【案例3-2】 字符串转义
+::
 
->>>"let's go!"
-"let's go!"
->>> '"nice to meet you!",he said'
-'"nice to meet you!",he said'
+   >>>"let's go!"
+   "let's go!"
+   >>>'"nice to meet you!",he said'
+   '"nice to meet you!",he said'
 
 上面的代码中，第1行代码的字符串内容有单引号，所以要使用双引号包含。而第3行代码的字符串内容有双引号，所以要使用单引号包含。如果不这么做，当解释器在根据单引号或者双引号辨别字符串的结果符时，难免会发生错误。例如，下面的代码就会报错：
 
