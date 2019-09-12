@@ -631,7 +631,8 @@ big_center_y)，然后再利用turtle.circle(-radius,
          pice =width/30big_center_x = -width/3big_center_y =eight/4
          star(big_center_x, big_center_y-1, pice*3, big_center_x,big_center_y)
          star(-width/6, height*2/5, pice, big_center_x,big_center_y)
-         star(-width/10,height*3/10,pice,big_center_x,big_center_y)star(width/10,height*3/20,pice,big_center_x,big_center_y)
+         star(-width/10,height*3/10,pice,big_center_x,big_center_y)
+         star(width/10,height*3/20,pice,big_center_x,big_center_y)
          star(-width/6, height/20, pice, big_center_x,big_center_y)
 
 8. 运行效果
