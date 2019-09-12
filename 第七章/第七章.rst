@@ -13,10 +13,10 @@
 ::
 
    def greet_user():
-   """显示简单的问候语"""
-   print("Hello!")
-   print("This is function")
-   greet_user()
+      """显示简单的问候语"""
+      print("Hello!")
+      print("This is function")
+      greet_user()
 
 这个示例演示了最简单的函数结构。使用关键字def来告诉Python你要定义一个
 
@@ -39,11 +39,11 @@ greet_user():后面的所有缩进行构成了函数体。"""的文本是被称�
 ::
 
    def greet_user():
-   """显示简单的问候语"""
-   print("Hello!")
-   print("This is function")
-   greet_user()
-   print("This is end")
+      """显示简单的问候语"""
+      print("Hello!")
+      print("This is function")
+      greet_user()
+      print("This is end")
 
 图7-1 函数调用执行的过程
 
@@ -86,10 +86,10 @@ Step 4.：函数完成时，从离开主程序的那个位置继续执行。
 ::
 
    def describe_pet(animal_type, pet_name):
-   """显示宠物的信息"""
-   print("\nI have a " + animal_type + ".")
-   print("My " + animal_type + "'s name is " + pet_name.title() + ".")
-   describe_pet('hamster', 'harry')
+      """显示宠物的信息"""
+      print("\nI have a " + animal_type + ".")
+      print("My " + animal_type + "'s name is " + pet_name.title() + ".")
+      describe_pet('hamster', 'harry')
 
 调用describe_pet()时，需要按顺序提供一种动物类型和一个名字。例如，在前面的函数调用中，实参'hamster'存储在形参animal_type中，而实参'harry'存储在形参pet_name中。在函数体内，使用了这两个形参来显示宠物的信息。输出描述了一只名为Harry的仓鼠：
 ::
@@ -117,10 +117,10 @@ Step 4.：函数完成时，从离开主程序的那个位置继续执行。
 ::
 
    def describe_pet(animal_type, pet_name):
-   """显示宠物的信息"""
-   print("\nI have a " + animal_type + ".")
-   print("My " + animal_type + "'s name is " + pet_name.title() + ".")
-   describe_pet(animal_type='hamster', pet_name='harry')
+      """显示宠物的信息"""
+      print("\nI have a " + animal_type + ".")
+      print("My " + animal_type + "'s name is " + pet_name.title() + ".")
+      describe_pet(animal_type='hamster', pet_name='harry')
 
 函数describe_pet()还是原来那样，但调用这个函数时，我们向Python明确地指出了各个实参对应的形参。看到这个函数调用时，Python知道应该将实参'hamster'和'harry'分别存储在形参animal_type和pet_name中。输出正确无误，它指出我们有一只名为Harry的仓鼠。关键字实参的顺序无关紧要，因为Python知道各个值该存储到哪个形参中。下面两个函数调用是等效的：
 ::
@@ -134,10 +134,10 @@ Step 4.：函数完成时，从离开主程序的那个位置继续执行。
 ::
 
    def describe_pet(pet_name, animal_type='dog'):
-   """显示宠物的信息"""
-   print("\nI have a " + animal_type + ".")
-   print("My " + animal_type + "'s name is " + pet_name.title() + ".")
-   describe_pet(pet_name='willie')
+      """显示宠物的信息"""
+      print("\nI have a " + animal_type + ".")
+      print("My " + animal_type + "'s name is " + pet_name.title() + ".")
+      describe_pet(pet_name='willie')
 
 这里修改了函数describe_pet()的定义，在其中给形参animal_type指定了默认值'dog'。这样，调用这个函数时，如果没有给animal_type指定值，Python将把这个形参设置为'dog'：
 ::
@@ -180,11 +180,11 @@ Step 4.：函数完成时，从离开主程序的那个位置继续执行。
 ::
 
    def get_formatted_name(first_name, last_name):
-   """返回整洁的姓名"""
-   full_name = first_name + ' ' + last_name
-   return full_name.title()
-   musician = get_formatted_name('jimi', 'hendrix')
-   print(musician)
+      """返回整洁的姓名"""
+      full_name = first_name + ' ' + last_name
+      return full_name.title()
+      musician = get_formatted_name('jimi', 'hendrix')
+      print(musician)
 
 函数get_formatted_name()的定义通过形参接受名和姓。将姓名组合后将结果存储在变量full_name中。然后，将full_name的值转换为首字母大写格式，并将结果返回到函数调用行。调用返回值的函数时，需要提供一个变量，用于存储返回的值。在这里，将返回值存储在了变量musician中。输出为完整的姓名：
 ::
@@ -199,26 +199,26 @@ Step 4.：函数完成时，从离开主程序的那个位置继续执行。
 ::
 
    def get_formatted_name(first_name, middle_name, last_name):
-   """返回整洁的姓名"""
-   full_name = first_name + ' ' + middle_name + ' ' + last_name
-   return full_name.title()
-   musician = get_formatted_name('john', 'lee', 'hooker')
-   print(musician)
+      """返回整洁的姓名"""
+      full_name = first_name + ' ' + middle_name + ' ' + last_name
+      return full_name.title()
+      musician = get_formatted_name('john', 'lee', 'hooker')
+      print(musician)
 
 再对这个函数进行优化，目前只要同时提供名、中间名和姓，这个函数就能正确地运行。它根据这三部分创建一个字符串，在适当的地方加上空格，并将结果转换为首字母大写格式。然而，并非所有的人都有中间名，但如果你调用这个函数时只提供了名和姓，它将不能正确地运行。为让中间名变成可选的，可给形参middle_name指定一个默认值——空字符串，并在用户没有提供中间名时不使用这个形参。为让get_formatted_name()在没有提供中间名时依然可行，可给实参middle_name指定一个默认值——空字符串，并将其移到形参列表的末尾：
 ::
 
    def get_formatted_name(first_name, last_name, middle_name=''):
-   """返回整洁的姓名"""
-   if middle_name:
-   full_name = first_name + ' ' + middle_name + ' ' + last_name
-   else:
-   full_name = first_name + ' ' + last_name
-   return full_name.title()
-   musician = get_formatted_name('jimi', 'hendrix')
-   print(musician)
-   musician = get_formatted_name('john', 'hooker', 'lee')
-   print(musician)
+      """返回整洁的姓名"""
+      if middle_name:
+         full_name = first_name + ' ' + middle_name + ' ' + last_name
+      else:
+         full_name = first_name + ' ' + last_name
+         return full_name.title()
+      musician = get_formatted_name('jimi', 'hendrix')
+      print(musician)
+      musician = get_formatted_name('john', 'hooker', 'lee')
+      print(musician)
 
 在这个示例中，姓名是根据三个可能提供的部分创建的。由于人都有名和姓，因此在函数定义中首先列出了这两个形参。中间名是可选的，因此在函数定义中最后列出该形参，并将其默认值设置为空字符串。在函数体中，我们检查是否提供了中间名。Python将非空字符串解读为True，因此如果函数调用中提供了中间名，if
 middle_name将为True。如果提供了中间名，就将名、中间名和姓合并为姓名，然后将其修改为首字母大写格式，并返回到函数调用行。在函数调用行，将返回的值存储在变量musician中；然后将这个变量的值打印出来。如果没有提供中间名，middle_name将为空字符串，导致if测试未通过，进而执行else代码块：只使用名和姓来生成姓名，并将设置好格式的姓名返回给函数调用行。在函数调用行，将返回的值存储在变量musician中；然后将这个变量的值打印出来。调用这个函数时，如果只想指定名和姓，调用起来将非常简单。如果还要指定中间名，就必须确保它是最后一个实参，这样Python才能正确地将位置实参关联到形参。
@@ -227,9 +227,9 @@ middle_name将为True。如果提供了中间名，就将名、中间名和姓�
 ::
 
    def build_person(first_name, last_name):
-   """返回一个字典，其中包含有关一个人的信息"""
-   person = {'first': first_name, 'last': last_name}
-   return person
+      """返回一个字典，其中包含有关一个人的信息"""
+      person = {'first': first_name, 'last': last_name}
+      return person
    musician = build_person('jimi', 'hendrix')
    print(musician)
 
@@ -256,14 +256,14 @@ middle_name将为True。如果提供了中间名，就将名、中间名和姓�
    # 模拟打印每个设计，直到没有未打印的设计为止
    # 打印每个设计后，都将其移到列表completed_models中
    while unprinted_designs:
-   current_design = unprinted_designs.pop()
+      current_design = unprinted_designs.pop()
    #模拟根据设计制作3D打印模型的过程
    print("Printing model: " + current_design)
    completed_models.append(current_design)
    # 显示打印好的所有模型
    print("\nThe following models have been printed:")
    for completed_model in completed_models:
-   print(completed_model)
+      print(completed_model)
 
 这个程序首先创建一个需要打印的设计列表，还创建一个名为completed_models的空列表，每个设计打印都将移到这个列表中。只要列表unprinted_designs中还有设计，while循环就模拟打印设计的过程：从该列表末尾删除一个设计，将其存储到变量current_design中，并显示一条消息，指出正在打印当前的设计，再将该设计加入到列表completed_models中。循环结束后，显示已打印的所有设计：
 ::
@@ -280,24 +280,24 @@ middle_name将为True。如果提供了中间名，就将名、中间名和姓�
 ::
 
    def print_models(unprinted_designs, completed_models):
-   """
-   模拟打印每个设计，直到没有未打印的设计为止
-   打印每个设计后，都将其移到列表completed_models中
-   """
-   while unprinted_designs:
-   current_design = unprinted_designs.pop()
-   # 模拟根据设计制作3D打印模型的过程
-   print("Printing model: " + current_design)
-   completed_models.append(current_design)
+      """
+      模拟打印每个设计，直到没有未打印的设计为止
+      打印每个设计后，都将其移到列表completed_models中
+      """
+      while unprinted_designs:
+         current_design = unprinted_designs.pop()
+         # 模拟根据设计制作3D打印模型的过程
+         print("Printing model: " + current_design)
+         completed_models.append(current_design)
    def show_completed_models(completed_models):
-   """显示打印好的所有模型"""
-   print("\nThe following models have been printed:")
-   for completed_model in completed_models:
-   print(completed_model)
-   unprinted_designs = ['iphone case', 'robot pendant', 'dodecahedron']
-   completed_models = []
-   print_models(unprinted_designs, completed_models)
-   show_completed_models(completed_models)
+      """显示打印好的所有模型"""
+      print("\nThe following models have been printed:")
+      for completed_model in completed_models:
+         print(completed_model)
+         unprinted_designs = ['iphone case', 'robot pendant', 'dodecahedron']
+         completed_models = []
+         print_models(unprinted_designs, completed_models)
+         show_completed_models(completed_models)
 
 在上面，我们定义了函数print_models()，它包含两个形参：一个需要打印的设计列表和一个打印好的模型列表。给定这两个列表，这个函数模拟打印每个设计的过程：将设计逐个地从未打印的设计列表中取出，并加入到打印好的模型列表中。我们定义了函数show_completed_models()，它包含一个形参：打印好的模型列表。给定这个列表，函数show_completed_models()显示打印出来的每个模型的名称。这个程序的输出与未使用函数的版本相同，但组织更为有序。完成大部分工作的代码都移到了两个函数中，让主程序更容易理解。只要看看主程序，你就知道这个程序的功能容易看清得多：
 ::
@@ -317,10 +317,10 @@ middle_name将为True。如果提供了中间名，就将名、中间名和姓�
 ::
 
    def make_pizza(*toppings):
-   """打印顾客点的所有配料"""
-   print(toppings)
-   make_pizza('pepperoni')
-   make_pizza('mushrooms', 'green peppers', 'extra cheese')
+      """打印顾客点的所有配料"""
+      print(toppings)
+      make_pizza('pepperoni')
+      make_pizza('mushrooms', 'green peppers', 'extra cheese')
 
 形参名*toppings中的星号让Python创建一个名为toppings的空元组，并将收到的所有值都封装到这个元组中。函数体内的print语句通过生成输出来证明Python能够处理使用一个值调用函数的情形，也能处理使用三个值来调用函数的情形。它以类似的方式处理不同的调用，注意，Python将实参封装到一个元组中，即便函数只收到一个值也如此：
 ::
@@ -332,12 +332,12 @@ middle_name将为True。如果提供了中间名，就将名、中间名和姓�
 ::
 
    def make_pizza(*toppings):
-   """概述要制作的比萨"""
-   print("\nMaking a pizza with the following toppings:")
-   for topping in toppings:
-   print("- " + topping)
-   make_pizza('pepperoni')
-   make_pizza('mushrooms', 'green peppers', 'extra cheese')
+      """概述要制作的比萨"""
+      print("\nMaking a pizza with the following toppings:")
+      for topping in toppings:
+         print("- " + topping)
+         make_pizza('pepperoni')
+         make_pizza('mushrooms', 'green peppers', 'extra cheese')
 不管收到的是一个值还是三个值，这个函数都能妥善地处理，不管函数收到的实参是多少个，这种语法都管用。
 ::
 
@@ -370,11 +370,13 @@ middle_name将为True。如果提供了中间名，就将名、中间名和姓�
 
    **pizza.py**
    def make_pizza(*toppings):
-   """概述要制作的比萨"""
-   print("\nMaking a pizza with the following toppings:")
-   for topping in toppings:
-   print("- " + topping)
-   接下来，我们在pizza.py所在的目录中创建另一个名为making_pizzas.py的文件，这个文件导入刚创建的模块，再调用make_pizza()两次
+      """概述要制作的比萨"""
+      print("\nMaking a pizza with the following toppings:")
+      for topping in toppings:
+         print("- " + topping)
+ 接下来，我们在pizza.py所在的目录中创建另一个名为making_pizzas.py的文件，这个文件导入刚创建的模块，再调用make_pizza()两次
+ ::
+ 
    **making_pizzas.py**
    import pizza
    pizza.make_pizza(16, 'pepperoni')
@@ -473,14 +475,14 @@ make_pizza()时，都可简写成mp()，而Python将运行make_pizza()中的代�
 ::
 
    def sum(m):
-   s=0
-   # 计算1+2+3+...+m的和
-   for p in range(m+1)：
-   s=s+p
-   return s
-   m=10
-   s=sum(m)
-   print(s)
+      s=0
+      # 计算1+2+3+...+m的和
+      for p in range(m+1)：
+         s=s+p
+         return s
+         m=10
+         s=sum(m)
+      print(s)
 
 其函数中的m，p，s变量都是局部变量，注意函数中定义的变量只能在函数中使用，不能在其他函数中使用，同时一个函数中也不能使用其他函数中定义的变量，各个函数之间是平行的关系，每个函数都封装了自己的区域，互补干扰。形参变量是属于被调用函数的局部变量，而实参变量是属于调用函数的局部变量。允许在不同的函数中使用相同的变量名，但是他们代表的是不同的对象，分配不同的存储单元，互不干扰，也不会发生混淆，在本例中sum函数的m、s变量和主程序的m、s变量同名，但是他们是不同的变量。
 
@@ -490,17 +492,17 @@ make_pizza()时，都可简写成mp()，而Python将运行make_pizza()中的代�
 ::
 
    def A(x):
-   global y
-   y=0
-   x=0
+      global y
+      y=0
+      x=0
    def B(x):
-   global y
-   y=10
-   x=0
-   x=1
-   y=2
-   A(x)
-   B(x)
+      global y
+      y=10
+      x=0
+      x=1
+      y=2
+      A(x)
+      B(x)
    print(x,y)
 
 在A，B函数中都使用了global y声明A，B中使用的y不是本地的y变量而是主程序的y变量，所以执行结果为：110。
@@ -561,55 +563,58 @@ make_pizza()时，都可简写成mp()，而Python将运行make_pizza()中的代�
 ::
 
    class Grid(object):
-   def \__init__(self, master = None, x = 10, y = 10, w = 222, h = 222):
-   self.x = x
-   self.y = y
-   self.w = w
-   self.h = h
-   self.width = w//35 - 1
-   self.height = h//55 - 1
-   self.bg = 0x000000
-   print(self.width, self.height)
-   #画背景
-   for i in range(320):
-   screen.drawline(0, i, 239, i, 1, self.bg);
-   self.initial()
+      def \__init__(self, master = None, x = 10, y = 10, w = 222, h = 222):
+         self.x = x
+         self.y = y
+         self.w = w
+         self.h = h
+         self.width = w//35 - 1
+         self.height = h//55 - 1
+         self.bg = 0x000000
+         print(self.width, self.height)
+         #画背景
+         for i in range(320):
+            screen.drawline(0, i, 239, i, 1, self.bg)
+            self.initial()
 
 在构造函数__init__()中，调用了screen.drawline函数来画直线，通过循环画出最外层的边框。
 ::
 
    def initial(self):
-   for i in range(0, 4):
-   for j in range(0, 4):
-   x = i \* 55 + self.x + 1
-   y = j \* 55 + self.y + 1
-   #画边界
-   screen.drawline(x,y,x + 55 - 1,y,1, 0xFFFFFF);
-   screen.drawline(x + 55 - 1,y,x + 55 - 1, y + 55,1,0xFFFFFF);
-   screen.drawline(x,y + 55,x + 55 - 1,y + 55,1, 0xFFFFFF);
-   screen.drawline(x,y,x,y + 55, 1,0xFFFFFF);
-   initial主要实现画内部的棋盘，通过双重循环画出网格状棋盘。
+      for i in range(0, 4):
+         for j in range(0, 4):
+            x = i \* 55 + self.x + 1
+            y = j \* 55 + self.y + 1
+            #画边界
+            screen.drawline(x,y,x + 55 - 1,y,1, 0xFFFFFF)
+            screen.drawline(x + 55 - 1,y,x + 55 - 1, y + 55,1,0xFFFFFF)
+            screen.drawline(x,y + 55,x + 55 - 1,y + 55,1, 0xFFFFFF)
+            screen.drawline(x,y,x,y + 55, 1,0xFFFFFF)
+            
+initial主要实现画内部的棋盘，通过双重循环画出网格状棋盘。
+   ::
+   
    def draw(self, pos, color, num):
-   x = pos[0] \* 55 + self.x
-   y = pos[1] \* 55 + self.y
-   text.draw("", x + 3, y + 19, color, 0x000000)
-   if num < 16:
-   text.draw(str(num), x + 19, y + 19, color, 0x000000)
-   elif num < 128:
-   text.draw(str(num), x + 11, y + 19, color, 0x000000)
-   elif num < 1024:
-   text.draw(str(num), x + 3, y + 19, color, 0x000000)
-   elif num == 1024:
-   text.draw("1K", x + 11, y + 19, color, 0x000000)
-   else:
-   text.draw("2K", x + 11, y + 19, color, 0x000000)
+      x = pos[0] \* 55 + self.x
+      y = pos[1] \* 55 + self.y
+      text.draw("", x + 3, y + 19, color, 0x000000)
+      if num < 16:
+         text.draw(str(num), x + 19, y + 19, color, 0x000000)
+      elif num < 128:
+         text.draw(str(num), x + 11, y + 19, color, 0x000000)
+      elif num < 1024:
+         text.draw(str(num), x + 3, y + 19, color, 0x000000)
+      elif num == 1024:
+         text.draw("1K", x + 11, y + 19, color, 0x000000)
+      else:
+         text.draw("2K", x + 11, y + 19, color, 0x000000)
 
 draw方法是将pos列表中的两个值转换成实际屏幕坐标，再在这个坐标上显示传入的num数字，但是数字长度不一，会根据数字长度对实际坐标位置进行修正。
 ::
 
    def printscore(self, msg, score):
-   print(msg + str(score))
-   text.draw(msg + str(score), 20, 250, 0xFF0000, 0x000000)
+      print(msg + str(score))
+      text.draw(msg + str(score), 20, 250, 0xFF0000, 0x000000)
 
 printscore方法主要是将当前成绩score显示在屏幕网格下方。
 
@@ -619,12 +624,12 @@ printscore方法主要是将当前成绩score显示在屏幕网格下方。
 ::
 
    class Matrix(object):
-   def \__init__(self, grid):
-   self.grid = grid
-   self.matrix = [[0 for i in range(4)] for i in range(4)]
-   self.matrix_o = [[0 for i in range(4)] for i in range(4)]
-   self.vacancy = []
-   self.gamewin = False
+      def \__init__(self, grid):
+         self.grid = grid
+         self.matrix = [[0 for i in range(4)] for i in range(4)]
+         self.matrix_o = [[0 for i in range(4)] for i in range(4)]
+         self.vacancy = []
+         self.gamewin = False
    #使用一个字典将数字与其对应的颜色存放起来
    self.color ={
    0 : 0xFFFFFF,
@@ -645,80 +650,80 @@ printscore方法主要是将当前成绩score显示在屏幕网格下方。
 ::
 
    def void(self):
-   self.vacancy = []
-   for x in range(0, 4):
-   for y in range(0, 4):
-   if self.matrix[x][y] == 0:
-   self.vacancy.append((x, y))
-   return len(self.vacancy)
+      self.vacancy = []
+      for x in range(0, 4):
+         for y in range(0, 4):
+            if self.matrix[x][y] == 0:
+               self.vacancy.append((x, y))
+               return len(self.vacancy)
    
 void方法主要是双重循环遍历矩阵，当发现值为0的点时将坐标加到vacancy列表中。
 ::
 
    def generate(self):
-   pos = choice(self.vacancy)
-   if randint(0, 5) == 4:
-   self.matrix[pos[0]][pos[1]] = 4
-   else:
-   self.matrix[pos[0]][pos[1]] = 2
-   del self.vacancy[self.vacancy.index((pos[0], pos[1]))]
+      pos = choice(self.vacancy)
+      if randint(0, 5) == 4:
+         self.matrix[pos[0]][pos[1]] = 4
+      else:
+         self.matrix[pos[0]][pos[1]] = 2
+         del self.vacancy[self.vacancy.index((pos[0], pos[1]))]
 
 generate方法在vacancy列表中取随机的点，并根据随机数的值来判断生成的是2还是4，并将vacancy列表删除新生成的点的坐标。
 ::
 
    def draw(self):
-   for i in range (0, 4):
-   for j in range (0, 4):
-   pos = (i, j)
-   num = self.matrix[i][j]
-   color = self.color[int(self.matrix[i][j])]
-   self.grid.draw(pos, color, num)
+      for i in range (0, 4):
+         for j in range (0, 4):
+            pos = (i, j)
+            num = self.matrix[i][j]
+            color = self.color[int(self.matrix[i][j])]
+            self.grid.draw(pos, color, num)
    
 draw方法就是遍历矩阵，通过调用grid类的draw方法将矩阵中的数据显示到网格中。
 ::
 
    def initial(self):
-   self.matrix = [[0 for i in range(4)] for i in range(4)]
-   self.void()
-   self.generate()
-   self.generate()
-   self.draw()
-   self.gamewin = False
-   for i in range(0, 4):
-   for j in range(0, 4):
-   self.matrix_o[i][j] = self.matrix[i][j]
+      self.matrix = [[0 for i in range(4)] for i in range(4)]
+      self.void()
+      self.generate()
+      self.generate()
+      self.draw()
+      self.gamewin = False
+      for i in range(0, 4):
+         for j in range(0, 4):
+            self.matrix_o[i][j] = self.matrix[i][j]
 
 initial方法综合调用前面定义的各种方法，初始化矩阵，并收集0值列表，产生两个随机的2或者4放入0值位置上，并调用draw在网格中显示矩阵，并将当前矩阵记录在原始矩阵matrix_o中。
 ::
 
    def up(self):
-   ss = 0
-   for i in range(0, 4):
-   for j in range(0, 3):
-   s = 0
-   if not self.matrix[i][j] == 0:
-   for k in range(j + 1, 4):
-   if not self.matrix[i][k] == 0:
-   if self.matrix[i][j] == self.matrix[i][k]:
-   ss = ss + self.matrix[i][k]
-   self.matrix[i][j] = self.matrix[i][j] \* 2
-   if self.matrix[i][j] == 2048:
-   self.gamewin = True
-   self.matrix[i][k] = 0
-   s = 1
-   break
-   else:
-   break
-   if s == 1:
-   break
-   for i in range(0, 4):
-   s = 0
-   for j in range(0, 3):
-   if self.matrix[i][j - s] == 0:
-   self.matrix[i].pop(j - s)
-   self.matrix[i].append(0)
-   s = s + 1
-   return ss
+      ss = 0
+      for i in range(0, 4):
+         for j in range(0, 3):
+            s = 0
+            if not self.matrix[i][j] == 0:
+               for k in range(j + 1, 4):
+                if not self.matrix[i][k] == 0:
+                  if self.matrix[i][j] == self.matrix[i][k]:
+                     ss = ss + self.matrix[i][k]
+                     self.matrix[i][j] = self.matrix[i][j] \* 2
+                     if self.matrix[i][j] == 2048:
+                           self.gamewin = True
+                           self.matrix[i][k] = 0
+                           s = 1
+                           break
+                     else:
+                           break
+              if s == 1:
+                   break
+     for i in range(0, 4):
+         s = 0
+         for j in range(0, 3):
+            if self.matrix[i][j - s] == 0:
+               self.matrix[i].pop(j - s)
+               self.matrix[i].append(0)
+               s = s + 1
+      return ss
 
 up函数实现点击向上按钮之后的矩阵变换。首先循环遍历所有的点，s为判断标志用来跳出循环，当发现某个位置的值不为0时，循环遍历这列当前节点之下的所有位置，当发现临近的点的值和当前的值相等时则当前值翻倍，当到达2048时则结束游戏。然后重新调整矩阵，将矩阵上移，并将值为0的点删除，在底部用0补全如图7-6所示。
 
@@ -728,78 +733,78 @@ up函数实现点击向上按钮之后的矩阵变换。首先循环遍历所有
 ::
 
    def down(self):
-   for i in range(0, 4):
-   self.matrix[i].reverse()
-   ss = self.up()
-   for i in range(0, 4):
-   self.matrix[i].reverse()
-   return ss
+      for i in range(0, 4):
+         self.matrix[i].reverse()
+         ss = self.up()
+      for i in range(0, 4):
+         self.matrix[i].reverse()
+      return ss
 
 下移过程将矩阵颠倒，然后调用上移方法，完成后再颠倒过来。
 ::
 
    def left(self):
-   ss = 0
-   for i in range(0, 4):
-   for j in range(0, 3):
-   s = 0
-   if not self.matrix[j][i] == 0:
-   for k in range(j + 1, 4):
-   if not self.matrix[k][i] == 0:
-   if self.matrix[j][i] == self.matrix[k][i]:
-   ss = ss + self.matrix[k][i]
-   self.matrix[j][i] = self.matrix[j][i] \* 2
-   if self.matrix[j][i] == 2048:
-   self.gamewin = True
-   self.matrix[k][i] = 0
-   s = 1
-   break
-   else:
-   break
-   if s == 1:
-   break
-   for i in range(0, 4):
-   s = 0
-   for j in range(0, 3):
-   if self.matrix[j - s][i] == 0:
-   for k in range(j - s, 3):
-   self.matrix[k][i] = self.matrix[k + 1][i]
-   self.matrix[3][i] = 0
-   s = s + 1
-   return ss
+      ss = 0
+      for i in range(0, 4):
+         for j in range(0, 3):
+            s = 0
+            if not self.matrix[j][i] == 0:
+               for k in range(j + 1, 4):
+                  if not self.matrix[k][i] == 0:
+                     if self.matrix[j][i] == self.matrix[k][i]:
+                        ss = ss + self.matrix[k][i]
+                        self.matrix[j][i] = self.matrix[j][i] \* 2
+                        if self.matrix[j][i] == 2048:
+                           self.gamewin = True
+                           self.matrix[k][i] = 0
+                           s = 1
+                           break
+                     else:
+                        break
+               if s == 1:
+                  break
+      for i in range(0, 4):
+         s = 0
+         for j in range(0, 3):
+            if self.matrix[j - s][i] == 0:
+               for k in range(j - s, 3):
+                  self.matrix[k][i] = self.matrix[k + 1][i]
+                  self.matrix[3][i] = 0
+                  s = s + 1
+          return ss
    def right(self):
-   ss = 0
-   for i in range(0, 4):
-   for j in range(0, 3):
-   s = 0
-   if not self.matrix[3-j][i] == 0:
-   k = 3-j-1
-   while k >= 0:
-   if not self.matrix[k][i] == 0:
-   if self.matrix[3-j][i] == self.matrix[k][i]:
-   ss = ss + self.matrix[k][i]
-   self.matrix[3-j][i] = self.matrix[3-j][i] \* 2
-   if self.matrix[3-j][i] == 2048:
-   self.gamewin = True
-   self.matrix[k][i] = 0
-   s = s+1
-   break
-   else:
-   break
-   k = k -1
-   if s == 1:
-   break
-   for i in range(0, 4):
-   s = 0
-   for j in range(0, 3):
-   if self.matrix[3 - j + s][i] == 0:
-   k = 3 - j + s
-   while k > 0:
-   self.matrix[k][i] = self.matrix[k - 1][i]
-   k = k - 1
-   self.matrix[0][i] = 0
-   s = s + 1
-   return ss
+      ss = 0
+      for i in range(0, 4):
+         for j in range(0, 3):
+            s = 0
+            if not self.matrix[3-j][i] == 0:
+               k = 3-j-1
+               while k >= 0:
+                  if not self.matrix[k][i] == 0:
+                     if self.matrix[3-j][i] == self.matrix[k][i]:
+                        ss = ss + self.matrix[k][i]
+                        self.matrix[3-j][i] = self.matrix[3-j][i] \* 2
+                        if self.matrix[3-j][i] == 2048:
+                           self.gamewin = True
+                           self.matrix[k][i] = 0
+                           s = s+1
+                           break
+                     else:
+                        break
+                  k = k -1
+         if s == 1:
+            break
+      for i in range(0, 4):
+         s = 0
+         for j in range(0, 3):
+            if self.matrix[3 - j + s][i] == 0:
+               k = 3 - j + s
+               while k > 0:
+                  self.matrix[k][i] = self.matrix[k - 1][i]
+                  k = k - 1
+                  self.matrix[0][i] = 0
+                  s = s + 1
+      return ss
 
 矩阵左移和右移方式和上移相似，就不再具体描述了。
 
@@ -809,61 +814,61 @@ up函数实现点击向上按钮之后的矩阵变换。首先循环遍历所有
 ::
 
    class Game():
-   def \__init__(self):
-   self.grid = Grid()
-   self.matrix = Matrix(self.grid)
-   self.status = ['run', 'stop']
-   #界面左侧显示分数
-   self.initial()
+      def \__init__(self):
+         self.grid = Grid()
+         self.matrix = Matrix(self.grid)
+         self.status = ['run', 'stop']
+         #界面左侧显示分数
+         self.initial()
 初始化当前状态，聚合网格类和矩阵类。
 ::
 
    def initial(self):
-   self.score = 0
-   self.grid.printscore("成绩为：", self.score)
-   self.matrix.initial()
+      self.score = 0
+      self.grid.printscore("成绩为：", self.score)
+      self.matrix.initial()
    
 初始化成绩并显示，初始化矩阵
 ::
 
    def key_release(self, key):
-   keymatch=["Down", "Left", "Up", "Right"]
-   if keymatch[key] == "Up":
-   ss = self.matrix.up()
-   self.run(ss)
-   elif keymatch[key] == "Down":
-   ss = self.matrix.down()
-   self.run(ss)
-   elif keymatch[key] == "Left":
-   ss = self.matrix.left()
-   self.run(ss)
-   elif keymatch[key] == "Right":
-   ss = self.matrix.right()
-   self.run(ss)
+      keymatch=["Down", "Left", "Up", "Right"]
+      if keymatch[key] == "Up":
+         ss = self.matrix.up()
+         self.run(ss)
+      elif keymatch[key] == "Down":
+         ss = self.matrix.down()
+         self.run(ss)
+         elif keymatch[key] == "Left":
+            ss = self.matrix.left()
+            self.run(ss)
+         elif keymatch[key] == "Right":
+            ss = self.matrix.right()
+            self.run(ss)
 
 按键控制不同的按键对应调用矩阵类的不同的变换。
 ::
 
    def run(self, ss):
-   if not self.matrix.matrix == self.matrix.matrix_o:
-   self.score = self.score + int(ss)
-   self.grid.printscore("成绩为：", self.score)
-   if self.matrix.gamewin == True:
-   self.matrix.draw()
-   self.grid.printscore("恭喜获胜，成绩为：", self.score)
-   if message == 'ok':
-   self.initial()
-   else:
-   self.matrix.void()
-   self.matrix.generate()
-   for i in range(0, 4):
-   for j in range(0, 4):
-   self.matrix.matrix_o[i][j] = self.matrix.matrix[i][j]
-   self.matrix.draw()
-   else:
-   v = self.matrix.void()
-   if v < 1:
-   self.grid.printscore("你输了，成绩为：", self.score)
+      if not self.matrix.matrix == self.matrix.matrix_o:
+         self.score = self.score + int(ss)
+         self.grid.printscore("成绩为：", self.score)
+         if self.matrix.gamewin == True:
+            self.matrix.draw()
+            self.grid.printscore("恭喜获胜，成绩为：", self.score)
+            if message == 'ok':
+            self.initial()
+         else:
+            self.matrix.void()
+            self.matrix.generate()
+            for i in range(0, 4):
+               for j in range(0, 4):
+               self.matrix.matrix_o[i][j] = self.matrix.matrix[i][j]
+               self.matrix.draw()
+      else:
+         v = self.matrix.void()
+         if v < 1:
+            self.grid.printscore("你输了，成绩为：", self.score)
 
 Run方法首先判判断变换前后是否相同，相同则游戏失败，不同，则判断是否已经生成2048达成胜利条件，如果没有则继续生成随机的2或4，记录当前的矩阵到matrix_o中。
 
@@ -873,22 +878,22 @@ Run方法首先判判断变换前后是否相同，相同则游戏失败，不�
 ::
 
    if \__name_\_ == '__main__':
-   game = Game()
-   while True:
-   gc.collect()
-   i = 0
-   j = -1
-   for k in keys:
-   if k.value() == 0:
-   if i != j:
-   print("i=", i)
-   print("j=", j)
-   j = i
-   game.key_release(i)
-   i = i+ 1
-   if i > 3:
-   i = 0
-   time.sleep_ms(125)
+      game = Game()
+      while True:
+         gc.collect()
+         i = 0
+         j = -1
+         for k in keys:
+            if k.value() == 0:
+            if i != j:
+               print("i=", i)
+               print("j=", j)
+               j = i
+               game.key_release(i)
+               i = i+ 1
+            if i > 3:
+               i = 0
+               time.sleep_ms(125)
 
 .. _本章小结-6:
 
