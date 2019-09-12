@@ -756,54 +756,54 @@ self.keys是计算器类中定义的一个列表，里面存放了四个按键�
 
    # 计算器四则运算
    def calculate(self, op1, ope, op2):
-   if self.keydict[ope] == '+':
-   res = op1 + op2
-   elif self.keydict[ope] == '-':
-   res = op1 - op2
-   elif self.keydict[ope] == '×':
-   res = op1 \* op2
-   elif self.keydict[ope] == '÷':
-   res = op1 / op2
-   else:
-   res = op2
-   return res
+      if self.keydict[ope] == '+':
+         res = op1 + op2
+      elif self.keydict[ope] == '-':
+         res = op1 - op2
+      elif self.keydict[ope] == '×':
+         res = op1 \* op2
+      elif self.keydict[ope] == '÷':
+         res = op1 / op2
+      else:
+         res = op2
+      return res
    # 计算器算法
    def sendData(self, num):
    # 数字0-9
-   if num < 10:
-   if self.operator == 11:
-   self.r_operand = 0
-   self.operator = 123
-   if self.dotFlag == 0:
-   self.r_operand = self.r_operand \* 10 + num
-   else:
-   self.dotLoc = self.dotLoc + self.dotFlag
-   self.r_operand = self.r_operand + num / (10 \*\* self.dotLoc)
-   self.result = self.r_operand
-   # 小数点.
-   elif num == 10:
-   if self.dotFlag == 0:
-   self.dotFlag = 1
+      if num < 10:
+         if self.operator == 11:
+            self.r_operand = 0
+            self.operator = 123
+            if self.dotFlag == 0:
+               self.r_operand = self.r_operand \* 10 + num
+            else:
+               self.dotLoc = self.dotLoc + self.dotFlag
+               self.r_operand = self.r_operand + num / (10 \*\* self.dotLoc)
+               self.result = self.r_operand
+            # 小数点.
+         elif num == 10:
+            if self.dotFlag == 0:
+               self.dotFlag = 1
    # 等号=
-   elif num == 11:
-   self.dotFlag = 0
-   self.dotLoc = 0
-   self.r_operand = self.calculate(self.l_operand, self.operator,
-   self.r_operand)
-   self.l_operand = 0
-   self.operator = num
-   self.result = self.r_operand
-   # 运算符+-*/
-   elif num > 11
-   self.dotFlag = 0
-   self.dotLoc = 0
-   self.l_operand = self.calculate(self.l_operand, self.operator,
-   self.r_operand)
-   self.r_operand = 0
-   self.operator = num
-   self.result = self.l_operand
-   else:
-   print('input error')
+         elif num == 11:
+            self.dotFlag = 0
+            self.dotLoc = 0
+            self.r_operand = self.calculate(self.l_operand, self.operator,
+            self.r_operand)
+            self.l_operand = 0
+            self.operator = num
+            self.result = self.r_operand
+            # 运算符+-*/
+         elif num > 11
+            self.dotFlag = 0
+            self.dotLoc = 0
+            self.l_operand = self.calculate(self.l_operand, self.operator,
+            self.r_operand)
+            self.r_operand = 0
+            self.operator = num
+            self.result = self.l_operand
+         else:
+            print('input error')
 
 步骤2：清空显示区，首先确定显示部分的坐标，然后调用text.draw(
 )函数对该区域进行清除。
