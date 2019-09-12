@@ -470,7 +470,7 @@ if 条件2:
 通过类的构造函数，从而实现对硬件（屏幕显示和按键设置）进行初始化，同时将游戏的一些统计数据进行清零。
 ::
 
-   def \__init__(self, playerName, computerName):
+   def __init__(self, playerName, computerName):
         #将游戏的统计数据进行清零
         self.gameStart = False
         self.playerName = playerName
@@ -643,7 +643,7 @@ if 条件2:
    pins = [36,39,34,35]
    keys = []
    class Game():
-      def \__init__(self, playerName, computerName):
+      def __init__(self, playerName, computerName):
          self.gameStart = False
          self.playerName = playerName
          self.computerName = computerName
@@ -749,7 +749,7 @@ if 条件2:
       text.draw(playerTotal, 20, 256, 0x000000, 0xffffff)
       text.draw(computerTotal, 20, 272, 0x000000, 0xffffff)
       text.draw(equalTotal, 20, 288, 0x000000, 0xffffff)
-    if \__name_\_ == '__main__':
+    if __name__ == '__main__':
           newGame = Game("玩家", "电脑")
          newGame.startGame()
 
