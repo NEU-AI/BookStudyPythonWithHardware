@@ -62,15 +62,15 @@
 
    输入考试成绩
    if 成绩在90-100:
-   等级为“A”
+        等级为“A”
    elif 成绩在80-89:
-   等级为“B”
+        等级为“B”
    elif 成绩在70-79:
-   等级为“C”
+        等级为“C”
    elif 成绩在60-69:
-   等级为“D”
+        等级为“D”
    elif 成绩在0-59:
-   等级为“E”
+        等级为“E”
    保存数据库
 
 当我们输入学生考试成绩后，系统将根据输入的成绩自动转换成相应的等级，并存入数据库中。当用户输入的考试成绩在90-100分之间，则会执行第一个分支，将等级“A”写入数据库中，当输入的成绩在80-89分之间，则会执行第二个分支，将等级“B”写入数据库，此次类推，当输入的成绩在0-59分之间，则会执行最后一个分支，将等级“E”写入数据库，最后执行保存数据库的操作。
@@ -279,17 +279,17 @@ if的缩写。if语句执行有个特点，它是从上往下判断，如果程�
 
    score = input(“Enter mark:”)
    if score<0 or score>100:
-   print(“Invalid”)
+        print(“Invalid”)
    elif score>=90 and score<=100:
-   print(“A”)
+        print(“A”)
    elif score>=80 and score<=89:
-   print(“B”)
+        print(“B”)
    elif score>=70 and score<=79:
-   print(“C”)
+        print(“C”)
    elif score>=60 and score<=69:
-   print(“D”)
+        print(“D”)
    elif score>=0 and score<=59:
-   print(“E”)
+        print(“E”)
 
 当然，if-elif语句可以和else语句一起使用。在上面的例子中，也可以将最后0~59分的条件判断，直接改成else判断。
 
@@ -301,22 +301,22 @@ if的缩写。if语句执行有个特点，它是从上往下判断，如果程�
    w = input(“w=”)
    w = int(w)
    if w==0:
-   s = “Sunday”
+        s = “Sunday”
    elif w==1:
-   s = “Monday”
+        s = “Monday”
    elif w==2:
-   s = “Tuesday”
+        s = “Tuesday”
    elif w==3:
-   s = “Wednesday”
+        s = “Wednesday”
    elif w==4:
-   s = “Thursday”
+        s = “Thursday”
    elif w==5:
-   s = “Friday”
+        s = “Friday”
    elif w==6:
-   s = “Saturday”
+        s = “Saturday”
    else:
-   s = “Error”
-   print(s)
+         s = “Error”
+         print(s)
 
 4.4 条件语句的嵌套使用
 ----------------------
@@ -349,16 +349,16 @@ if 条件2:
    ticket = 1 #用1代表有车票，0代表没有车票
    knifeLength = 0 #刀子的长度，单位为cm
    if ticket == 1:
-   print(“有车票，可以进站”)
+        print(“有车票，可以进站”)
    if knifeLength < 10:
-   print(“通过安检”)
-   print(“终于可以见到Ta了，美滋滋~~~”)
+        print(“通过安检”)
+        print(“终于可以见到Ta了，美滋滋~~~”)
    else:
-   print(“没有通过安检”)
-   print(“刀子的长度超过规定，等待警察处理…”)
+        print(“没有通过安检”)
+        print(“刀子的长度超过规定，等待警察处理…”)
    else:
-   print(“没有车票，不能进站”)
-   print(“亲爱的，那就下次见了，一票难求啊~~~~(>_<)~~~~”)
+        print(“没有车票，不能进站”)
+        print(“亲爱的，那就下次见了，一票难求啊~~~~(>_<)~~~~”)
 
 1. 假设ticket = 1 、knifeLength = 9，程序的运行结果如图4-5所示。
 
@@ -398,18 +398,18 @@ if 条件2:
    b = float(b)
    c = float(c)
    if a!=0:
-   d = b*b-4*a*c
+        d = b*b-4*a*c
    if d>0:
-   d = math.sqrt(d)
-   x1 = (-b+d) / 2 / a
-   x2 = (-b-d) / 2 / a
-   print(“x1=”,x1, “x2=”,x2)
+        d = math.sqrt(d)
+        x1 = (-b+d) / 2 / a
+         x2 = (-b-d) / 2 / a
+        print(“x1=”,x1, “x2=”,x2)
    elif d==0:
-   print(“x1,x2=”,-b/2/a)
+        print(“x1,x2=”,-b/2/a)
    else:
-   print(“无实数解”)
+         print(“无实数解”)
    else:
-   print(“不是一元二次方程！”)
+         print(“不是一元二次方程！”)
    
 程序运行结果：
 ::
@@ -481,22 +481,22 @@ if 条件2:
 ::
 
    def \__init__(self, playerName, computerName):
-   #将游戏的统计数据进行清零
-   self.gameStart = False
-   self.playerName = playerName
-   self.computerName = computerName
-   self.playerScore = 0
-   self.computerScore = 0
-   self.equalNum = 0
-   self.playerStatus = 0
-   self.playerMessage = ""
-   self.computerStatus = 0
-   self.computerMessage = ""
-   #设置按键数组
-   for p in pins:
-   keys.append(Pin(p,Pin.IN))
-   #初始化屏幕
-   self.displayInit()
+        #将游戏的统计数据进行清零
+        self.gameStart = False
+        self.playerName = playerName
+        self.computerName = computerName
+        self.playerScore = 0
+        self.computerScore = 0
+        self.equalNum = 0
+        self.playerStatus = 0
+        self.playerMessage = ""
+         self.computerStatus = 0
+         self.computerMessage = ""
+        #设置按键数组
+        for p in pins:
+        keys.append(Pin(p,Pin.IN))
+        #初始化屏幕
+        self.displayInit()
    
 在构造函数__init__()中，调用了displayInit()函数来进行屏幕初始化工作，主要负责完成屏幕顶部的游戏规则和操作说明显示。
 ::
