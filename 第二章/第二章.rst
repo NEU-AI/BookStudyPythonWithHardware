@@ -514,7 +514,8 @@ y2: 右下角纵坐标。
 1）计算国旗的宽度和高度的绝对值。
 ::
 
-   width = abs(x2 - x1) height = abs(y2 - y1)
+   width = abs(x2 - x1) 
+   height = abs(y2 - y1)
 
 2）抬笔，并移动到左上角位置，落笔。
 ::
