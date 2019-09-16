@@ -375,7 +375,7 @@ middle_name将为True。如果提供了中间名，就将名、中间名和姓�
       print("\nMaking a pizza with the following toppings:")
       for topping in toppings:
          print("- " + topping)
- 接下来，我们在pizza.py所在的目录中创建另一个名为making_pizzas.py的文件，这个文件导入刚创建的模块，再调用make_pizza()两次
+接下来，我们在pizza.py所在的目录中创建另一个名为making_pizzas.py的文件，这个文件导入刚创建的模块，再调用make_pizza()两次
  ::
  
    **making_pizzas.py**
@@ -564,7 +564,7 @@ make_pizza()时，都可简写成mp()，而Python将运行make_pizza()中的代�
 ::
 
    class Grid(object):
-      def \__init__(self, master = None, x = 10, y = 10, w = 222, h = 222):
+      def __init__(self, master = None, x = 10, y = 10, w = 222, h = 222):
          self.x = x
          self.y = y
          self.w = w
@@ -584,8 +584,8 @@ make_pizza()时，都可简写成mp()，而Python将运行make_pizza()中的代�
    def initial(self):
       for i in range(0, 4):
          for j in range(0, 4):
-            x = i \* 55 + self.x + 1
-            y = j \* 55 + self.y + 1
+            x = i * 55 + self.x + 1
+            y = j * 55 + self.y + 1
             #画边界
             screen.drawline(x,y,x + 55 - 1,y,1, 0xFFFFFF)
             screen.drawline(x + 55 - 1,y,x + 55 - 1, y + 55,1,0xFFFFFF)
@@ -596,19 +596,19 @@ initial主要实现画内部的棋盘，通过双重循环画出网格状棋盘�
    ::
    
    def draw(self, pos, color, num):
-      x = pos[0] \* 55 + self.x
-      y = pos[1] \* 55 + self.y
-      text.draw("", x + 3, y + 19, color, 0x000000)
-      if num < 16:
-         text.draw(str(num), x + 19, y + 19, color, 0x000000)
-      elif num < 128:
-         text.draw(str(num), x + 11, y + 19, color, 0x000000)
-      elif num < 1024:
-         text.draw(str(num), x + 3, y + 19, color, 0x000000)
-      elif num == 1024:
-         text.draw("1K", x + 11, y + 19, color, 0x000000)
-      else:
-         text.draw("2K", x + 11, y + 19, color, 0x000000)
+       x = pos[0] * 55 + self.x
+       y = pos[1] * 55 + self.y
+       text.draw("", x + 3, y + 19, color, 0x000000)
+       if num < 16:
+          text.draw(str(num), x + 19, y + 19, color, 0x000000)
+       elif num < 128:
+          text.draw(str(num), x + 11, y + 19, color, 0x000000)
+       elif num < 1024:
+          text.draw(str(num), x + 3, y + 19, color, 0x000000)
+       elif num == 1024:
+          text.draw("1K", x + 11, y + 19, color, 0x000000)
+       else:
+          text.draw("2K", x + 11, y + 19, color, 0x000000)
 
 draw方法是将pos列表中的两个值转换成实际屏幕坐标，再在这个坐标上显示传入的num数字，但是数字长度不一，会根据数字长度对实际坐标位置进行修正。
 ::
@@ -625,29 +625,29 @@ printscore方法主要是将当前成绩score显示在屏幕网格下方。
 ::
 
    class Matrix(object):
-      def \__init__(self, grid):
+      def __init__(self, grid):
          self.grid = grid
          self.matrix = [[0 for i in range(4)] for i in range(4)]
          self.matrix_o = [[0 for i in range(4)] for i in range(4)]
          self.vacancy = []
          self.gamewin = False
    #使用一个字典将数字与其对应的颜色存放起来
-   self.color ={
-   0 : 0xFFFFFF,
-   2 : 0x000099,
-   4 : 0x009900,
-   8 : 0x990000,
-   16 : 0x999900,
-   32 : 0x990099,
-   64 : 0x00FFFF,
-   128 : 0x0000FF,
-   256 : 0x00FF00,
-   512 : 0xFF0000,
-   1024 : 0xFFFF00,
-   2048 : 0xFF00FF
-   }
+         self.color ={
+         0 : 0xFFFFFF,
+         2 : 0x000099,
+         4 : 0x009900,
+         8 : 0x990000,
+         16 : 0x999900,
+         32 : 0x990099,
+         64 : 0x00FFFF,
+         128 : 0x0000FF,
+         256 : 0x00FF00,
+         512 : 0xFF0000,
+         1024 : 0xFFFF00,
+         2048 : 0xFF00FF
+         }
 
-\__init__函数主要进行初始化操作，初始化矩阵，字体颜色，0值的列表，胜利标志等参数。
+__init__函数主要进行初始化操作，初始化矩阵，字体颜色，0值的列表，胜利标志等参数。
 ::
 
    def void(self):
@@ -707,7 +707,7 @@ initial方法综合调用前面定义的各种方法，初始化矩阵，并收�
                 if not self.matrix[i][k] == 0:
                   if self.matrix[i][j] == self.matrix[i][k]:
                      ss = ss + self.matrix[i][k]
-                     self.matrix[i][j] = self.matrix[i][j] \* 2
+                     self.matrix[i][j] = self.matrix[i][j] * 2
                      if self.matrix[i][j] == 2048:
                            self.gamewin = True
                            self.matrix[i][k] = 0
@@ -754,7 +754,7 @@ up函数实现点击向上按钮之后的矩阵变换。首先循环遍历所有
                   if not self.matrix[k][i] == 0:
                      if self.matrix[j][i] == self.matrix[k][i]:
                         ss = ss + self.matrix[k][i]
-                        self.matrix[j][i] = self.matrix[j][i] \* 2
+                        self.matrix[j][i] = self.matrix[j][i] * 2
                         if self.matrix[j][i] == 2048:
                            self.gamewin = True
                            self.matrix[k][i] = 0
@@ -784,7 +784,7 @@ up函数实现点击向上按钮之后的矩阵变换。首先循环遍历所有
                   if not self.matrix[k][i] == 0:
                      if self.matrix[3-j][i] == self.matrix[k][i]:
                         ss = ss + self.matrix[k][i]
-                        self.matrix[3-j][i] = self.matrix[3-j][i] \* 2
+                        self.matrix[3-j][i] = self.matrix[3-j][i] * 2
                         if self.matrix[3-j][i] == 2048:
                            self.gamewin = True
                            self.matrix[k][i] = 0
@@ -815,7 +815,7 @@ up函数实现点击向上按钮之后的矩阵变换。首先循环遍历所有
 ::
 
    class Game():
-      def \__init__(self):
+      def __init__(self):
          self.grid = Grid()
          self.matrix = Matrix(self.grid)
          self.status = ['run', 'stop']
@@ -878,7 +878,7 @@ Run方法首先判判断变换前后是否相同，相同则游戏失败，不�
 主循环是游戏的入口，开始后不断循环监听按键输入，并调用游戏类的按键处理方法。
 ::
 
-   if \__name_\_ == '__main__':
+   if __name__ == '__main__':
       game = Game()
       while True:
          gc.collect()
