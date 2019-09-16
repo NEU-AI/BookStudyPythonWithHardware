@@ -660,28 +660,28 @@ print(tom)就会调用内置的__str__方法，只要自己定义了__str__(self
 
    class Grid(object):
       def __init__(self, master = None, x = 10, y = 10, w = 193, h = 303):
-         self.x = x
-         self.y = y
-         self.w = w
-         self.h = h
-         self.rows = h//10
-         self.cols = w//10
-         self.bg = 0x000000
-         print(self.rows,self.cols)
-         #画背景
-         for i in range(320):
-            screen.drawline(0, i, 239, i, 1, self.bg)
-            #画边界
-            screen.drawline(x,y,x + w - 1, y,1,0xFFFFFF)
-            screen.drawline(x + w - 1,y,x + w - 1,y + h,1,0xFFFFFF)
-            screen.drawline(x,y + h,x + w - 1, y + h,1,0xFFFFFF)
-            screen.drawline(x,y,x,y + h,1, 0xFFFFFF)
-            #画预览框边界
-            screen.drawline(204,10, 204 + 32 - 1,10,1,0xFFFFFF)
-            screen.drawline(204 + 32 - 1, 10,204 + 32 - 1,10 + 32, 1,0xFFFFFF)
-            screen.drawline(204,10 + 32, 204 + 32 - 1,10 + 32,1,0xFFFFFF)
-            screen.drawline(204,10, 204, 10 + 32,1,0xFFFFFF)
-   
+      self.x = x
+      self.y = y
+      self.w = w
+      self.h = h
+      self.rows = h//10
+      self.cols = w//10
+      self.bg = 0x000000;
+      print(self.rows,self.cols)
+      #画背景
+      for i in range(320):
+	      screen.drawline(0, i, 239, i, 1, self.bg);
+         #画边界
+         screen.drawline(x,y,x + w - 1,	y,1,0xFFFFFF)
+         screen.drawline(x + w - 1,y,x + w - 1,y + h,1,0xFFFFFF)
+         screen.drawline(x,y + h,x + w - 1,	y + h,1,0xFFFFFF)
+         screen.drawline(x,y,x,y + h,1,	0xFFFFFF)
+         #画预览框边界
+         screen.drawline(204,10,	204 + 32 - 1,10,1,0xFFFFFF)
+         screen.drawline(204 + 32 - 1,	10,204 + 32 - 1,10 + 32,	1,0xFFFFFF)
+         screen.drawline(204,10 + 32,	204 + 32 - 1,10 + 32,1,0xFFFFFF)
+         screen.drawline(204,10,	204,	10 + 32,1,0xFFFFFF)
+
 在__init__方法中，调用了screen.drawline函数来画直线，画出游戏区域的边框、和预览区域的边框。
 ::
 
