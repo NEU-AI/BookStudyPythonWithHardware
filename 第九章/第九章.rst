@@ -390,7 +390,7 @@ install paho-mqtt，并且自己搭建好服务端程序。客户端代码如下
 通过类的构造函数，从而实现对硬件（屏幕显示和按键设置）进行初始化，同时设置配制参数。
 ::
 
-   def \__init__(self):
+   def __init__(self):
       self.keys = [Pin(p, Pin.IN) for p in [35, 36, 39, 34]]
       self.keymatch = ["Key1", "Key2", "Key3", "Key4"]
       self.select=1
