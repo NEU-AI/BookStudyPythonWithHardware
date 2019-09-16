@@ -212,8 +212,7 @@ MQTT协议中定义了一些方法（也被称为动作），用来表示对确�
 
    1. Connect：等待与服务器建立连接。
 
-   2.
-   Disconnect：等待MQTT客户端完成所做的工作，并与服务器断开TCP/IP会话。
+   2. Disconnect：等待MQTT客户端完成所做的工作，并与服务器断开TCP/IP会话。
 
    3. Subscribe：等待完成订阅。
 
@@ -252,9 +251,9 @@ bit，高4位是数据包类型如图9-9所示，低4位标识位。固定头的
 
 服务器搭建软件有emqtt和mqttbox，emqtt是MQTT服务端软件，mqttbox是客户端软件，下载地址如下：
 
-   Emqtt下载地址：\ http://www.emqtt.com/downloads
+   Emqtt下载地址： http://www.emqtt.com/downloads
 
-   Mqttbox下载地址：\ http://workswithweb.com/html/mqttbox/downloads.html
+   Mqttbox下载地址： http://workswithweb.com/html/mqttbox/downloads.html
 
 下载好后解压“\ `emqttd-windows10-v2.3.11.zip <http://www.emqtt.com/downloads/2318/windows10>`__\ ”，并通过命令提示符启动服务，首先进入到bin目录下，然后输入命令“emqttd.cmd
 start”成功启动服务，如图9-10所示。
