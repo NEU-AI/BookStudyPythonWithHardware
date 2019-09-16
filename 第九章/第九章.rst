@@ -18,7 +18,7 @@
 
 TCP/IP（Transmission Control Protocol/InternetProtocol）是传输控制协议和网络协议的简称，它定义了电子设备如何连入因特网，以及数据如何在它们之间传输的标准。它是互联网的核心。在应用层中定义了很多面向应用的协议如FTP、TFTP、HTTP、SMTP、DHCP、Telnet、DNS和SNMP等。在传输层主要有两个协议，TCP和UDP，这些协议负责流量控制，错误校验和排序服务。在网络层中的协议主要有IP、ICMP、IGMP、ARP和RARP等，这些协议处理信息的路由和主机地址解析。
 
-2 OSI协议
+2OSI协议
 
 开放式系统互联通信参考模型（Open System Interconnection ReferenceModel，缩写为OSI），简称为OSI模型。OSI是七层体系结构，概念清晰，理论完整，但它即复杂又不实用。现在广泛使用的是TCP/IP体系结构，它是一个四层的体系结构,它包含应用层、运输层、网际层和网络接口层。不过从实质上讲，TCP/IP只有最上面的三层，因为最下面的网络接口层并没有什么具体内容，因此往往采取折中的办法，即综合OSI和TCP/IP的优点，采用一种只有五层协议的体系结构，这样既简洁又能将概念阐述淸楚，有时为了方便，也可把最底下两层称为网络接口层。
 
