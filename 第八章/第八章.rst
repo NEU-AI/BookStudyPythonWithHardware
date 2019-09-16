@@ -656,7 +656,7 @@ print(tom)就会调用内置的__str__方法，只要自己定义了__str__(self
 2. 网格类
 
 构造Grid类，主要功能是绘制背景及绘制界面，提供两个分别刷新游戏区域和预览区域的方法。
-:
+::
 
    class Grid(object):
       def __init__(self, master = None, x = 10, y = 10, w = 193, h = 303):
