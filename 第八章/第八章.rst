@@ -424,7 +424,7 @@ print(tom)就会调用内置的__str__方法，只要自己定义了__str__(self
 ::
 
    class 子类名(父类名1, 父类名2...)
-   pass
+      pass
 
 多继承会存在一个问题，如果不同的父类中存在同名的方法，子类对象在调用方法时，会调用哪一个父类中的方法呢？Python提供了多种的搜索方式，当找到适合的方法，就直接执行不再搜索，如果没有找到，就查找下一个类中是否有对应的方法，如果找到，就直接执行不再搜索，如果找到最后一个类，还没有找到方法，程序报错。其实在开发时，应该尽量避免这种容易产生混淆的情况。如果父类之间存在同名的属性或者方法，应该尽量避免使用多继承。
 
@@ -666,7 +666,7 @@ print(tom)就会调用内置的__str__方法，只要自己定义了__str__(self
          self.h = h
          self.rows = h//10
          self.cols = w//10
-         self.bg = 0x000000;
+         self.bg = 0x000000
          print(self.rows,self.cols)
          #画背景
          for i in range(320):
@@ -686,13 +686,13 @@ print(tom)就会调用内置的__str__方法，只要自己定义了__str__(self
 ::
 
    def drawgrid(self, pos, color):
-      x = pos[1] \* 10 + self.x + 2
-      y = pos[0] \* 10 + self.y + 2
+      x = pos[1] * 10 + self.x + 2
+      y = pos[0] * 10 + self.y + 2
       for i in range(9):
          screen.drawline(x, y + i, x + 9 - 1, y + i, 1, color)
    def drawpre(self, pos, color):
-      x = pos[1] \* 10 + 204 + 2
-      y = pos[0] \* 10 + 10 + 2
+      x = pos[1] * 10 + 204 + 2
+      y = pos[0] * 10 + 10 + 2
       for i in range(9):
          screen.drawline(x, y + i, x + 9 - 1, y + i, 1, color)
 
