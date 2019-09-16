@@ -255,7 +255,7 @@ bit，高4位是数据包类型如图9-9所示，低4位标识位。固定头的
 
    Mqttbox下载地址： http://workswithweb.com/html/mqttbox/downloads.html
 
-下载好后解压“\ `emqttd-windows10-v2.3.11.zip <http://www.emqtt.com/downloads/2318/windows10>`__\ ”，并通过命令提示符启动服务，首先进入到bin目录下，然后输入命令“emqttd.cmd
+下载好后解压“emqttd-windows10-v2.3.11.zip <http://www.emqtt.com/downloads/2318/windows10>”，并通过命令提示符启动服务，首先进入到bin目录下，然后输入命令“emqttd.cmd
 start”成功启动服务，如图9-10所示。
 
 .. image:: /Chapter/picture/image134.jpg
