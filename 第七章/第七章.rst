@@ -376,7 +376,7 @@ middle_name将为True。如果提供了中间名，就将名、中间名和姓�
       for topping in toppings:
          print("- " + topping)
 接下来，我们在pizza.py所在的目录中创建另一个名为making_pizzas.py的文件，这个文件导入刚创建的模块，再调用make_pizza()两次
- ::
+::
  
    **making_pizzas.py**
    import pizza
