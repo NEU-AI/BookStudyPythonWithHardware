@@ -593,7 +593,7 @@ make_pizza()时，都可简写成mp()，而Python将运行make_pizza()中的代�
             screen.drawline(x,y,x,y + 55, 1,0xFFFFFF)
             
 initial主要实现画内部的棋盘，通过双重循环画出网格状棋盘。
-   ::
+::
    
    def draw(self, pos, color, num):
        x = pos[0] * 55 + self.x
@@ -631,7 +631,7 @@ printscore方法主要是将当前成绩score显示在屏幕网格下方。
          self.matrix_o = [[0 for i in range(4)] for i in range(4)]
          self.vacancy = []
          self.gamewin = False
-   #使用一个字典将数字与其对应的颜色存放起来
+         #使用一个字典将数字与其对应的颜色存放起来
          self.color ={
          0 : 0xFFFFFF,
          2 : 0x000099,
