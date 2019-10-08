@@ -22,17 +22,3 @@ Skids 参考
 -----------------
 
 
-术语表
------------------
-
-.. toctree::
-   :maxdepth: 1
-
-   reference/glossary.rst
-
-   
-索引
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
